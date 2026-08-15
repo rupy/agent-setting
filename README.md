@@ -6,21 +6,24 @@ Claude Code と Codex で使う個人設定のベースです。
 
 ```text
 .
+├── shared/
+│   └── INSTRUCTIONS.md
 ├── claude/
-│   ├── CLAUDE.md
+│   ├── CLAUDE.md -> ../shared/INSTRUCTIONS.md
 │   └── rules/
 │       ├── safety.md
 │       └── workflow.md
 ├── codex/
-│   └── AGENTS.md
+│   └── AGENTS.md -> ../shared/INSTRUCTIONS.md
 └── skills/
     └── verify-work/
         └── SKILL.md
 ```
 
-- **Claude共通指示**: `claude/CLAUDE.md`
+- **共通指示の原本**: `shared/INSTRUCTIONS.md`
+- **Claude共通指示**: `claude/CLAUDE.md`から共通指示の原本を参照
 - **Claude分割ルール**: `claude/rules/*.md`
-- **Codex共通指示**: `codex/AGENTS.md`
+- **Codex共通指示**: `codex/AGENTS.md`から共通指示の原本を参照
 - **共通ワークフロー**: `skills/*/SKILL.md`
 
 ## 導入先
@@ -35,11 +38,11 @@ Claude Code と Codex で使う個人設定のベースです。
 | Claude Skill | `skills/verify-work/` | `~/.claude/skills/verify-work/` |
 | Codex Skill | `skills/verify-work/` | `~/.codex/skills/verify-work/` |
 
-このリポジトリは設定の原本として扱います。ホームディレクトリへ反映する前に、各ファイルの `Customize` セクションを自分用に編集してください。
+このリポジトリは設定の原本として扱います。ホームディレクトリへ反映する前に、`shared/INSTRUCTIONS.md` の `Customize` セクションを自分用に編集してください。
 
 ## 育て方
 
-- **常設方針**: 毎回必要な短い方針は `CLAUDE.md` / `AGENTS.md` に追加する
+- **常設方針**: 毎回必要な短い方針は `shared/INSTRUCTIONS.md` に追加する
 - **Claude固有ルール**: 細かなルールは `claude/rules/` に追加する
 - **複数手順**: 必要なときだけ使う手順はSkillにする
 - **プロジェクト固有**: この個人設定ではなく各プロジェクト側に置く
