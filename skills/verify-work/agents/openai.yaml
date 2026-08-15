@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Work"
+  short_description: "実装や設定の変更内容と検証結果を完了前に確認して報告する"
+  default_prompt: "Use $verify-work to review the current changes and report validation results."
