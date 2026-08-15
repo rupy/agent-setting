@@ -18,10 +18,10 @@ Claude Code と Codex で使う個人設定のベースです。
         └── SKILL.md
 ```
 
-- `claude/CLAUDE.md`: Claude Code の個人向け常設指示
-- `claude/rules/*.md`: Claude Code の指示をテーマ別に分割したもの
-- `codex/AGENTS.md`: Codex の個人向け常設指示
-- `skills/*/SKILL.md`: 両方で再利用するワークフロー
+- **Claude共通指示**: `claude/CLAUDE.md`
+- **Claude分割ルール**: `claude/rules/*.md`
+- **Codex共通指示**: `codex/AGENTS.md`
+- **共通ワークフロー**: `skills/*/SKILL.md`
 
 ## 導入先
 
@@ -39,9 +39,8 @@ Claude Code と Codex で使う個人設定のベースです。
 
 ## 育て方
 
-- 毎回必要な短い方針は `CLAUDE.md` / `AGENTS.md` に追加する
-- Claude固有の細かなルールは `claude/rules/` に追加する
-- 複数手順の作業や、必要なときだけ使う手順はSkillにする
-- プロジェクト固有のルールは、この個人設定ではなく各プロジェクト側に置く
-- 同じ指示を増やしすぎず、曖昧な表現を具体的な行動へ書き換える
-
+- **常設方針**: 毎回必要な短い方針は `CLAUDE.md` / `AGENTS.md` に追加する
+- **Claude固有ルール**: 細かなルールは `claude/rules/` に追加する
+- **複数手順**: 必要なときだけ使う手順はSkillにする
+- **プロジェクト固有**: この個人設定ではなく各プロジェクト側に置く
+- **明確さ**: 同じ指示を増やしすぎず、曖昧な表現を具体的な行動へ書き換える
