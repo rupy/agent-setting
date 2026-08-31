@@ -16,6 +16,12 @@ Claude Code と Codex で使う個人設定のベースです。
 ├── codex/
 │   └── AGENTS.md -> ../shared/INSTRUCTIONS.md
 └── skills/
+    ├── create-requirements-docs/
+    │   ├── SKILL.md
+    │   ├── references/
+    │   └── assets/
+    │       ├── requirements-template/
+    │       └── planning-template/
     └── verify-work/
         └── SKILL.md
 ```
@@ -25,6 +31,7 @@ Claude Code と Codex で使う個人設定のベースです。
 - **Claude分割ルール**: `claude/rules/*.md`
 - **Codex共通指示**: `codex/AGENTS.md`から共通指示の原本を参照
 - **共通ワークフロー**: `skills/*/SKILL.md`
+- **要件定義文書の作成**: `skills/create-requirements-docs/`
 
 ## 導入先
 
@@ -35,8 +42,8 @@ Claude Code と Codex で使う個人設定のベースです。
 | Claude 共通指示 | `claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
 | Claude ルール | `claude/rules/` | `~/.claude/rules/` |
 | Codex 共通指示 | `codex/AGENTS.md` | `~/.codex/AGENTS.md` |
-| Claude Skill | `skills/verify-work/` | `~/.claude/skills/verify-work/` |
-| Codex Skill | `skills/verify-work/` | `~/.codex/skills/verify-work/` |
+| Claude Skill | `skills/*/` | `~/.claude/skills/*/` |
+| Codex Skill | `skills/*/` | `~/.codex/skills/*/` |
 
 このリポジトリは設定の原本として扱います。ホームディレクトリへ反映する前に、`shared/INSTRUCTIONS.md` の `Customize` セクションを自分用に編集してください。
 

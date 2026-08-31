@@ -1,0 +1,4 @@
+interface:
+  display_name: "要件定義ドキュメント作成"
+  short_description: "ビジネス背景から受入条件まで一貫した要件文書を作成"
+  default_prompt: "$create-requirements-docs を使って、このプロジェクトの要件定義文書を作成してください。"
