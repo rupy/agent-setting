@@ -47,6 +47,25 @@ Claude Code と Codex で使う個人設定のベースです。
 
 このリポジトリは設定の原本として扱います。ホームディレクトリへ反映する前に、`shared/INSTRUCTIONS.md` の `Customize` セクションを自分用に編集してください。
 
+### このパソコンへの導入状況
+
+`orca` ユーザーの共通指示を、次のシンボリックリンクで導入済みです。
+
+| 導入先 | リンク先（このリポジトリ内） |
+|---|---|
+| `~/.codex/AGENTS.md` | `codex/AGENTS.md` → `shared/INSTRUCTIONS.md` |
+| `~/.claude/CLAUDE.md` | `claude/CLAUDE.md` → `shared/INSTRUCTIONS.md` |
+| `~/.claude/rules/safety.md` | `claude/rules/safety.md` |
+| `~/.claude/rules/workflow.md` | `claude/rules/workflow.md` |
+
+共通指示は `shared/INSTRUCTIONS.md` を編集すると両方に反映されます。変更後は新しいセッションを開始してください。この設定は同じユーザーで起動するローカルの Codex / Claude Code の全プロジェクトが対象です。各プロジェクトの指示も併せて読み込まれます。
+
+リンク先は `/home/orca/orca/projects/agent-setting` です。このリポジトリを移動・削除する場合はリンクの更新が必要です。`CODEX_HOME` や `CLAUDE_CONFIG_DIR` を変更して起動する場合は、その設定先にも配置してください。Codex に `AGENTS.override.md` を置くと、同じ階層の `AGENTS.md` より優先されます。
+
+今回導入したのは共通指示と Claude の分割ルールです。上表の Skill は別途導入する構成です。
+
+読み込み仕様: [Codex の AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[Claude Code の CLAUDE.md](https://code.claude.com/docs/en/memory)。
+
 ## 育て方
 
 - **常設方針**: 毎回必要な短い方針は `shared/INSTRUCTIONS.md` に追加する

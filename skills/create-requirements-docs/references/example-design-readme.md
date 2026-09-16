@@ -39,13 +39,16 @@ FR-001からFR-004、DR-001、IF-001からIF-004、NFR-001、NFR-002、NFR-007�
 | basic/06-screen-design.md | 画面一覧、遷移、構成、入力、状態表示、操作・アクセシビリティ方針 | 条件付き | draft | UX責任者 |
 | basic/07-security-design.md | 脅威、認証、認可、暗号化、監査、インシデント | 条件付き | in-review | セキュリティ責任者 |
 | basic/08-migration-design.md | データ移行、切替、検証、切り戻し | 条件付き | draft | 移行責任者 |
+| basic/09-api-design.md | 提供API、共通方針、入出力、エラー、互換性 | 条件付き | in-review | 開発責任者 |
+| basic/10-authentication-and-authorization-design.md | 認証主体、認証フロー、セッション、ロール、権限、認可規則 | 条件付き | in-review | セキュリティ責任者 |
 
 ### 詳細設計
 
 | 文書 | 内容 | 必須性 | ステータス | 責任者 |
 |---|---|---|---|---|
 | detailed/01-application-design.md | モジュール、内部処理、状態、制御、バッチ | 必須 | in-review | 開発責任者 |
-| detailed/02-common-ui-design.md | 入力、エラー表示、端末別動作、アクセシビリティ、共通部品 | 条件付き | draft | UX責任者 |
+| detailed/02-project-directory-structure.md | ディレクトリツリー、配置ルール、依存方向、命名規則 | 必須 | in-review | 開発責任者 |
+| detailed/03-common-ui-design.md | 入力、エラー表示、端末別動作、アクセシビリティ、共通部品 | 条件付き | draft | UX責任者 |
 | detailed/data/DATA-001-expense-database.md | 物理構造、制約、索引、整合性、スキーマ変更 | 条件付き | draft | 開発責任者 |
 | detailed/modules/MOD-001-approval-engine.md | 責務、公開API、依存関係、内部構成、品質 | 条件付き | draft | 開発責任者 |
 

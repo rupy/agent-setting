@@ -62,7 +62,7 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 
 開発計画は要件文書群へ混在させず、原則として `planning/development-plan.md` に置く。要件文書では「何が必要か」を定義し、開発計画では「どの順番で実現し、各段階を何で完了とするか」を定義する。
 
-技術設計は要件文書群へ混在させず、`design/` に置く。基本設計は外部から見える構造・仕様を `design/basic/`、詳細設計はアプリケーション内部の実現方法を `design/detailed/` に置く。必須の標準形は `README.md`、`basic/01-system-structure.md`、`basic/02-technology-selection.md`、`basic/03-data-design.md`、`basic/05-infrastructure-and-operations.md`、`detailed/01-application-design.md` とする。外部連携がある場合は `basic/04-external-system-integration-design.md` を作成する。画面、セキュリティ、移行もREADMEの作成条件に該当する場合に基本設計へ追加し、重要な実現方法の判断は `design/decisions/` のADRへ記録する。`basic/02-technology-selection.md` は採用した技術・製品、用途、バージョン方針、関連要件・制約を一覧化する。候補の比較、トレードオフ、詳しい判断理由は重複させずADRを正本とする。画面設計では画面の構成・遷移・入力・状態表示に加え、対応端末・基本操作・アクセシビリティの方針だけを扱う。エラーの表示位置、入力値保持、画面幅別の動作、フォーカス制御、文言、共通部品などの実装仕様が必要な場合は、条件付きで `detailed/02-common-ui-design.md` を作成する。データ設計はシステム内部で扱う論理データとその関係・ライフサイクルを、外部システム連携設計は外部システムや外部サービスとの接続を扱う。複雑な制約、整合性、検索性能、履歴、スキーマ変更を実装前に合意する必要がある場合は、対象データストアごとに `detailed/data/DATA-*.md` を作成する。複数箇所で利用する、公開APIの互換性が必要、状態・並行処理が複雑、または障害影響が大きいモジュールは、対象ごとに `detailed/modules/MOD-*.md` を作成する。単純なCRUDやコードから明らかなクラス・メソッドを網羅する目的では作成しない。アプリケーション内部のモジュール間呼び出しや内部APIは詳細設計へ記載する。各設計判断は根拠となる要件ID、制約ID、決定IDを参照し、要件本文を設計文書へ複製しない。設計によって要件または制約の変更が必要になった場合は、設計だけで変更せず要件文書へ反映する。
+技術設計は要件文書群へ混在させず、`design/` に置く。基本設計は外部から見える構造・仕様を `design/basic/`、詳細設計はアプリケーション内部の実現方法を `design/detailed/` に置く。必須の標準形は `README.md`、`basic/01-system-structure.md`、`basic/02-technology-selection.md`、`basic/03-data-design.md`、`basic/05-infrastructure-and-operations.md`、`detailed/01-application-design.md`、`detailed/02-project-directory-structure.md` とする。外部連携がある場合は `basic/04-external-system-integration-design.md` を作成する。画面、セキュリティ、移行もREADMEの作成条件に該当する場合に基本設計へ追加し、重要な実現方法の判断は `design/decisions/` のADRへ記録する。`basic/02-technology-selection.md` は採用した技術・製品、用途、バージョン方針、関連要件・制約を一覧化する。候補の比較、トレードオフ、詳しい判断理由は重複させずADRを正本とする。画面設計では画面の構成・遷移・入力・状態表示に加え、対応端末・基本操作・アクセシビリティの方針だけを扱う。エラーの表示位置、入力値保持、画面幅別の動作、フォーカス制御、文言、共通部品などの実装仕様が必要な場合は、条件付きで `detailed/03-common-ui-design.md` を作成する。データ設計はシステム内部で扱う論理データとその関係・ライフサイクルを、外部システム連携設計は外部システムや外部サービスとの接続を扱う。複雑な制約、整合性、検索性能、履歴、スキーマ変更を実装前に合意する必要がある場合は、対象データストアごとに `detailed/data/DATA-*.md` を作成する。複数箇所で利用する、公開APIの互換性が必要、状態・並行処理が複雑、または障害影響が大きいモジュールは、対象ごとに `detailed/modules/MOD-*.md` を作成する。単純なCRUDやコードから明らかなクラス・メソッドを網羅する目的では作成しない。アプリケーション内部のモジュール間呼び出しや内部APIは詳細設計へ記載する。各設計判断は根拠となる要件ID、制約ID、決定IDを参照し、要件本文を設計文書へ複製しない。設計によって要件または制約の変更が必要になった場合は、設計だけで変更せず要件文書へ反映する。
 
 文書の必須性は `requirements/README.md` の文書一覧を正本とし、`必須`、`条件付き`、`任意` のいずれかで示す。条件付き・任意文書には作成条件も記載する。案件固有の事情で標準の必須性を変える場合は、そのREADMEを更新する。各文書のfrontmatterや本文へ必須性を重複記載しない。
 
@@ -81,6 +81,12 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 開発フェーズは案件に合わせて定義し、基盤、主要機能、外部連携などの固定分類を強制しない。フェーズ表には機能領域と要件IDを参照し、要件本文を複製しない。開発フェーズと利用者向けリリースを同一視せず、必要な場合だけ対応関係を追記する。日付、工数、担当者を確認できない場合は推測せず未確定事項とする。
 
 単一部門かつ関係者と対象範囲が少なく、分割すると各文書が極端に短くなる場合は、`requirements/03-stakeholders-and-scope.md` に統合してよい。統合する場合も、ステークホルダーとの影響関係とスコープの対象・対象外を別見出しにし、後続文書の番号を詰めるかどうかは既存規約に合わせて一貫させる。標準形は分割とする。
+
+`detailed/02-project-directory-structure.md` は必須とし、実装対象のプロジェクトディレクトリ構成を責務と依存方向が分かる粒度で定義する。既存プロジェクトでは実際の構成と一致させ、新規プロジェクトでは採用技術とモジュール境界に基づく作成方針として示す。生成物、依存パッケージ、キャッシュなど設計判断を持たないディレクトリは網羅しない。
+
+システムが画面、アプリ、他システムなどのクライアントへAPIを提供する場合は、条件付きで `basic/09-api-design.md` を作成する。利用者から見えるAPI契約、各APIが要求する認証・認可の参照、入出力、エラー、一覧取得、冪等性、制限、互換性を定義する。認証方式と認可規則は `basic/10-authentication-and-authorization-design.md` を正本とする。システムから外部サービスを呼び出す接続仕様は `basic/04-external-system-integration-design.md`、アプリケーション内部のモジュール間APIは詳細設計を正本とし、重複させない。OpenAPIなどの機械可読な仕様を正本とする場合は、本書に正本の場所と更新方法を記載する。
+
+利用者またはサービスを認証する場合、もしくは主体によって利用できる機能・情報を制御する場合は、条件付きで `basic/10-authentication-and-authorization-design.md` を作成する。認証主体と方式、認証フロー、セッション・トークン、ロールと権限、対象資源・操作・状態を含む認可規則、権限変更、特権操作、監査を定義する。脅威と対策、暗号化、秘密情報、脆弱性、インシデント対応は `basic/07-security-design.md` を正本とし、重複させない。
 
 詳細な書き方とID体系を決めるときは `references/writing-rules.md` を読む。テンプレートを作成・変更するときは `assets/requirements-template/` の該当ファイルを使用する。
 
@@ -111,8 +117,11 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 - `design/basic/06-screen-design.md`: `references/example-design-basic-06-screen-design.md`
 - `design/basic/07-security-design.md`: `references/example-design-basic-07-security-design.md`
 - `design/basic/08-migration-design.md`: `references/example-design-basic-08-migration-design.md`
+- `design/basic/09-api-design.md`: `references/example-design-basic-09-api-design.md`
+- `design/basic/10-authentication-and-authorization-design.md`: `references/example-design-basic-10-authentication-and-authorization-design.md`
 - `design/detailed/01-application-design.md`: `references/example-design-detailed-01-application-design.md`
-- `design/detailed/02-common-ui-design.md`: `references/example-design-detailed-02-common-ui-design.md`
+- `design/detailed/02-project-directory-structure.md`: `references/example-design-detailed-02-project-directory-structure.md`
+- `design/detailed/03-common-ui-design.md`: `references/example-design-detailed-03-common-ui-design.md`
 - `design/detailed/data/DATA-*.md`: `references/example-design-detailed-data.md`
 - `design/detailed/modules/MOD-*.md`: `references/example-design-detailed-module.md`
 - `design/decisions/ADR-*.md`: `references/example-design-decision.md`

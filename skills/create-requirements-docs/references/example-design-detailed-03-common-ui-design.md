@@ -2,7 +2,7 @@
 
 架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例のUI仕様を実案件へ転用しない。
 
-## design/detailed/02-common-ui-design.md
+## design/detailed/03-common-ui-design.md
 
 ```markdown
 ---
