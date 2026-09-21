@@ -12,8 +12,8 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 1. リポジトリの指示、既存文書、用語、実装、課題管理資料を確認する。
 2. ユーザーが文書の作成・編集まで求めているか確認する。計画や提案だけの場合はファイルを変更しない。
 3. 十分な情報がなければ、安全に推測できない重要事項だけを質問する。回答待ちで止める必要がなければ、仮定と未確定事項を明示して進める。
-4. 文書を作成・更新する前に、対象に対応する `references/example-*.md` を読み、文章の粒度、属性、要件間のつなぎ方を確認する。例の固有名詞、数値、業務ルールは転用しない。
-5. 新規作成では `assets/requirements-template/` を対象プロジェクトの `requirements/` へコピーする構成を基準にする。開発計画も求められた場合は、`assets/planning-template/development-plan.md` を `planning/development-plan.md` として使用する。技術設計も求められた場合は、`assets/design-template/` を `design/` として使用する。既存の文書規約があればそちらを優先し、内容だけ適用する。
+4. 文書を作成・更新する前に、対象テンプレート内の「記入例（参考・成果物には含めない）」を読み、文章の粒度、属性、要件間のつなぎ方を確認する。例の固有名詞、数値、業務ルールは転用しない。
+5. 新規作成では `assets/requirements-template/` を対象プロジェクトの `requirements/` の作成元とする。各テンプレートの `<!-- BEGIN REFERENCE EXAMPLE` から `<!-- END REFERENCE EXAMPLE -->` までを除いた部分を使い、案内コメントと空欄を案件の内容へ置き換える。開発計画も求められた場合は、`assets/planning-template/development-plan.md` を `planning/development-plan.md` として使用する。技術設計も求められた場合は、`assets/design-template/` を `design/` として使用する。既存の文書規約があればそちらを優先し、内容だけ適用する。
 6. `requirements/README.md` で文書の必須性と作成条件を確認し、必要な文書だけを選ぶ。`requirements/` 直下の文書を番号順に作成し、ビジネスと利用者の理解からシステムに求める内容へ段階的に具体化する。共通の付録は随時更新する。
 7. 要件IDとリンクを用いて、ビジネス目的から受入条件までを追跡可能にする。
 8. 完了前に `references/writing-rules.md` の品質チェックを実施する。
@@ -58,6 +58,7 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 | `08-data-requirements.md` | 業務データ、品質、保持、機密区分 |
 | `09-non-functional-requirements.md` | 品質、運用、セキュリティ、性能などの測定可能な条件 |
 | `10-acceptance-and-traceability.md` | 受入条件、検証方法、上位要求との対応 |
+| `appendices/competitive-analysis.md` | 競合・代替手段の比較、機能候補、採否と要件への対応 |
 | `requirements/appendices/` | ビジネスとシステムで共有する用語、仮定・制約、決定、未確定事項 |
 
 開発計画は要件文書群へ混在させず、原則として `planning/development-plan.md` に置く。要件文書では「何が必要か」を定義し、開発計画では「どの順番で実現し、各段階を何で完了とするか」を定義する。
@@ -68,13 +69,21 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 
 ステークホルダー文書では「誰がプロジェクトに関係し、どのような影響を受けるか、または与えるか」を記載する。具体的な業務手順は業務フロー、システムの振る舞いは機能要件を正本とし、ステークホルダー文書へ重複記載しない。利用者以外の関係者も、業務、運用、規程などへの影響があれば記載する。意思決定体制、承認経路、レビュー計画、RACIなどのプロジェクト管理情報は、明示的に必要とされない限り含めない。スコープ文書では「今回の対象にどこまで含むか」を記載し、影響関係を重複させない。
 
+ステークホルダー一覧は「自社」「顧客企業」「外部委託先」など、確認できた所属・組織単位の見出しでまとめ、内部の部門・役割は影響の違いが分かる行として残す。「自社」が指す組織を明記し、別企業を一つにまとめたり、未確認の所属を推測したりしない。関係図はMermaidで作成し、同じまとまりを `subgraph`、内部の関係者をノードとして表す。矢印には関係・影響の意味を付け、業務の処理順や承認経路と混同させない。一覧と図の名称・所属を一致させ、関係のない組織を図の体裁のために追加しない。
+
 スコープ文書では「今回どこまで作るか」と「何を作らないか」を大項目で示す。プロジェクト、プロダクト、業務、機能などのスコープ分類を必須にしない。具体的な画面操作や処理条件は機能要件へ記載し、関連システムや連携方式の詳細は `06-related-systems-and-integrations.md` を正本とする。
 
 機能要件には、対象利用者、利用者が実現したいこと、その理由、関連するスコープ・業務フローを記載したうえで、システムが提供する振る舞いを定義する。利用者の目的を独立文書へ重複させず、機能要件の根拠として一元管理する。
 
+機能一覧と個別機能要件は、業務・機能領域ごとのカテゴリ見出しでまとめ、両者のカテゴリ名・分類・順序をそろえる。カテゴリは案件に合わせて定義し、固定の分類を強制しない。個別要件はカテゴリ見出しの下にFR-ID付きの見出しで記載する。FR-IDはカテゴリをまたいで一意とし、分類変更でも維持する。複数カテゴリに関わる要件は主たるカテゴリを正本として他から参照し、本文を重複させない。
+
 業務フロー Before／After文書は条件付きとし、既存業務を変更する案件で、現行と将来の手順、役割、受け渡し、業務ルールの差分を合意する必要がある場合に作成する。Beforeには確認できた現行業務と課題、Afterには合意を目指す将来業務と変更点を記載する。システムの具体的な振る舞いは機能要件を正本とし、この文書へ重複させない。比較対象となる既存業務がない場合は無理にBeforeを作らず、機能要件の利用者視点と必要な将来業務だけを記載する。
 
+業務フローにはMermaid図を付ける。BeforeとAfterを同じ業務範囲・粒度で描き、BP-ID、開始・終了、実施者、受け渡し、判断条件、差し戻し・例外を示す。図の手順番号・状態・分岐を手順表と業務ルールに対応させ、未確認の現行手順や未合意の将来案を確定事項として描かない。
+
 ターゲットとペルソナ文書は任意とし、対象顧客や典型的な利用者像がUI・UX、機能の優先順位、業務フローの判断に影響する場合に作成する。対価や価値提供の対象である「対象顧客」と、実際に操作または利用する「対象利用者」を区別する。社内システムなど対象顧客の概念が該当しない場合は、その理由を明記して対象外としてよい。ペルソナは調査結果または明示した仮定に基づいて作成し、裏付けのない人物像、属性、課題を事実として捏造しない。ペルソナを作らない場合でも、対象利用者はステークホルダーまたは機能要件で明確にする。
+
+ターゲットとペルソナ文書には、対象顧客・対象利用者・ペルソナの対応をMermaidで示す。本文と名称・PER-IDを一致させ、関係の意味と仮定・未確定の状態を明示する。対象顧客が該当しない場合は省き、ペルソナ未定義の利用者も図に残す。図のためにペルソナや所属関係を追加せず、関係者間の影響はステークホルダー図、手順は業務フロー図へ分離する。
 
 組織標準、既存基盤、契約などによる必須の技術的制約は `requirements/appendices/assumptions-and-constraints.md` に記録する。外部仕様と通信方式は連携要件、対応環境と品質水準は非機能要件を正本とする。製品、フレームワーク、データベース、クラウドサービス、コンポーネント構成などの実現方法は要件へ混在させず、`design/` の技術設計文書または決定記録へ記載する。
 
@@ -90,46 +99,22 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 
 詳細な書き方とID体系を決めるときは `references/writing-rules.md` を読む。テンプレートを作成・変更するときは `assets/requirements-template/` の該当ファイルを使用する。
 
-例は作業対象に応じて次から直接読む。
+記入例はすべて対応するテンプレート内に統合している。対象文書だけを次から読み、テンプレートと記入例を併せて確認する。
 
-- `requirements/README.md`: `references/example-readme.md`
-- `01-business-overview.md`: `references/example-01-business-overview.md`
-- `02-targets-and-personas.md`: `references/example-02-targets-and-personas.md`
-- `03-stakeholders.md`: `references/example-03-stakeholders.md`
-- `04-scope.md`: `references/example-04-scope.md`
-- `05-business-process-before-and-after.md`: `references/example-05-business-process-before-and-after.md`
-- `06-related-systems-and-integrations.md`: `references/example-06-related-systems-and-integrations.md`
-- `07-functional-requirements.md`: `references/example-07-functional-requirements.md`
-- `08-data-requirements.md`: `references/example-08-data-requirements.md`
-- `09-non-functional-requirements.md`: `references/example-09-non-functional-requirements.md`
-- `10-acceptance-and-traceability.md`: `references/example-10-acceptance-and-traceability.md`
-- `appendices/glossary.md`: `references/example-appendix-glossary.md`
-- `appendices/assumptions-and-constraints.md`: `references/example-appendix-assumptions-and-constraints.md`
-- `appendices/decisions.md`: `references/example-appendix-decisions.md`
-- `appendices/open-issues.md`: `references/example-appendix-open-issues.md`
-- `planning/development-plan.md`: `references/example-planning-development-plan.md`
-- `design/README.md`: `references/example-design-readme.md`
-- `design/basic/01-system-structure.md`: `references/example-design-basic-01-system-structure.md`
-- `design/basic/02-technology-selection.md`: `references/example-design-basic-02-technology-selection.md`
-- `design/basic/03-data-design.md`: `references/example-design-basic-03-data-design.md`
-- `design/basic/04-external-system-integration-design.md`: `references/example-design-basic-04-external-system-integration-design.md`
-- `design/basic/05-infrastructure-and-operations.md`: `references/example-design-basic-05-infrastructure-and-operations.md`
-- `design/basic/06-screen-design.md`: `references/example-design-basic-06-screen-design.md`
-- `design/basic/07-security-design.md`: `references/example-design-basic-07-security-design.md`
-- `design/basic/08-migration-design.md`: `references/example-design-basic-08-migration-design.md`
-- `design/basic/09-api-design.md`: `references/example-design-basic-09-api-design.md`
-- `design/basic/10-authentication-and-authorization-design.md`: `references/example-design-basic-10-authentication-and-authorization-design.md`
-- `design/detailed/01-application-design.md`: `references/example-design-detailed-01-application-design.md`
-- `design/detailed/02-project-directory-structure.md`: `references/example-design-detailed-02-project-directory-structure.md`
-- `design/detailed/03-common-ui-design.md`: `references/example-design-detailed-03-common-ui-design.md`
-- `design/detailed/data/DATA-*.md`: `references/example-design-detailed-data.md`
-- `design/detailed/modules/MOD-*.md`: `references/example-design-detailed-module.md`
-- `design/decisions/ADR-*.md`: `references/example-design-decision.md`
-- 要件の表現をレビューまたは改善するときは `references/example-writing-improvements.md` を読む。
+- 要件定義・付録: `assets/requirements-template/` の対象ファイル
+- 開発計画: `assets/planning-template/development-plan.md`
+- 基本設計・詳細設計・ADR: `assets/design-template/` の対象ファイル
+- 要件の表現のレビュー・改善: `references/writing-rules.md` の「記述の悪い例と改善例」
+
+テンプレートを更新するときは同じファイル内の記入例も確認し、項目・構造の整合を保つ。実案件の成果物には参考用の記入例セクションを残さず、架空の状態・担当者・日付・要件IDを実データへ混在させない。 記入例の本文は通常のMarkdownとして記載し、全体をコードブロックで囲まない。コードブロックはメタデータ、Mermaid、コードなど必要な部分だけに使う。
 
 例は構造と品質の基準として扱う。例に登場する会社、利用者、システム、数値、法令、保存期間、優先度を実案件の事実として採用しない。実案件で確認できない内容は仮定または未確定事項として記録する。
 
 ## 更新時の扱い
+
+競合調査を要件や差別化の判断に使う場合は `assets/requirements-template/appendices/competitive-analysis.md` を使う。直接・間接競合と現状維持の代替手段を比較し、公式資料を優先して出典・確認日・対象プランや版を残す。最新情報は利用可能な一次情報で確認し、未確認を非対応と断定しない。調査事実、自社への示唆、機能の推奨、採否決定を区別する。
+
+機能候補はCAND-IDで追跡し、対象利用者の課題、今回の目的・範囲への適合、開発・運用負担、依存条件を踏まえて提案する。推奨だけで採用済みにせず、採否・判断根拠・判断者・判断日を確認する。採用後はスコープ、機能要件の該当カテゴリ、優先度、受入条件を更新し、本書からFR-ID・AC-ID、機能要件の根拠からCAND-IDを相互参照する。既存要件と重複する場合は既存FR-IDを使う。重要な決定は決定記録、判断待ちは未確定事項へつなぎ、文書への反映状況も残す。
 
 既存文書を更新するときは、変更対象だけでなく次の波及を確認する。
 
@@ -150,3 +135,4 @@ description: ビジネス背景からターゲット・ペルソナ、業務フ�
 - 仮定が事実として書かれていないか確認する。
 - 未確定事項に意思決定のための次のアクションがあるか確認する。
 - 実装設計が要件として不必要に固定されていないか確認する。
+- 実案件の成果物に参考用の記入例セクションや架空の例データが残っていないか確認する。
