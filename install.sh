@@ -28,15 +28,24 @@ link_setting() {
   printf 'Installed: %s\n' "$target"
 }
 
+remove_old_link() {
+  local target=$1 old_source=$2
+  if [[ -L "$target" && $(readlink -- "$target") == "$old_source" ]]; then
+    rm -- "$target"
+    printf 'Removed old link: %s\n' "$target"
+  fi
+}
+
 if [[ "$codex_dir" != /* || "$claude_dir" != /* || "$HOME" != /* ]]; then
   printf 'HOME, CODEX_HOME and CLAUDE_CONFIG_DIR must use absolute paths.\n' >&2
   exit 1
 fi
 
-link_setting "$repo_dir/codex/AGENTS.md" "$codex_dir/AGENTS.md"
-link_setting "$repo_dir/claude/CLAUDE.md" "$claude_dir/CLAUDE.md"
-for rule in "$repo_dir"/claude/rules/*.md; do
-  link_setting "$rule" "$claude_dir/rules/$(basename -- "$rule")"
+link_setting "$repo_dir/AGENTS.md" "$HOME/AGENTS.md"
+link_setting "$repo_dir/AGENTS.md" "$codex_dir/AGENTS.md"
+remove_old_link "$claude_dir/CLAUDE.md" "$repo_dir/claude/CLAUDE.md"
+for rule in safety workflow; do
+  remove_old_link "$claude_dir/rules/$rule.md" "$repo_dir/claude/rules/$rule.md"
 done
 for skill in "$repo_dir"/skills/*; do
   [[ -f "$skill/SKILL.md" ]] || continue
