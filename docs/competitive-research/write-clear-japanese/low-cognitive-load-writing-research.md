@@ -97,4 +97,4 @@ HTML では、リンク単体で移動先が分かる名前にする。「こち
 
 ## 既存スキルとの関係
 
-[write-clear-japanese](../../skills/write-clear-japanese/SKILL.md) は、読者、根拠、段落、因果、用語の一貫性を扱う。本調査は、その判断を支える資料と、文書ごとに検証する方法をまとめたもの。短いスキル本文へ研究内容を全て移す必要はない。日本語ライティング系の公開スキルは [別の調査](japanese-writing-skills-research.md) にまとめている。
+[write-clear-japanese](../../../skills/write-clear-japanese/SKILL.md) は、読者、根拠、段落、因果、用語の一貫性を扱う。本調査は、その判断を支える資料と、文書ごとに検証する方法をまとめたもの。短いスキル本文へ研究内容を全て移す必要はない。日本語ライティング系の公開スキルは [別の調査](japanese-writing-skills-research.md) にまとめている。

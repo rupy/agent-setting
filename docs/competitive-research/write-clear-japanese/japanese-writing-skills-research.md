@@ -10,7 +10,7 @@
 
 | スキル | 主な用途・方法 | 参考になる点 | 適用時の注意 |
 | --- | --- | --- | --- |
-| [japanese-tech-writing](https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d) | 技術書・解説文の執筆と推敲。段落、論証、読者の負担、翻訳調の比喩、冗長さを扱う。 | 文の表面だけでなく、主張の根拠や説明順序まで点検する。 | 書籍原稿向けの細かい規則を、短い業務文書へ一律に適用しない。既存の [write-clear-japanese](../../skills/write-clear-japanese/SKILL.md) の発想元でもある。 |
+| [japanese-tech-writing](https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d) | 技術書・解説文の執筆と推敲。段落、論証、読者の負担、翻訳調の比喩、冗長さを扱う。 | 文の表面だけでなく、主張の根拠や説明順序まで点検する。 | 書籍原稿向けの細かい規則を、短い業務文書へ一律に適用しない。既存の [write-clear-japanese](../../../skills/write-clear-japanese/SKILL.md) の発想元でもある。 |
 | [jp-style-check](https://github.com/Forest-Project-Lab/jp-writing-skills/blob/main/plugin/skills/jp-style-check/SKILL.md) | 日本語の曖昧さ、冗長さ、訳語臭、用語・表記の不一致を指摘する。美しさを採点せず、問題箇所だけ返す。 | 明確な欠陥と、確信度の低いリズム上の助言を分ける。各規則に誤検出を避ける条件がある。 | 特定の言い回しを見つけただけで欠陥と決めない。文体と読者を先に確認する。 |
 | [logic-jp-check](https://github.com/Forest-Project-Lab/jp-writing-skills/blob/main/plugin/skills/logic-jp-check/SKILL.md) | `jp-style-check` の日本語検査に、主張と根拠、推論、比較軸、因果の検査を加える。 | 「文章が読めるか」と「論証が成立するか」を分けて点検できる。 | 事実の真偽は文章だけから確定できない。出典や元資料の確認が必要。 |
 | [writing-style](https://github.com/takekazuomi/takekazuomi-claude-plugins/blob/main/plugins/writing-style/skills/writing-style/SKILL.md) | ブログ等は casual、仕様書・設計書等は formal と文書種別で切り替える。執筆後に削除、論理、通読、文字数、任意の textlint を確認する。 | 同じ「良い日本語」でも用途ごとに文体と情報密度を変える。機械検査を論理検査の代わりにしない。 | スタイルの二分法や著者固有の好みは、そのまま共通規則にしない。 |
@@ -26,7 +26,7 @@
 
 ## このリポジトリへの適用案
 
-[write-clear-japanese](../../skills/write-clear-japanese/SKILL.md) は、読者、根拠、段落、因果、用語を扱っている。今回の調査から追加を検討するなら、次の順が適切と考える。
+[write-clear-japanese](../../../skills/write-clear-japanese/SKILL.md) は、読者、根拠、段落、因果、用語を扱っている。今回の調査から追加を検討するなら、次の順が適切と考える。
 
 1. 実際の文書で、意味の曖昧さ、訳語調、用語の不一致が起きた箇所を集める。修正理由と、修正しない例も残す。
 2. 推敲を依頼されたときの出力を、完成稿と「判断が必要な箇所」に分ける。欠陥のない項目を長く列挙しない。

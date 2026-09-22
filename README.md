@@ -44,10 +44,10 @@ Claude Code と Codex で使う個人設定のベースです。
 - **HTML要件定義・設計資料の作成**: `skills/create-requirements-html/`。Markdown版とは別に、HTML出力を指定したときに使用する。34文書と共通目次・ページ遷移を備えたサイトを作成する。[閲覧用サイト](requirements-html/index.html)から構成を確認できる。
 - **日本語の文章作成・推敲**: `skills/write-clear-japanese/`。技術文書、業務文書、解説、報告の文章を読みやすく整える。
 - **競合・代替手段の調査**: `skills/research-competitors/`。候補探索から共通軸での比較、ポジショニング、採用判断までを扱う。
-- **AI slop 対策スキルの調査**: [docs/competitive-research/ai-slop-skills-research.md](docs/competitive-research/ai-slop-skills-research.md)。公開スキルの比較と、このリポジトリへの適用案を記載する。
-- **日本語ライティング系スキルの調査**: [docs/competitive-research/japanese-writing-skills-research.md](docs/competitive-research/japanese-writing-skills-research.md)。執筆、論理確認、校正の方法を比較する。
-- **認知負荷を減らすライティングの調査**: [docs/competitive-research/low-cognitive-load-writing-research.md](docs/competitive-research/low-cognitive-load-writing-research.md)。研究、公的指針、文書設計、検証方法を整理する。
-- **文書の認知負荷対策に役立つ公開 skill の調査**: [docs/competitive-research/cognitive-load-writing-skills-research.md](docs/competitive-research/cognitive-load-writing-skills-research.md)。公開 skill の用途と、このリポジトリへの適用案を整理する。
+- **AI slop 対策スキルの調査**: [docs/competitive-research/write-clear-japanese/ai-slop-skills-research.md](docs/competitive-research/write-clear-japanese/ai-slop-skills-research.md)。公開スキルの比較と、このリポジトリへの適用案を記載する。
+- **日本語ライティング系スキルの調査**: [docs/competitive-research/write-clear-japanese/japanese-writing-skills-research.md](docs/competitive-research/write-clear-japanese/japanese-writing-skills-research.md)。執筆、論理確認、校正の方法を比較する。
+- **認知負荷を減らすライティングの調査**: [docs/competitive-research/write-clear-japanese/low-cognitive-load-writing-research.md](docs/competitive-research/write-clear-japanese/low-cognitive-load-writing-research.md)。研究、公的指針、文書設計、検証方法を整理する。
+- **文書の認知負荷対策に役立つ公開 skill の調査**: [docs/competitive-research/write-clear-japanese/cognitive-load-writing-skills-research.md](docs/competitive-research/write-clear-japanese/cognitive-load-writing-skills-research.md)。公開 skill の用途と、このリポジトリへの適用案を整理する。
 
 ## 導入先
 
