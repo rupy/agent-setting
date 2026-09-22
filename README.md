@@ -1,116 +1,35 @@
 # Personal agent settings
 
-Claude Code と Codex で使う個人設定のベースです。
+Claude Code と Codex で使う個人設定です。共通指示はリポジトリ直下の `AGENTS.md` にまとめています。
 
 ## 構成
 
-```text
-.
-├── shared/
-│   └── INSTRUCTIONS.md
-├── claude/
-│   ├── CLAUDE.md -> ../shared/INSTRUCTIONS.md
-│   └── rules/
-│       ├── safety.md
-│       └── workflow.md
-├── codex/
-│   └── AGENTS.md -> ../shared/INSTRUCTIONS.md
-└── skills/
-    ├── create-requirements-docs/
-    │   ├── SKILL.md
-    │   ├── references/
-    │   └── assets/
-    │       ├── requirements-template/
-    │       └── planning-template/
-    ├── create-requirements-html/
-    │   ├── SKILL.md
-    │   ├── references/
-    │   ├── assets/
-    │   └── scripts/
-    ├── verify-work/
-    │   └── SKILL.md
-    ├── research-competitors/
-    │   └── SKILL.md
-    └── write-clear-japanese/
-        └── SKILL.md
-```
+- `AGENTS.md`: 両ツールで共有する指示の原本。`Customize` セクションで個人設定を編集します。
+- `skills/*/SKILL.md`: 必要なときに使う共通 Skill。
+- `requirements-html/`: HTML 要件定義の[閲覧用サイト](requirements-html/index.html)。
+- `docs/`: Skill の調査資料。
 
-- **共通指示の原本**: `shared/INSTRUCTIONS.md`
-- **Claude共通指示**: `claude/CLAUDE.md`から共通指示の原本を参照
-- **Claude分割ルール**: `claude/rules/*.md`
-- **Codex共通指示**: `codex/AGENTS.md`から共通指示の原本を参照
-- **共通ワークフロー**: `skills/*/SKILL.md`
-- **要件定義文書の作成**: `skills/create-requirements-docs/`
-- **HTML要件定義・設計資料の作成**: `skills/create-requirements-html/`。Markdown版とは別に、HTML出力を指定したときに使用する。34文書と共通目次・ページ遷移を備えたサイトを作成する。[閲覧用サイト](requirements-html/index.html)から構成を確認できる。
-- **日本語の文章作成・推敲**: `skills/write-clear-japanese/`。技術文書、業務文書、解説、報告の文章を読みやすく整える。
-- **競合・代替手段の調査**: `skills/research-competitors/`。候補探索から共通軸での比較、ポジショニング、採用判断までを扱う。
-- **AI slop 対策スキルの調査**: [docs/competitive-research/write-clear-japanese/ai-slop-skills-research.md](docs/competitive-research/write-clear-japanese/ai-slop-skills-research.md)。公開スキルの比較と、このリポジトリへの適用案を記載する。
-- **日本語ライティング系スキルの調査**: [docs/competitive-research/write-clear-japanese/japanese-writing-skills-research.md](docs/competitive-research/write-clear-japanese/japanese-writing-skills-research.md)。執筆、論理確認、校正の方法を比較する。
-- **認知負荷を減らすライティングの調査**: [docs/competitive-research/write-clear-japanese/low-cognitive-load-writing-research.md](docs/competitive-research/write-clear-japanese/low-cognitive-load-writing-research.md)。研究、公的指針、文書設計、検証方法を整理する。
-- **文書の認知負荷対策に役立つ公開 skill の調査**: [docs/competitive-research/write-clear-japanese/cognitive-load-writing-skills-research.md](docs/competitive-research/write-clear-japanese/cognitive-load-writing-skills-research.md)。公開 skill の用途と、このリポジトリへの適用案を整理する。
+## 導入
 
-## 導入先
-
-内容を確認してから、次の場所へコピーまたはシンボリックリンクします。
-
-| 対象 | このリポジトリ | 導入先 |
-|---|---|---|
-| Claude 共通指示 | `claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
-| Claude ルール | `claude/rules/` | `~/.claude/rules/` |
-| Codex 共通指示 | `codex/AGENTS.md` | `~/.codex/AGENTS.md` |
-| Claude Skill | `skills/*/` | `~/.claude/skills/*/` |
-| Codex Skill | `skills/*/` | `~/.codex/skills/*/` |
-
-このリポジトリは設定の原本として扱います。ホームディレクトリへ反映する前に、`shared/INSTRUCTIONS.md` の `Customize` セクションを自分用に編集してください。
-
-### このパソコンへの導入状況
-
-`orca` ユーザーの共通指示を、次のシンボリックリンクで導入済みです。
-
-| 導入先 | リンク先（このリポジトリ内） |
-|---|---|
-| `~/.codex/AGENTS.md` | `codex/AGENTS.md` → `shared/INSTRUCTIONS.md` |
-| `~/.claude/CLAUDE.md` | `claude/CLAUDE.md` → `shared/INSTRUCTIONS.md` |
-| `~/.claude/rules/safety.md` | `claude/rules/safety.md` |
-| `~/.claude/rules/workflow.md` | `claude/rules/workflow.md` |
-
-共通指示は `shared/INSTRUCTIONS.md` を編集すると両方に反映されます。変更後は新しいセッションを開始してください。この設定は同じユーザーで起動するローカルの Codex / Claude Code の全プロジェクトが対象です。各プロジェクトの指示も併せて読み込まれます。
-
-リンク先は `/home/orca/orca/projects/agent-setting` です。このリポジトリを移動・削除する場合はリンクの更新が必要です。`CODEX_HOME` や `CLAUDE_CONFIG_DIR` を変更して起動する場合は、その設定先にも配置してください。Codex に `AGENTS.override.md` を置くと、同じ階層の `AGENTS.md` より優先されます。
-
-今回導入したのは共通指示と Claude の分割ルールです。上表の Skill は別途導入する構成です。
-
-読み込み仕様: [Codex の AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[Claude Code の CLAUDE.md](https://code.claude.com/docs/en/memory)。
-
-### rupy ユーザーでの導入
-
-配置先は `/home/rupy/projects/agent-setting` です。`orca` 側のホームを参照せず、このディレクトリだけで利用できます。
-SSH で `rupy` として接続した後、次を実行します。
+このリポジトリを配置したユーザーで実行します。
 
 ```bash
-cd ~/projects/agent-setting
 bash install.sh
 ```
 
-共通指示、Claude の分割ルール、リポジトリ内の全 Skill を実行ユーザーの設定先へリンクします。
-`CODEX_HOME` / `CLAUDE_CONFIG_DIR` を設定している場合はその絶対パスを使います。
-既存の同名ファイル・ディレクトリは `~/.local/state/agent-setting/backup.*` の下に元の絶対パスを保って退避します。
-同じリンクが導入済みなら変更しません。反映後は新しいセッションを開始してください。
+| 導入先 | 内容 |
+|---|---|
+| `~/AGENTS.md` | Claude Code がホームから各プロジェクトへの階層で読む共通指示 |
+| `${CODEX_HOME:-~/.codex}/AGENTS.md` | Codex のユーザー共通指示 |
+| `${CODEX_HOME:-~/.codex}/skills/*` | Codex 用 Skill |
+| `${CLAUDE_CONFIG_DIR:-~/.claude}/skills/*` | Claude Code 用 Skill |
 
-配置先には `.git` も含め、元の履歴・ブランチ・未コミット変更を引き継いでいます。元のリポジトリの変更は自動同期されません。
-`orca` からのコピー直後は所有者が `orca` です。`rupy` として接続後、次を一度実行して、このリポジトリの所有者を `rupy` に変更してください。グループは共有用の `orca-dev` を維持します。
+すべてリポジトリ内へのシンボリックリンクです。既存の同名ファイルは `~/.local/state/agent-setting/backup.*` に退避します。同じリンクがあればそのままにします。以前のこのリポジトリへの `~/.claude/CLAUDE.md` と `~/.claude/rules/{safety,workflow}.md` のリンクだけを削除します。独自のファイルやリンクは削除しません。反映後は新しいセッションを開始してください。
 
-```bash
-sudo chown -hR rupy /home/rupy/projects/agent-setting
-git -C /home/rupy/projects/agent-setting status
-```
+`CODEX_HOME` と `CLAUDE_CONFIG_DIR` を設定している場合は、絶対パスを指定してください。Codex に `AGENTS.override.md` がある場合は、同じ階層の `AGENTS.md` より優先されます。
 
-所有者の変更後は、このリポジトリ用の `safe.directory` の例外登録は不要です。
+## Claude Code での読み込み条件
 
-## 育て方
+[Claude Code の公式ドキュメント](https://code.claude.com/docs/en/memory#agentsmd)によると、`AGENTS.md` の直接読み込みには v2.1.277 以降が必要です。作業ディレクトリまたはその親に `CLAUDE.md` / `CLAUDE.local.md` がある場合、既定ではそちらが優先されます。Bedrock などの外部プロバイダーやテレメトリー無効化などで機能が使えないセッションもあります。その場合は必要な場所に `CLAUDE.md` を作り、`@AGENTS.md` で読み込んでください。Claude Code のセッション開始時に `AGENTS.md loaded` と表示されるか確認できます。
 
-- **常設方針**: 毎回必要な短い方針は `shared/INSTRUCTIONS.md` に追加する
-- **Claude固有ルール**: 細かなルールは `claude/rules/` に追加する
-- **複数手順**: 必要なときだけ使う手順はSkillにする
-- **プロジェクト固有**: この個人設定ではなく各プロジェクト側に置く
-- **明確さ**: 同じ指示を増やしすぎず、曖昧な表現を具体的な行動へ書き換える
+Claude Code の Skill は引き続き `~/.claude/skills/` に、Codex の Skill は `~/.codex/skills/` にリンクします。指示の原本だけを一本化しています。
