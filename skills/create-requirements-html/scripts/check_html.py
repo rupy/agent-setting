@@ -16,6 +16,7 @@ class Document(HTMLParser):
         self.stack = []
         self.ids = []
         self.links = []
+        self.dependencies = []
         self.errors = []
         self.lang = False
         self.title = False
@@ -53,6 +54,8 @@ class Document(HTMLParser):
                     self.links.append(value)
                 elif url.scheme or url.netloc:
                     self.errors.append("external/embedded dependency: " + tag)
+                elif name == "src" or tag == "link":
+                    self.dependencies.append(value)
 
     def handle_endtag(self, tag):
         if tag in VOID:
@@ -82,6 +85,10 @@ def check(paths, template=False):
         errors.extend(f"{path}: {error}" for error in doc.errors)
         if doc.example and not template:
             errors.append(f"{path}: reference example remains")
+        for href in doc.dependencies:
+            target = (path.parent / unquote(urlsplit(href).path)).resolve()
+            if not target.is_file():
+                errors.append(f"{path}: missing local dependency: {href}")
         for href in doc.links:
             url = urlsplit(href)
             if url.scheme or url.netloc:
@@ -104,9 +111,12 @@ if __name__ == "__main__":
     parser.add_argument("paths", nargs="+", type=Path)
     parser.add_argument("--template", action="store_true", help="Allow marked reference examples")
     args = parser.parse_args()
-    failures = check(args.paths, args.template)
+    paths = [file for path in args.paths for file in (sorted(path.rglob("*.html")) if path.is_dir() else [path])]
+    if not paths:
+        parser.error("No HTML files found")
+    failures = check(paths, args.template)
     for failure in failures:
         print(failure)
     if failures:
         raise SystemExit(1)
-    print(f"Checked {len(args.paths)} HTML file(s). No structural/link errors detected.")
+    print(f"Checked {len(paths)} HTML file(s). No structural/link errors detected.")

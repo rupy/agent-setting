@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>非機能要件 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../shared/site.css"><script defer src="../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="index.html">要件定義</a></li><li data-nav-item><a href="01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="04-scope.html">スコープ</a></li><li data-nav-item><a href="05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="09-non-functional-requirements.html" aria-current="page">非機能要件</a></li><li data-nav-item><a href="10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="appendices/glossary.html">用語集</a></li><li data-nav-item><a href="appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../design/index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../design/basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../design/basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../design/basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../design/basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../design/basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../design/basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../design/basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../design/basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../design/basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../design/basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../design/detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../design/detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../design/detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../design/detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../design/detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../design/decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">トップ</a> / 要件定義 / 非機能要件</nav><header><p class="eyebrow">要件定義 · 10 / 34</p><h1>非機能要件</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 非機能要件
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#非機能要件">非機能要件</a></li><li><a href="#1-可用性">1. 可用性</a></li><li><a href="#2-性能">2. 性能</a></li><li><a href="#3-拡張性">3. 拡張性</a></li><li><a href="#4-信頼性">4. 信頼性</a></li><li><a href="#5-セキュリティ">5. セキュリティ</a></li><li><a href="#6-プライバシー">6. プライバシー</a></li><li><a href="#7-アクセシビリティ">7. アクセシビリティ</a></li><li><a href="#8-ユーザビリティ">8. ユーザビリティ</a></li><li><a href="#9-保守性">9. 保守性</a></li><li><a href="#10-互換性">10. 互換性</a></li><li><a href="#11-監視-ログ">11. 監視・ログ</a></li><li><a href="#12-バックアップ-災害復旧">12. バックアップ・災害復旧</a></li><li><a href="#13-運用-サポート">13. 運用・サポート</a></li><li><a href="#14-法令-規格への準拠">14. 法令・規格への準拠</a></li><li><a href="#15-未確定事項">15. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="非機能要件">非機能要件</h2>
+<h2 id="1-可用性">1. 可用性</h2>
+<p class="guide">提供時間、稼働率、停止許容、計画停止、測定方法を記載する。</p>
+<h3 id="NFR-001"><a href="09-non-functional-requirements.html#NFR-001">NFR-001</a> 要件名</h3>
+<p class="guide">対象、条件、目標値、許容上限、測定方法・環境、優先度を埋める。</p>
+<ul>
+<li>対象:</li>
+<li>条件:</li>
+<li>目標値:</li>
+<li>許容上限:</li>
+<li>測定方法:</li>
+<li>測定環境:</li>
+<li>優先度:</li>
+<li>上位要求:</li>
+</ul>
+<h2 id="2-性能">2. 性能</h2>
+<p class="guide">応答時間、処理時間、スループットを負荷条件とともに記載する。</p>
+<h2 id="3-拡張性">3. 拡張性</h2>
+<p class="guide">利用者・データ・処理量の増加条件と、その際に維持する品質を記載する。</p>
+<h2 id="4-信頼性">4. 信頼性</h2>
+<p class="guide">重複、欠落、不整合を防止し、障害時も正しい状態を保つ条件を記載する。</p>
+<h2 id="5-セキュリティ">5. セキュリティ</h2>
+<p class="guide">認証、認可、暗号化、脆弱性対策など達成すべき条件を記載する。</p>
+<h2 id="6-プライバシー">6. プライバシー</h2>
+<p class="guide">個人情報の利用目的、最小化、閲覧、保存、削除に関する条件を記載する。</p>
+<h2 id="7-アクセシビリティ">7. アクセシビリティ</h2>
+<p class="guide">対象操作、利用者、準拠基準、検証方法を記載する。</p>
+<h2 id="8-ユーザビリティ">8. ユーザビリティ</h2>
+<p class="guide">誤操作防止、学習性、入力支援など測定・確認できる条件を記載する。</p>
+<h2 id="9-保守性">9. 保守性</h2>
+<p class="guide">変更、設定、診断、試験、文書化を容易にする条件を記載する。</p>
+<h2 id="10-互換性">10. 互換性</h2>
+<p class="guide">対応端末・ブラウザ・OS・外部仕様とサポート範囲を記載する。</p>
+<h2 id="11-監視-ログ">11. 監視・ログ</h2>
+<p class="guide">監視対象、記録内容、通知条件、禁止するログ情報を記載する。</p>
+<h2 id="12-バックアップ-災害復旧">12. バックアップ・災害復旧</h2>
+<p class="guide">バックアップ頻度、RPO・RTO、復元試験、災害時条件を記載する。</p>
+<h2 id="13-運用-サポート">13. 運用・サポート</h2>
+<p class="guide">運用時間、問い合わせ、障害対応、定常作業のサービス条件を記載する。</p>
+<h2 id="14-法令-規格への準拠">14. 法令・規格への準拠</h2>
+<p class="guide">適用が確認された法令・規格・社内規程と検証方法を記載する。</p>
+<h2 id="15-未確定事項">15. 未確定事項</h2>
+<p class="guide">数値、測定条件、適用基準など追加判断が必要な事項を記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の固有名詞、数値、日付、方式、判断を実案件へ転用しない。</p>
+<h2 id="example-目次">目次</h2>
+<ul>
+<li>可用性</li>
+<li>性能</li>
+<li>拡張性・信頼性</li>
+<li>セキュリティ・プライバシー</li>
+<li>アクセシビリティ・ユーザビリティ</li>
+<li>保守性・互換性</li>
+<li>監視・バックアップ・運用</li>
+<li>法令・規格と未確定事項</li>
+</ul>
+<h2 id="example-09-non-functional-requirements-md">09-non-functional-requirements.md</h2>
+<pre><code>---
+title: 非機能要件
+status: draft
+owner: システム責任者
+reviewers:
+  - セキュリティ担当者
+  - 運用責任者
+last_updated: 2026-08-30
+---
+</code></pre>
+<h3 id="example-非機能要件">非機能要件</h3>
+<h2 id="example-1-可用性">1. 可用性</h2>
+<h3 id="example-NFR-001"><a href="09-non-functional-requirements.html#example-NFR-001">NFR-001</a> サービス提供時間</h3>
+<ul>
+<li>対象: 経費精算システム全体</li>
+<li>条件: 計画停止を除く平日6:00から24:00</li>
+<li>目標値: 月間稼働率99.5%以上</li>
+<li>許容上限: 1回の連続停止が4時間を超えないこと。</li>
+<li>測定方法: 外形監視結果の月次集計</li>
+<li>測定環境: 本番環境</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="01-business-overview.html#example-BO-002">BO-002</a></li>
+</ul>
+<h2 id="example-2-性能">2. 性能</h2>
+<h3 id="example-NFR-002"><a href="09-non-functional-requirements.html#example-NFR-002">NFR-002</a> 画面応答時間</h3>
+<ul>
+<li>対象: 通常の参照・登録画面</li>
+<li>条件: 同時利用者100名以下、領収書アップロードを除く。</li>
+<li>目標値: リクエストの95%が2秒以内</li>
+<li>許容上限: 5秒</li>
+<li>測定方法: 本番相当データを用いた負荷試験</li>
+<li>測定環境: 本番相当環境</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="07-functional-requirements.html#example-FR-001">FR-001</a>、<a href="07-functional-requirements.html#example-FR-003">FR-003</a></li>
+</ul>
+<h2 id="example-3-拡張性">3. 拡張性</h2>
+<p>月間申請数が現状の3倍である2,400件になっても、<a href="09-non-functional-requirements.html#example-NFR-002">NFR-002</a>を満たすこと。
+承認段階の追加に備え、状態と承認順序を変更可能な構造とする。</p>
+<h2 id="example-4-信頼性">4. 信頼性</h2>
+<p>同じ提出または承認操作が再送されても処理を重複させない。
+状態遷移と履歴記録は一体として成功または失敗し、不整合を残さない。</p>
+<h2 id="example-5-セキュリティ">5. セキュリティ</h2>
+<p>通信をTLSで暗号化し、保存する領収書を暗号化する。権限のない直接URLアクセスを拒否する。
+重大な既知脆弱性がないことをリリース前に依存関係検査と脆弱性診断で確認する。</p>
+<h2 id="example-6-プライバシー">6. プライバシー</h2>
+<p>氏名、従業員ID、経費利用先を個人情報として扱い、利用目的を経費精算と監査に限定する。
+本番データを開発環境へ複製しない。</p>
+<h2 id="example-7-アクセシビリティ">7. アクセシビリティ</h2>
+<p>主要な申請・承認操作をキーボードだけで実行できること。
+入力項目にラベルを関連付け、状態やエラーを色だけで伝えないこと。</p>
+<h2 id="example-8-ユーザビリティ">8. ユーザビリティ</h2>
+<p>必須項目と任意項目を画面上で識別できること。入力エラーは該当項目の近くに原因と修正方法を表示すること。</p>
+<h2 id="example-9-保守性">9. 保守性</h2>
+<p>経費区分、勘定科目対応、通知テンプレートをアプリケーションの再ビルドなしで権限者が変更できること。
+重要な運用手順と外部連携仕様をリポジトリで版管理すること。</p>
+<h2 id="example-10-互換性">10. 互換性</h2>
+<p>会社標準のMicrosoft Edge最新安定版と一つ前の安定版で、申請、承認、経理確認の
+主要操作を機能差なく完了できること。スマートフォンは会社指定OSの標準ブラウザを対象とし、
+対象画面はISSUE-004で確定する。</p>
+<h2 id="example-11-監視-ログ">11. 監視・ログ</h2>
+<p>死活、エラー率、応答時間、ジョブ失敗、外部連携失敗、ストレージ使用量を監視する。
+ログに認証トークン、領収書画像、入力された秘密情報を出力しない。</p>
+<h2 id="example-12-バックアップ-災害復旧">12. バックアップ・災害復旧</h2>
+<h3 id="example-NFR-007"><a href="09-non-functional-requirements.html#example-NFR-007">NFR-007</a> 復旧目標</h3>
+<ul>
+<li>対象: 申請データ、履歴、領収書</li>
+<li>条件: クラウド基盤またはアプリケーションの重大障害</li>
+<li>目標値: RPO 24時間、RTO 8時間</li>
+<li>許容上限: RPO 24時間、RTO 8時間</li>
+<li>測定方法: 年2回の復元試験</li>
+<li>測定環境: 災害復旧検証環境</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="01-business-overview.html#example-BO-001">BO-001</a>、<a href="01-business-overview.html#example-BO-002">BO-002</a></li>
+</ul>
+<h2 id="example-13-運用-サポート">13. 運用・サポート</h2>
+<p>平日9:00から18:00に社内窓口で問い合わせを受け付ける。重大障害は検知後30分以内に運用責任者へ通知する。</p>
+<h2 id="example-14-法令-規格への準拠">14. 法令・規格への準拠</h2>
+<p>電子証憑保存に関係する適用法令と社内規程は<a href="appendices/open-issues.html#example-ISSUE-001">ISSUE-001</a>で法務・経理が確認する。
+確認前に特定の法令適合を完了したとは記載しない。</p>
+<h2 id="example-15-未確定事項">15. 未確定事項</h2>
+<ul>
+<li><a href="appendices/open-issues.html#example-ISSUE-001">ISSUE-001</a>: 電子証憑の保存要件</li>
+<li>ISSUE-006: 災害復旧構成と試験方法</li>
+<li>ISSUE-010: 正式な対応ブラウザ範囲</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="08-data-requirements.html">← 前：データ要件</a><a rel="next" href="10-acceptance-and-traceability.html">次：受入条件とトレーサビリティ →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

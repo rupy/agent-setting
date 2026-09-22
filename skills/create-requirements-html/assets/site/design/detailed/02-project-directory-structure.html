@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>プロジェクトディレクトリ構成 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../../requirements/index.html">要件定義</a></li><li data-nav-item><a href="../../requirements/01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../../requirements/02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../../requirements/03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../../requirements/04-scope.html">スコープ</a></li><li data-nav-item><a href="../../requirements/05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../../requirements/06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../../requirements/07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../../requirements/08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../../requirements/09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../../requirements/10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="../../requirements/appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="../../requirements/appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="../../requirements/appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="../../requirements/appendices/glossary.html">用語集</a></li><li data-nav-item><a href="../../requirements/appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="02-project-directory-structure.html" aria-current="page">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 詳細設計 / プロジェクトディレクトリ構成</nav><header><p class="eyebrow">詳細設計 · 29 / 34</p><h1>プロジェクトディレクトリ構成</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: プロジェクトディレクトリ構成
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#プロジェクトディレクトリ構成">プロジェクトディレクトリ構成</a></li><li><a href="#1-文書の目的">1. 文書の目的</a></li><li><a href="#2-入力となる設計-制約">2. 入力となる設計・制約</a></li><li><a href="#3-ディレクトリツリー">3. ディレクトリツリー</a></li><li><a href="#4-配置ルール">4. 配置ルール</a></li><li><a href="#5-依存方向と境界">5. 依存方向と境界</a></li><li><a href="#6-命名規則">6. 命名規則</a></li><li><a href="#7-設計判断">7. 設計判断</a></li><li><a href="#8-未確定事項">8. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="プロジェクトディレクトリ構成">プロジェクトディレクトリ構成</h2>
+<h2 id="1-文書の目的">1. 文書の目的</h2>
+<p class="guide">対象プロジェクトと、ディレクトリ構成によって統一する実装上の判断を書く。</p>
+<h2 id="2-入力となる設計-制約">2. 入力となる設計・制約</h2>
+<p class="guide">関連するシステム構成、採用技術、アプリケーション詳細設計、ADR、既存規約を列挙する。</p>
+<h2 id="3-ディレクトリツリー">3. ディレクトリツリー</h2>
+<p class="guide">実装対象の主要ディレクトリと重要なファイルをツリーで示す。既存プロジェクトでは実際の構成と一致させる。生成物、依存パッケージ、キャッシュは原則として記載しない。</p>
+<pre><code>project-root/
+└── path/  # 責務
+</code></pre>
+<h2 id="4-配置ルール">4. 配置ルール</h2>
+<p class="guide">コード、設定、テスト、静的資産などをどこへ置くか、追加時の判断基準とともに記載する。</p>
+<h2 id="5-依存方向と境界">5. 依存方向と境界</h2>
+<p class="guide">ディレクトリ間で許可・禁止する依存、公開境界、循環参照の防止方針を記載する。</p>
+<h2 id="6-命名規則">6. 命名規則</h2>
+<p class="guide">ディレクトリと主要ファイルの命名規則を、採用技術の慣例と既存規約に合わせて記載する。</p>
+<h2 id="7-設計判断">7. 設計判断</h2>
+<p class="guide">構成へ影響する重要な判断とADRへの参照を記載する。</p>
+<h2 id="8-未確定事項">8. 未確定事項</h2>
+<p class="guide">実装開始までに解決が必要な事項を記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の構成を実案件へ転用しない。</p>
+<h2 id="example-design-detailed-02-project-directory-structure-md">design/detailed/02-project-directory-structure.md</h2>
+<pre><code>---
+title: プロジェクトディレクトリ構成
+status: in-review
+owner: 開発責任者
+reviewers: [アーキテクト]
+last_updated: 2026-08-31
+---
+</code></pre>
+<h3 id="example-プロジェクトディレクトリ構成">プロジェクトディレクトリ構成</h3>
+<h2 id="example-1-文書の目的">1. 文書の目的</h2>
+<p>経費精算システムのコード、設定、テストの配置と依存方向を統一し、モジュール境界を実装へ反映する。</p>
+<h2 id="example-2-入力となる設計-制約">2. 入力となる設計・制約</h2>
+<p><code>../basic/01-system-structure.md</code>、<code>../basic/02-technology-selection.md</code>、<code>01-application-design.md</code>、ADR-003を入力とする。</p>
+<h2 id="example-3-ディレクトリツリー">3. ディレクトリツリー</h2>
+<pre><code>src/
+├── application/       # ユースケースとトランザクション境界
+│   ├── expense/
+│   └── approval/
+├── domain/            # エンティティ、値、業務ルール
+│   ├── expense/
+│   └── approval/
+├── infrastructure/    # DB、社内認証、通知、会計連携の実装
+├── presentation/      # HTTP APIの入出力と認証コンテキスト
+└── jobs/              # 組織情報取込、通知、会計CSV生成
+tests/
+├── unit/              # ドメインとユースケースの単体テスト
+└── integration/       # DBおよび外部接続境界の結合テスト
+</code></pre>
+<h2 id="example-4-配置ルール">4. 配置ルール</h2>
+<p>機能単位のコードは対応する <code>application/</code> と <code>domain/</code> の配下へ置く。DBや外部サービス固有のコードは <code>infrastructure/</code>、HTTP固有の変換は <code>presentation/</code> へ置く。複数機能で使うという理由だけで汎用ディレクトリを追加しない。</p>
+<h2 id="example-5-依存方向と境界">5. 依存方向と境界</h2>
+<p><code>presentation</code> と <code>jobs</code> から <code>application</code>、<code>application</code> から <code>domain</code> への依存を許可する。<code>infrastructure</code> は <code>application</code> または <code>domain</code> が定義するインターフェースを実装する。<code>domain</code> から他の層を参照しない。</p>
+<h2 id="example-6-命名規則">6. 命名規則</h2>
+<p>ディレクトリ名は小文字の英単語、複数語はハイフン区切りとする。ユースケースのファイル名は動詞から始め、業務上の操作と対応させる。</p>
+<h2 id="example-7-設計判断">7. 設計判断</h2>
+<p>ADR-003に基づき、技術種別だけでなく業務モジュールも分かる構成とする。</p>
+<h2 id="example-8-未確定事項">8. 未確定事項</h2>
+<ul>
+<li>ISSUE-030: 結合テスト用fixtureを機能別に置くか共通管理するか。</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="01-application-design.html">← 前：アプリケーション詳細設計</a><a rel="next" href="03-common-ui-design.html">次：共通UI詳細設計 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

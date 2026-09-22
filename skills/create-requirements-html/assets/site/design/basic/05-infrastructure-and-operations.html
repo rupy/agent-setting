@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>インフラ・運用設計 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../../requirements/index.html">要件定義</a></li><li data-nav-item><a href="../../requirements/01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../../requirements/02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../../requirements/03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../../requirements/04-scope.html">スコープ</a></li><li data-nav-item><a href="../../requirements/05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../../requirements/06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../../requirements/07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../../requirements/08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../../requirements/09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../../requirements/10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="../../requirements/appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="../../requirements/appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="../../requirements/appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="../../requirements/appendices/glossary.html">用語集</a></li><li data-nav-item><a href="../../requirements/appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="03-data-design.html">データ設計</a></li><li data-nav-item><a href="04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="05-infrastructure-and-operations.html" aria-current="page">インフラ・運用設計</a></li><li data-nav-item><a href="06-screen-design.html">画面設計</a></li><li data-nav-item><a href="07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="08-migration-design.html">移行設計</a></li><li data-nav-item><a href="09-api-design.html">API設計</a></li><li data-nav-item><a href="10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 基本設計 / インフラ・運用設計</nav><header><p class="eyebrow">基本設計 · 22 / 34</p><h1>インフラ・運用設計</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: インフラ・運用設計
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#インフラ-運用設計">インフラ・運用設計</a></li><li><a href="#1-文書の目的">1. 文書の目的</a></li><li><a href="#2-入力となる要件-制約">2. 入力となる要件・制約</a></li><li><a href="#3-環境構成">3. 環境構成</a></li><li><a href="#4-ネットワークとセキュリティ">4. ネットワークとセキュリティ</a></li><li><a href="#5-ビルド-デプロイ-リリース">5. ビルド・デプロイ・リリース</a></li><li><a href="#6-監視-ログ-通知">6. 監視・ログ・通知</a></li><li><a href="#7-バックアップと復旧">7. バックアップと復旧</a></li><li><a href="#8-定常運用と障害対応">8. 定常運用と障害対応</a></li><li><a href="#9-設計判断">9. 設計判断</a></li><li><a href="#10-未確定事項">10. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="インフラ-運用設計">インフラ・運用設計</h2>
+<h2 id="1-文書の目的">1. 文書の目的</h2>
+<p class="guide">この文書で決める環境、配備、監視、復旧、運用の範囲を書く。</p>
+<h2 id="2-入力となる要件-制約">2. 入力となる要件・制約</h2>
+<p class="guide">根拠となる非機能要件、技術的制約、運用条件を列挙する。</p>
+<h2 id="3-環境構成">3. 環境構成</h2>
+<p class="guide">開発・検証・本番などの環境、用途、差異、分離方針を記載する。</p>
+<h2 id="4-ネットワークとセキュリティ">4. ネットワークとセキュリティ</h2>
+<p class="guide">接続経路、公開範囲、境界防御、アクセス制御の構成を記載する。</p>
+<h2 id="5-ビルド-デプロイ-リリース">5. ビルド・デプロイ・リリース</h2>
+<p class="guide">成果物の作成、承認、配備、ロールバックの流れを記載する。</p>
+<h2 id="6-監視-ログ-通知">6. 監視・ログ・通知</h2>
+<p class="guide">監視対象、ログ収集、検知条件、通知先と重大度を記載する。</p>
+<h2 id="7-バックアップと復旧">7. バックアップと復旧</h2>
+<p class="guide">対象、頻度、保管、復元手順、RPO・RTOの満たし方を記載する。</p>
+<h2 id="8-定常運用と障害対応">8. 定常運用と障害対応</h2>
+<p class="guide">日常作業、障害受付、切り分け、復旧、事後対応を記載する。</p>
+<h2 id="9-設計判断">9. 設計判断</h2>
+<p class="guide">採用した重要な方針とADRへの参照を記載する。</p>
+<h2 id="10-未確定事項">10. 未確定事項</h2>
+<p class="guide">設計確定に必要な調査・判断をISSUE IDとともに記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の技術選択を実案件へ転用しない。</p>
+<h2 id="example-design-basic-05-infrastructure-and-operations-md">design/basic/05-infrastructure-and-operations.md</h2>
+<pre><code>---
+title: インフラ・運用設計
+status: draft
+owner: 運用責任者
+reviewers:
+  - インフラ責任者
+  - セキュリティ担当者
+last_updated: 2026-08-31
+---
+</code></pre>
+<h3 id="example-インフラ-運用設計">インフラ・運用設計</h3>
+<h2 id="example-1-文書の目的">1. 文書の目的</h2>
+<p>システムの環境、ネットワーク、配備、監視、バックアップ、定常運用と障害対応を定義する。</p>
+<h2 id="example-2-入力となる要件-制約">2. 入力となる要件・制約</h2>
+<p><a href="../../requirements/09-non-functional-requirements.html#example-NFR-001">NFR-001</a>、<a href="../../requirements/09-non-functional-requirements.html#example-NFR-002">NFR-002</a>、<a href="../../requirements/09-non-functional-requirements.html#example-NFR-007">NFR-007</a>、非機能要件11節、13節、<a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a>を入力とする。</p>
+<h2 id="example-3-環境構成">3. 環境構成</h2>
+<p>開発、検証、本番を分離する。本番と検証は同じ構成要素を使用し、規模とデータだけを分ける。</p>
+<h2 id="example-4-ネットワークとセキュリティ">4. ネットワークとセキュリティ</h2>
+<p>Web入口だけを社内許可経路から到達可能にする。API、データストア、証憑ストレージは非公開ネットワークに配置する。</p>
+<h2 id="example-5-ビルド-デプロイ-リリース">5. ビルド・デプロイ・リリース</h2>
+<p>版管理されたソースから自動ビルドし、検証環境の試験と承認後に同じ成果物を本番へ配備する。失敗時は直前版へ戻す。</p>
+<h2 id="example-6-監視-ログ-通知">6. 監視・ログ・通知</h2>
+<p>死活、応答時間、エラー率、ジョブ失敗、外部連携失敗、保存容量を監視する。重大障害は運用責任者へ30分以内に通知する。</p>
+<h2 id="example-7-バックアップと復旧">7. バックアップと復旧</h2>
+<p>申請データと証憑を毎日バックアップする。<a href="../../requirements/09-non-functional-requirements.html#example-NFR-007">NFR-007</a>のRPO 24時間、RTO 8時間を年2回の復元試験で確認する。</p>
+<h2 id="example-8-定常運用と障害対応">8. 定常運用と障害対応</h2>
+<p>平日は監視結果と失敗ジョブを確認する。障害時は影響範囲、開始時刻、暫定対応を記録し、復旧後に原因と再発防止策を残す。</p>
+<h2 id="example-9-設計判断">9. 設計判断</h2>
+<p>認証は<a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a>に従い社内基盤を利用する。監視サービスの選定理由はDEC-003へ記録する。</p>
+<h2 id="example-10-未確定事項">10. 未確定事項</h2>
+<ul>
+<li>ISSUE-026: 本番リリースの承認者</li>
+<li>ISSUE-027: 復元試験で使用できる証憑データの作成方法</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="04-external-system-integration-design.html">← 前：外部システム連携設計</a><a rel="next" href="06-screen-design.html">次：画面設計 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>機能要件 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../shared/site.css"><script defer src="../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="index.html">要件定義</a></li><li data-nav-item><a href="01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="04-scope.html">スコープ</a></li><li data-nav-item><a href="05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="07-functional-requirements.html" aria-current="page">機能要件</a></li><li data-nav-item><a href="08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="appendices/glossary.html">用語集</a></li><li data-nav-item><a href="appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../design/index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../design/basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../design/basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../design/basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../design/basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../design/basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../design/basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../design/basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../design/basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../design/basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../design/basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../design/detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../design/detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../design/detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../design/detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../design/detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../design/decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">トップ</a> / 要件定義 / 機能要件</nav><header><p class="eyebrow">要件定義 · 8 / 34</p><h1>機能要件</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 機能要件
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#機能要件">機能要件</a></li><li><a href="#1-機能要件の記述規則">1. 機能要件の記述規則</a></li><li><a href="#2-機能一覧">2. 機能一覧</a></li><li><a href="#3-個別機能要件">3. 個別機能要件</a></li><li><a href="#4-認証-認可">4. 認証・認可</a></li><li><a href="#5-監査-履歴">5. 監査・履歴</a></li><li><a href="#6-エラー処理">6. エラー処理</a></li><li><a href="#7-未確定事項">7. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="機能要件">機能要件</h2>
+<h2 id="1-機能要件の記述規則">1. 機能要件の記述規則</h2>
+<p class="guide">ID、優先度、属性、要件と設計の境界、この文書固有の規則を記載する。</p>
+<h2 id="2-機能一覧">2. 機能一覧</h2>
+<p class="guide">業務・機能領域ごとのカテゴリ見出しでまとめ、カテゴリごとに一覧表を作る。カテゴリは案件に合わせて定義し、個別機能要件と名称・分類・順序をそろえる。上位要求と受入条件を対応付ける。</p>
+<h3 id="2-1-カテゴリ名">2.1 カテゴリ名</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ID</th>
+<th scope="col">機能</th>
+<th scope="col">優先度</th>
+<th scope="col">上位要求</th>
+<th scope="col">受入条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="07-functional-requirements.html#FR-001">FR-001</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-個別機能要件">3. 個別機能要件</h2>
+<p class="guide">各機能を利用者視点とシステムの振る舞いに分け、検証可能な単位で記載する。</p>
+<p class="guide">カテゴリごとに見出しを作り、その下に各FRを置く。FR-IDは文書全体で一意にし、カテゴリごとに採番を再開しない。分類変更でも既存IDを維持する。複数カテゴリに関わる要件は主たるカテゴリに一度だけ記載し、他からは参照する。</p>
+<h3 id="3-1-カテゴリ名">3.1 カテゴリ名</h3>
+<h4 id="FR-001"><a href="07-functional-requirements.html#FR-001">FR-001</a> 要件名</h4>
+<p class="guide">一つのIDに一つの振る舞いを記載し、事前条件、処理、出力、例外、権限を埋める。</p>
+<ul>
+<li>概要:</li>
+<li>根拠:</li>
+</ul>
+<p class="guide">競合調査から採用した場合は appendices/competitive-analysis.md のCAND-IDを参照し、自社の利用者課題と採用理由も示す。検討中の候補は確定要件として追加しない。</p>
+<ul>
+<li>対象利用者:</li>
+<li>利用者が実現したいこと:</li>
+<li>関連するスコープ:</li>
+<li>関連する業務フロー:</li>
+<li>事前条件:</li>
+<li>トリガー:</li>
+<li>入力:</li>
+<li>基本処理:</li>
+<li>出力:</li>
+<li>事後条件:</li>
+<li>例外:</li>
+<li>権限制御:</li>
+<li>優先度:</li>
+<li>上位要求:</li>
+<li>受入条件:</li>
+</ul>
+<h2 id="4-認証-認可">4. 認証・認可</h2>
+<p class="guide">利用開始条件と、役割・対象データ・操作ごとの権限制御を記載する。</p>
+<h2 id="5-監査-履歴">5. 監査・履歴</h2>
+<p class="guide">記録対象、記録項目、閲覧者、変更可否など機能上必要な履歴を記載する。</p>
+<h2 id="6-エラー処理">6. エラー処理</h2>
+<p class="guide">入力、業務、権限、外部連携、内部エラー時に必要な振る舞いを記載する。</p>
+<h2 id="7-未確定事項">7. 未確定事項</h2>
+<p class="guide">機能・優先度・例外・権限を確定するために判断が必要な事項を記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の固有名詞、数値、日付、方式、判断を実案件へ転用しない。</p>
+<h2 id="example-07-functional-requirements-md">07-functional-requirements.md</h2>
+<pre><code>---
+title: 機能要件
+status: draft
+owner: 開発責任者
+reviewers:
+  - 業務分析担当者
+  - テスト責任者
+last_updated: 2026-08-30
+---
+</code></pre>
+<h3 id="example-機能要件">機能要件</h3>
+<h2 id="example-1-機能要件の記述規則">1. 機能要件の記述規則</h2>
+<p>要件IDはFRから始め、一つのIDに一つの検証可能な振る舞いを記載する。
+Must要件には上位要求と受入条件を対応させる。
+機能一覧と個別機能要件は「経費申請」「承認」「会計連携」のカテゴリでまとめる。
+要件IDはカテゴリをまたいで一意とし、分類を変更しても採番し直さない。</p>
+<h2 id="example-2-機能一覧">2. 機能一覧</h2>
+<h3 id="example-2-1-経費申請">2.1 経費申請</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ID</th>
+<th scope="col">機能</th>
+<th scope="col">優先度</th>
+<th scope="col">上位要求</th>
+<th scope="col">受入条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="07-functional-requirements.html#example-FR-001">FR-001</a></td>
+<td>経費申請の提出</td>
+<td>Must</td>
+<td><a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="10-acceptance-and-traceability.html#example-AC-001">AC-001</a>、<a href="10-acceptance-and-traceability.html#example-AC-002">AC-002</a></td>
+</tr>
+<tr>
+<td><a href="07-functional-requirements.html#example-FR-002">FR-002</a></td>
+<td>申請状況の参照</td>
+<td>Must</td>
+<td><a href="01-business-overview.html#example-BO-002">BO-002</a>、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td>AC-003</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-2-2-承認">2.2 承認</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ID</th>
+<th scope="col">機能</th>
+<th scope="col">優先度</th>
+<th scope="col">上位要求</th>
+<th scope="col">受入条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="07-functional-requirements.html#example-FR-003">FR-003</a></td>
+<td>申請の承認・差し戻し</td>
+<td>Must</td>
+<td><a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td>AC-004</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="example-2-3-会計連携">2.3 会計連携</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ID</th>
+<th scope="col">機能</th>
+<th scope="col">優先度</th>
+<th scope="col">上位要求</th>
+<th scope="col">受入条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="07-functional-requirements.html#example-FR-004">FR-004</a></td>
+<td>会計連携用CSVの出力</td>
+<td>Should</td>
+<td><a href="01-business-overview.html#example-BO-001">BO-001</a></td>
+<td>AC-005</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-3-個別機能要件">3. 個別機能要件</h2>
+<h3 id="example-3-1-経費申請">3.1 経費申請</h3>
+<h4 id="example-FR-001"><a href="07-functional-requirements.html#example-FR-001">FR-001</a> 経費申請の提出</h4>
+<ul>
+<li>概要: 下書きの経費申請を承認者へ提出できること。</li>
+<li>根拠: 紙による申請をオンラインへ移行するため。</li>
+<li>対象利用者: 申請者</li>
+<li>利用者が実現したいこと: 支払い後に経費情報と領収書を提出する。</li>
+<li>関連するスコープ: 経費申請、領収書</li>
+<li>関連する業務フロー: <a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>事前条件: 申請者がログインし、申請が下書き状態である。</li>
+<li>トリガー: 申請者が提出を実行する。</li>
+<li>入力: 支払日、金額、経費区分、支払先、利用目的、領収書画像</li>
+<li>基本処理:
+<ol>
+<li>必須項目と入力形式を検証する。</li>
+<li>組織情報から承認者を決定する。</li>
+<li>状態を上長承認待ちへ変更する。</li>
+<li>承認者へ通知する。</li>
+</ol>
+</li>
+<li>出力: 提出結果、申請番号、現在の状態</li>
+<li>事後条件: 承認者が承認待ち一覧から申請を確認できる。</li>
+<li>例外: 入力不足または承認者未設定の場合は提出せず、理由を表示する。</li>
+<li>権限制御: 申請の所有者だけが提出できる。</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="01-business-overview.html#example-BO-001">BO-001</a>、<a href="01-business-overview.html#example-BO-002">BO-002</a>、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>受入条件: <a href="10-acceptance-and-traceability.html#example-AC-001">AC-001</a>、<a href="10-acceptance-and-traceability.html#example-AC-002">AC-002</a></li>
+</ul>
+<h4 id="example-FR-002"><a href="07-functional-requirements.html#example-FR-002">FR-002</a> 申請状況の参照</h4>
+<ul>
+<li>概要: 申請者が自分の申請の現在の状態を参照できること。</li>
+<li>根拠: 申請の進捗を把握するため。</li>
+<li>対象利用者: 申請者</li>
+<li>利用者が実現したいこと: 提出した申請がどの段階にあるか確認する。</li>
+<li>関連するスコープ: 経費申請</li>
+<li>関連する業務フロー: <a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>基本処理: 閲覧権限を確認し、対象申請の現在の状態を表示する。</li>
+<li>権限制御: 他の申請者の申請は閲覧できない。</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="01-business-overview.html#example-BO-002">BO-002</a>、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>受入条件: AC-003</li>
+</ul>
+<h3 id="example-3-2-承認">3.2 承認</h3>
+<h4 id="example-FR-003"><a href="07-functional-requirements.html#example-FR-003">FR-003</a> 申請の承認・差し戻し</h4>
+<ul>
+<li>概要: 承認者が割り当てられた申請の承認結果を記録できること。</li>
+<li>根拠: 申請に対する判断をシステム上で共有するため。</li>
+<li>対象利用者: 承認者</li>
+<li>利用者が実現したいこと: 内容を確認して承認または差し戻しを行う。</li>
+<li>関連するスコープ: 承認</li>
+<li>関連する業務フロー: <a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>事前条件: 対象申請が上長承認待ちである。</li>
+<li>基本処理: 承認または差し戻しの結果を記録し、対応する状態へ変更する。</li>
+<li>権限制御: 対象申請に割り当てられた承認者だけが操作できる。</li>
+<li>優先度: Must</li>
+<li>上位要求: <a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>受入条件: AC-004</li>
+</ul>
+<h3 id="example-3-3-会計連携">3.3 会計連携</h3>
+<h4 id="example-FR-004"><a href="07-functional-requirements.html#example-FR-004">FR-004</a> 会計連携用CSVの出力</h4>
+<ul>
+<li>概要: 経理確認済みの経費を会計システムへ取り込むためのCSVを出力できること。</li>
+<li>根拠: 会計システムへの転記作業を減らすため。</li>
+<li>対象利用者: 経理担当者</li>
+<li>利用者が実現したいこと: 確認済みの経費データを会計システムへ受け渡す。</li>
+<li>関連するスコープ: 会計連携</li>
+<li>関連する業務フロー: <a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+<li>基本処理: 経理確認済みデータを会計取込用CSVとして出力する。</li>
+<li>例外: 出力失敗時は登録完了とせず、<a href="05-business-process-before-and-after.html#example-BR-003">BR-003</a>に従う。</li>
+<li>権限制御: 経理担当者だけが出力できる。</li>
+<li>優先度: Should</li>
+<li>上位要求: <a href="01-business-overview.html#example-BO-001">BO-001</a></li>
+<li>受入条件: AC-005</li>
+</ul>
+<h2 id="example-4-認証-認可">4. 認証・認可</h2>
+<ul>
+<li>社内認証基盤で認証された利用者だけが利用できる。</li>
+<li>申請者は自分の申請、承認者は割り当てられた申請を閲覧できる。</li>
+<li>経理担当者は上長承認済みの申請を閲覧・処理できる。</li>
+<li>システム管理者権限だけでは申請内容を閲覧できない。</li>
+</ul>
+<h2 id="example-5-監査-履歴">5. 監査・履歴</h2>
+<p>申請提出、承認、差し戻し、経理承認、CSV出力、権限変更について、
+実行者、対象、日時、変更前後の状態、結果を記録する。利用者は履歴を変更できない。</p>
+<h2 id="example-6-エラー処理">6. エラー処理</h2>
+<ul>
+<li>入力エラーは対象項目と修正方法を表示する。</li>
+<li>一時的な外部連携エラーでは入力済み内容を失わせない。</li>
+<li>内部情報やスタックトレースを利用者へ表示しない。</li>
+<li>業務継続に影響するエラーは監視対象として運用担当者へ通知する。</li>
+</ul>
+<h2 id="example-7-未確定事項">7. 未確定事項</h2>
+<ul>
+<li><a href="appendices/open-issues.html#example-ISSUE-003">ISSUE-003</a>: 代理承認機能の要否</li>
+<li>ISSUE-007: 申請取り下げを許可する状態と期限</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="06-related-systems-and-integrations.html">← 前：関連システムとシステム連携</a><a rel="next" href="08-data-requirements.html">次：データ要件 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

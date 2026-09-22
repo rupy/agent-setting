@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>競合調査と機能候補 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../index.html">要件定義</a></li><li data-nav-item><a href="../01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../04-scope.html">スコープ</a></li><li data-nav-item><a href="../05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="competitive-analysis.html" aria-current="page">競合調査と機能候補</a></li><li data-nav-item><a href="decisions.html">決定記録</a></li><li data-nav-item><a href="glossary.html">用語集</a></li><li data-nav-item><a href="open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../../design/index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../../design/basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../../design/basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../../design/basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../../design/basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../../design/basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../../design/basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../../design/basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../../design/basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../../design/basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../../design/basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../../design/detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../../design/detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../../design/detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../../design/detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../../design/detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../../design/decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 付録・競合調査 / 競合調査と機能候補</nav><header><p class="eyebrow">付録・競合調査 · 13 / 34</p><h1>競合調査と機能候補</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 競合調査と機能候補
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#競合調査と機能候補">競合調査と機能候補</a></li><li><a href="#1-調査目的と範囲">1. 調査目的と範囲</a></li><li><a href="#2-競合-代替手段一覧">2. 競合・代替手段一覧</a></li><li><a href="#3-比較結果">3. 比較結果</a></li><li><a href="#4-強み-弱みと差別化の仮説">4. 強み・弱みと差別化の仮説</a></li><li><a href="#5-取り入れる機能候補">5. 取り入れる機能候補</a></li><li><a href="#6-採否と要件への反映">6. 採否と要件への反映</a></li><li><a href="#7-出典と確認日">7. 出典と確認日</a></li><li><a href="#8-仮定と未確定事項">8. 仮定と未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="競合調査と機能候補">競合調査と機能候補</h2>
+<h2 id="1-調査目的と範囲">1. 調査目的と範囲</h2>
+<p class="guide">判断したいこと、対象市場・顧客・利用者、関連するビジネス目的、調査基準日、対象外を記載する。</p>
+<h2 id="2-競合-代替手段一覧">2. 競合・代替手段一覧</h2>
+<p class="guide">直接競合、間接競合、Excel・手作業などの現状維持を区別する。調査対象とした理由を残す。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象</th>
+<th scope="col">区分</th>
+<th scope="col">対象顧客・利用者</th>
+<th scope="col">提供価値</th>
+<th scope="col">選定理由</th>
+<th scope="col">対象プラン・版・地域</th>
+<th scope="col">出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-比較結果">3. 比較結果</h2>
+<p class="guide">機能カテゴリ、価格、利用体験、導入・運用条件など、意思決定に必要な軸で比較する。価格には通貨・課金単位・契約条件・確認日を付ける。公開情報で見つからない機能は「未確認」とし、「非対応」と断定しない。公式の説明と実機確認も区別する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">比較軸</th>
+<th scope="col">競合・代替手段A</th>
+<th scope="col">競合・代替手段B</th>
+<th scope="col">自社の現状</th>
+<th scope="col">出典・確認日・確認方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-強み-弱みと差別化の仮説">4. 強み・弱みと差別化の仮説</h2>
+<p class="guide">調査事実と解釈を分け、利用者の未充足ニーズや自社の目的に照らして評価する。競合にあるという理由だけで採用を推奨しない。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">調査から確認できた事実・出典</th>
+<th scope="col">強み・弱みの評価</th>
+<th scope="col">自社への示唆・差別化の仮説</th>
+<th scope="col">追加検証の方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-取り入れる機能候補">5. 取り入れる機能候補</h2>
+<p class="guide">CAND-IDは候補の識別子であり、確定要件のFR-IDとは別にする。推奨は提案であり、採用決定ではない。開発・運用負担や工数が不明なら未確定とする。</p>
+<h3 id="CAND-001"><a href="competitive-analysis.html#CAND-001">CAND-001</a> 機能候補名</h3>
+<ul>
+<li>機能カテゴリ:</li>
+<li>調査根拠・出典:</li>
+<li>対象利用者と解決する課題:</li>
+<li>利用者への価値:</li>
+<li>関連するビジネス目的・スコープ:</li>
+<li>推奨とその理由:</li>
+<li>制約・懸念・依存条件:</li>
+<li>検証すべき仮説・確認方法:</li>
+</ul>
+<h2 id="6-採否と要件への反映">6. 採否と要件への反映</h2>
+<p class="guide">採否は「検討中／今回採用／将来検討／不採用」。推奨と採否を分け、確認できた判断者・判断日・根拠を残す。未決なら担当と次のアクションを記載する。重要な決定の詳細はdecisions.mdを参照する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">候補ID</th>
+<th scope="col">採否</th>
+<th scope="col">判断理由・決定記録</th>
+<th scope="col">判断者・判断日</th>
+<th scope="col">関連スコープ</th>
+<th scope="col">採用後のFR-ID・優先度</th>
+<th scope="col">受入条件</th>
+<th scope="col">反映状況・次のアクション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="competitive-analysis.html#CAND-001">CAND-001</a></td>
+<td>検討中</td>
+<td></td>
+<td>未確定</td>
+<td></td>
+<td>未採番</td>
+<td>未定</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>採用された候補は、<a href="../04-scope.html">スコープ</a>を確認し、<a href="../07-functional-requirements.html">機能要件</a>の該当カテゴリへ反映する。既存機能と同じ場合は既存FR-IDを参照・更新し、重複した要件を増やさない。一つの候補が複数の振る舞いを含む場合は、複数のFRへ分けて対応を残す。</p>
+<p>機能要件側の「根拠」から本書の候補IDを参照し、優先度と<a href="../10-acceptance-and-traceability.html">受入条件</a>を具体化する。採用決定済みでも文書への反映が未了なら、その状態を明記する。詳細な機能仕様は本書へ複製しない。</p>
+<h2 id="7-出典と確認日">7. 出典と確認日</h2>
+<p class="guide">公式製品資料、料金表、ヘルプ等の一次情報を優先する。リンク先を確認できない場合は調査済みとせず、確認できた範囲を明記する。社内資料は文書名・保管先・対象期間を記録し、秘密情報を転載しない。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">出典の識別名</th>
+<th scope="col">発行元・資料名</th>
+<th scope="col">URLまたは保管先</th>
+<th scope="col">公開・更新日</th>
+<th scope="col">確認日</th>
+<th scope="col">対象プラン・版</th>
+<th scope="col">確認できた範囲・限界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="8-仮定と未確定事項">8. 仮定と未確定事項</h2>
+<p class="guide">仮定はassumptions-and-constraints.md、判断待ちはopen-issues.mdを正本として参照する。競合の仕様変更など、再調査が必要になる条件も残す。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<details open>
+<summary>記入例を表示</summary>
+<p>以下は社内経費精算システムを題材とした架空の例。競合A、資料、調査結果、判断者・日付は説明用であり、実際の競合を調査した結果ではない。</p>
+<h2 id="example-1-調査目的と範囲">1. 調査目的と範囲</h2>
+<p>申請の進捗確認に関する問い合わせを減らすため、競合サービスと現行の表計算・メール運用を比較する。対象は国内経費の申請者と経理担当者。海外経費と決済カード連携は今回の範囲外。以下の確認日は例示である。</p>
+<h2 id="example-2-競合-代替手段一覧">2. 競合・代替手段一覧</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象</th>
+<th scope="col">区分</th>
+<th scope="col">対象顧客・利用者</th>
+<th scope="col">提供価値</th>
+<th scope="col">選定理由</th>
+<th scope="col">対象プラン・版・地域</th>
+<th scope="col">出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>競合A（架空）</td>
+<td>同種サービス</td>
+<td>企業の申請者・経理担当者</td>
+<td>申請状況の一覧確認</td>
+<td>同じ利用者課題を扱う</td>
+<td>標準プラン・国内向け（例）</td>
+<td>資料A</td>
+</tr>
+<tr>
+<td>現行の表計算・メール</td>
+<td>代替手段</td>
+<td>自社の申請者・経理担当者</td>
+<td>既存環境で申請を継続</td>
+<td>現状維持との比較</td>
+<td>現行業務（例）</td>
+<td>資料B</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-3-比較結果">3. 比較結果</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">比較軸</th>
+<th scope="col">競合A（架空）</th>
+<th scope="col">現行の表計算・メール</th>
+<th scope="col">自社の現状</th>
+<th scope="col">出典・確認日・確認方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>申請状況の一覧</td>
+<td>公式資料上は対応。実機未確認</td>
+<td>メールを個別確認</td>
+<td>一覧がなく問い合わせが発生</td>
+<td>資料A・B、2026-09-22、資料確認（架空）</td>
+</tr>
+<tr>
+<td>自動催促</td>
+<td>未確認</td>
+<td>担当者が個別連絡</td>
+<td>通知を増やす効果は未検証</td>
+<td>資料B、2026-09-22、ヒアリング（架空）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-4-強み-弱みと差別化の仮説">4. 強み・弱みと差別化の仮説</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">調査から確認できた事実・出典</th>
+<th scope="col">強み・弱みの評価</th>
+<th scope="col">自社への示唆・差別化の仮説</th>
+<th scope="col">追加検証の方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>競合Aは状況一覧を提供すると説明（資料A）</td>
+<td>メールを探す負担を減らせる可能性</td>
+<td>自社でも現在の状態を確認できれば問い合わせが減る</td>
+<td>申請者への試作画面の操作テストと導入前後の問い合わせ比較</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-5-取り入れる機能候補">5. 取り入れる機能候補</h2>
+<h3 id="example-CAND-001"><a href="competitive-analysis.html#example-CAND-001">CAND-001</a> 申請状況の参照</h3>
+<ul>
+<li>機能カテゴリ: 経費申請</li>
+<li>調査根拠・出典: 資料Aの状況一覧と、資料Bの問い合わせ課題。</li>
+<li>対象利用者と解決する課題: 申請者が提出後の進捗を把握できない。</li>
+<li>利用者への価値: 経理への問い合わせ前に現在の状態を確認できる。</li>
+<li>関連するビジネス目的・スコープ: <a href="../01-business-overview.html#example-BO-002">BO-002</a>、経費申請。</li>
+<li>推奨とその理由: 今回採用を推奨。競合への追随ではなく、自社でも確認された課題に対応するため。</li>
+<li>制約・懸念・依存条件: 本人の申請だけを表示する権限制御が必要。開発工数は未見積もり。</li>
+<li>検証すべき仮説・確認方法: 状態表示で問い合わせが減るか、試作評価と導入後の測定で確認する。</li>
+</ul>
+<h3 id="example-CAND-002"><a href="competitive-analysis.html#example-CAND-002">CAND-002</a> 承認者への自動催促</h3>
+<ul>
+<li>機能カテゴリ: 承認</li>
+<li>調査根拠・出典: 資料Bの手動連絡。競合の対応は未確認。</li>
+<li>対象利用者と解決する課題: 経理担当者の催促作業。</li>
+<li>利用者への価値: 手動連絡の負担軽減が期待される。</li>
+<li>関連するビジネス目的・スコープ: 承認。今回の対象に追加するかは未合意。</li>
+<li>推奨とその理由: 追加調査を推奨。必要な催促条件と通知負担が分からないため。</li>
+<li>制約・懸念・依存条件: 通知頻度、休暇中の扱い、運用負担が未確定。</li>
+<li>検証すべき仮説・確認方法: 催促が承認時間を短縮するか、承認者へのヒアリングで検討する。</li>
+</ul>
+<h2 id="example-6-採否と要件への反映">6. 採否と要件への反映</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">候補ID</th>
+<th scope="col">採否</th>
+<th scope="col">判断理由・決定記録</th>
+<th scope="col">判断者・判断日</th>
+<th scope="col">関連スコープ</th>
+<th scope="col">採用後のFR-ID・優先度</th>
+<th scope="col">受入条件</th>
+<th scope="col">反映状況・次のアクション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="competitive-analysis.html#example-CAND-001">CAND-001</a></td>
+<td>今回採用</td>
+<td>状態把握の課題に対応し既存範囲内</td>
+<td>業務責任者・2026-09-22（架空）</td>
+<td>経費申請</td>
+<td><a href="../07-functional-requirements.html#example-FR-002">FR-002</a>・Must</td>
+<td>AC-003</td>
+<td>既存<a href="../07-functional-requirements.html#example-FR-002">FR-002</a>を使用。根拠欄への<a href="competitive-analysis.html#example-CAND-001">CAND-001</a>参照の追記は未了</td>
+</tr>
+<tr>
+<td><a href="competitive-analysis.html#example-CAND-002">CAND-002</a></td>
+<td>検討中</td>
+<td>通知条件と効果の検証が必要</td>
+<td>未決定</td>
+<td>承認（追加未合意）</td>
+<td>未採番</td>
+<td>未定</td>
+<td>業務分析担当者が通知条件を確認する</td>
+</tr>
+</tbody>
+</table></div>
+<p>採用した機能の仕様は<a href="../07-functional-requirements.html">機能要件</a>、合否の基準は<a href="../10-acceptance-and-traceability.html">受入条件</a>を正本とする。未決定の候補を確定した要件として扱わない。</p>
+<h2 id="example-7-出典と確認日">7. 出典と確認日</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">出典の識別名</th>
+<th scope="col">発行元・資料名</th>
+<th scope="col">URLまたは保管先</th>
+<th scope="col">公開・更新日</th>
+<th scope="col">確認日</th>
+<th scope="col">対象プラン・版</th>
+<th scope="col">確認できた範囲・限界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>資料A</td>
+<td>競合Aの公式ヘルプ（架空）</td>
+<td>例のため実在URLなし</td>
+<td>不明</td>
+<td>2026-09-22（架空）</td>
+<td>標準プラン（例）</td>
+<td>状況一覧の説明のみ。実機・自動催促は未確認</td>
+</tr>
+<tr>
+<td>資料B</td>
+<td>現行業務ヒアリング記録（架空）</td>
+<td>例のため実在保管先なし</td>
+<td>2026-09-22（架空）</td>
+<td>2026-09-22（架空）</td>
+<td>現行業務</td>
+<td>ヒアリング対象者の範囲に限定</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-8-仮定と未確定事項">8. 仮定と未確定事項</h2>
+<ul>
+<li><strong>仮定</strong>: 状態表示が問い合わせを減らす。検証結果によって見直す。</li>
+<li><strong>未確定</strong>: <a href="competitive-analysis.html#example-CAND-002">CAND-002</a>の通知条件・運用負担。判断待ちは<a href="open-issues.html">未確定事項</a>へ登録する。</li>
+<li><strong>再調査条件</strong>: 競合の提供プラン変更、または自社の対象利用者・業務範囲の変更。</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="assumptions-and-constraints.html">← 前：前提条件と制約</a><a rel="next" href="decisions.html">次：決定記録 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

@@ -1,0 +1,4787 @@
+{
+  "kind": "requirements-html-template-site",
+  "documents": [
+    {
+      "source": "requirements-template/README.md",
+      "path": "requirements/index.html",
+      "title": "要件定義",
+      "group": "要件定義",
+      "sourceSha256": "2a40284c024131a64238077cc2925c0086ac6788f42225da8315019dd6a27a71",
+      "headings": [
+        {
+          "label": "要件定義",
+          "id": "要件定義",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "文書の目的",
+          "id": "文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "対象プロジェクト",
+          "id": "対象プロジェクト",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "想定読者",
+          "id": "想定読者",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "文書一覧",
+          "id": "文書一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "ビジネスと利用者を理解する文書",
+          "id": "ビジネスと利用者を理解する文書",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "システムに求める内容を定義する文書",
+          "id": "システムに求める内容を定義する文書",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "調査・判断を支える付録",
+          "id": "調査-判断を支える付録",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "推奨する閲覧順序",
+          "id": "推奨する閲覧順序",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "要件IDの規則",
+          "id": "要件idの規則",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "更新・レビュー方法",
+          "id": "更新-レビュー方法",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "関連資料",
+          "id": "関連資料",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "README.md",
+          "id": "example-readme-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "経費精算システム 要件定義",
+          "id": "example-経費精算システム-要件定義",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "文書の目的",
+          "id": "example-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "対象プロジェクト",
+          "id": "example-対象プロジェクト",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "想定読者",
+          "id": "example-想定読者",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "文書一覧",
+          "id": "example-文書一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ビジネスと利用者を理解する文書",
+          "id": "example-ビジネスと利用者を理解する文書",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "システムに求める内容を定義する文書",
+          "id": "example-システムに求める内容を定義する文書",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "調査・判断を支える付録",
+          "id": "example-調査-判断を支える付録",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "推奨する閲覧順序",
+          "id": "example-推奨する閲覧順序",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "要件IDの規則",
+          "id": "example-要件idの規則",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "更新・レビュー方法",
+          "id": "example-更新-レビュー方法",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "関連資料",
+          "id": "example-関連資料",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/01-business-overview.md",
+      "path": "requirements/01-business-overview.html",
+      "title": "ビジネス概要",
+      "group": "要件定義",
+      "sourceSha256": "d9af4a0de5593867785c6a54f2d15854749c3df23a2954c830ce55c82b4db7cd",
+      "headings": [
+        {
+          "label": "ビジネス概要",
+          "id": "ビジネス概要",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 背景",
+          "id": "1-背景",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 現状と課題",
+          "id": "2-現状と課題",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 実現したい状態",
+          "id": "3-実現したい状態",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. ビジネス目的",
+          "id": "4-ビジネス目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "BO-001 目的名",
+          "id": "BO-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "5. 期待する価値",
+          "id": "5-期待する価値",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 成功指標",
+          "id": "6-成功指標",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. ビジネス上のリスク",
+          "id": "7-ビジネス上のリスク",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 前提条件",
+          "id": "8-前提条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 未確定事項",
+          "id": "9-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "01-business-overview.md",
+          "id": "example-01-business-overview-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ビジネス概要",
+          "id": "example-ビジネス概要",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 背景",
+          "id": "example-1-背景",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 現状と課題",
+          "id": "example-2-現状と課題",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 実現したい状態",
+          "id": "example-3-実現したい状態",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. ビジネス目的",
+          "id": "example-4-ビジネス目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "BO-001 経理処理時間の削減",
+          "id": "example-BO-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "BO-002 申請リードタイムの短縮",
+          "id": "example-BO-002",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "5. 期待する価値",
+          "id": "example-5-期待する価値",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 成功指標",
+          "id": "example-6-成功指標",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. ビジネス上のリスク",
+          "id": "example-7-ビジネス上のリスク",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 前提条件",
+          "id": "example-8-前提条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 未確定事項",
+          "id": "example-9-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/02-targets-and-personas.md",
+      "path": "requirements/02-targets-and-personas.html",
+      "title": "ターゲットとペルソナ",
+      "group": "要件定義",
+      "sourceSha256": "11f68eedf8e24f29f3b2ef1ffd09ef66e1802bb90f42cdea03b8d06bc5324812",
+      "headings": [
+        {
+          "label": "ターゲットとペルソナ",
+          "id": "ターゲットとペルソナ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 概要",
+          "id": "1-概要",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象顧客",
+          "id": "2-対象顧客",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 対象利用者",
+          "id": "3-対象利用者",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. ペルソナを使用する目的",
+          "id": "4-ペルソナを使用する目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. ペルソナ",
+          "id": "5-ペルソナ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "PER-001 ペルソナ名",
+          "id": "PER-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "6. ターゲットとペルソナの対応図",
+          "id": "6-ターゲットとペルソナの対応図",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 根拠と仮定",
+          "id": "7-根拠と仮定",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 未確定事項",
+          "id": "8-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "02-targets-and-personas.md",
+          "id": "example-02-targets-and-personas-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ターゲットとペルソナ",
+          "id": "example-ターゲットとペルソナ",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 概要",
+          "id": "example-1-概要",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象顧客",
+          "id": "example-2-対象顧客",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 対象利用者",
+          "id": "example-3-対象利用者",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. ペルソナを使用する目的",
+          "id": "example-4-ペルソナを使用する目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. ペルソナ",
+          "id": "example-5-ペルソナ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "PER-001 外出の多い営業担当者",
+          "id": "example-PER-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "6. ターゲットとペルソナの対応図",
+          "id": "example-6-ターゲットとペルソナの対応図",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 根拠と仮定",
+          "id": "example-7-根拠と仮定",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 未確定事項",
+          "id": "example-8-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": [
+        "shared/diagrams/6839e19cf07e52f3.svg",
+        "shared/diagrams/cd834b492ad1776f.svg"
+      ]
+    },
+    {
+      "source": "requirements-template/03-stakeholders.md",
+      "path": "requirements/03-stakeholders.html",
+      "title": "ステークホルダー",
+      "group": "要件定義",
+      "sourceSha256": "ca5e8d1e5493ffe63cadf208f14ca3098f1b17509a7e359c7130f88a6680a850",
+      "headings": [
+        {
+          "label": "ステークホルダー",
+          "id": "ステークホルダー",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. ステークホルダー一覧",
+          "id": "2-ステークホルダー一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2.1 自社（組織名）",
+          "id": "2-1-自社-組織名",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "2.2 関係先（組織名）",
+          "id": "2-2-関係先-組織名",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3. 直接利用者",
+          "id": "3-直接利用者",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. ステークホルダー関係図",
+          "id": "4-ステークホルダー関係図",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 影響関係の補足",
+          "id": "5-影響関係の補足",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 未確定事項",
+          "id": "6-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "03-stakeholders.md",
+          "id": "example-03-stakeholders-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ステークホルダー",
+          "id": "example-ステークホルダー",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. ステークホルダー一覧",
+          "id": "example-2-ステークホルダー一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2.1 自社（経費精算システムを導入する企業）",
+          "id": "example-2-1-自社-経費精算システムを導入する企業",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3. 直接利用者",
+          "id": "example-3-直接利用者",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. ステークホルダー関係図",
+          "id": "example-4-ステークホルダー関係図",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 影響関係の補足",
+          "id": "example-5-影響関係の補足",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5.1 自社",
+          "id": "example-5-1-自社",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "申請者",
+          "id": "example-申請者",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "承認者",
+          "id": "example-承認者",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "経理担当者",
+          "id": "example-経理担当者",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "情報システム部",
+          "id": "example-情報システム部",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "内部監査担当者",
+          "id": "example-内部監査担当者",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "6. 未確定事項",
+          "id": "example-6-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": [
+        "shared/diagrams/5775ece989f4bbbe.svg",
+        "shared/diagrams/b535be7dbda1188a.svg"
+      ]
+    },
+    {
+      "source": "requirements-template/04-scope.md",
+      "path": "requirements/04-scope.html",
+      "title": "スコープ",
+      "group": "要件定義",
+      "sourceSha256": "d5ed6feb71f0824ca8ed1d4f6b7699791968c0a6e20419c5ae6435fea38cb96e",
+      "headings": [
+        {
+          "label": "スコープ",
+          "id": "スコープ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 概要",
+          "id": "1-概要",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象",
+          "id": "2-対象",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 対象外",
+          "id": "3-対象外",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 未確定事項",
+          "id": "4-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "04-scope.md",
+          "id": "example-04-scope-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "スコープ",
+          "id": "example-スコープ",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 概要",
+          "id": "example-1-概要",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象",
+          "id": "example-2-対象",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 対象外",
+          "id": "example-3-対象外",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 未確定事項",
+          "id": "example-4-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/05-business-process-before-and-after.md",
+      "path": "requirements/05-business-process-before-and-after.html",
+      "title": "業務フロー Before／After",
+      "group": "要件定義",
+      "sourceSha256": "64eac99a144f0f0ecccaa383f8d7c62ac07a4b96a527a2c5b9cf76d02798488b",
+      "headings": [
+        {
+          "label": "業務フロー Before／After",
+          "id": "業務フロー-before-after",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象業務",
+          "id": "2-対象業務",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 現行業務（Before）",
+          "id": "3-現行業務-before",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3.1 業務の開始条件",
+          "id": "3-1-業務の開始条件",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3.2 関係者",
+          "id": "3-2-関係者",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3.3 業務の流れ",
+          "id": "3-3-業務の流れ",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3.4 課題",
+          "id": "3-4-課題",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "4. 将来業務（After）",
+          "id": "4-将来業務-after",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4.1 業務の開始条件",
+          "id": "4-1-業務の開始条件",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "4.2 関係者",
+          "id": "4-2-関係者",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "4.3 業務の流れ",
+          "id": "4-3-業務の流れ",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "4.4 変更点",
+          "id": "4-4-変更点",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "5. Before／After比較",
+          "id": "5-before-after比較",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 業務ルールと例外",
+          "id": "6-業務ルールと例外",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 関連する機能要件",
+          "id": "7-関連する機能要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 仮定と未確定事項",
+          "id": "8-仮定と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "目次",
+          "id": "example-目次",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "05-business-process-before-and-after.md",
+          "id": "example-05-business-process-before-and-after-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "業務フロー Before／After",
+          "id": "example-業務フロー-before-after",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 対象業務",
+          "id": "example-2-対象業務",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 現行業務（Before）",
+          "id": "example-3-現行業務-before",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3.1 業務の開始条件",
+          "id": "example-3-1-業務の開始条件",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3.2 関係者",
+          "id": "example-3-2-関係者",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3.3 業務の流れ",
+          "id": "example-3-3-業務の流れ",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3.4 課題",
+          "id": "example-3-4-課題",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "4. 将来業務（After）",
+          "id": "example-4-将来業務-after",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4.1 業務の開始条件",
+          "id": "example-4-1-業務の開始条件",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "4.2 関係者",
+          "id": "example-4-2-関係者",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "4.3 業務の流れ",
+          "id": "example-4-3-業務の流れ",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "4.4 変更点",
+          "id": "example-4-4-変更点",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "5. Before／After比較",
+          "id": "example-5-before-after比較",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 業務ルールと例外",
+          "id": "example-6-業務ルールと例外",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 関連する機能要件",
+          "id": "example-7-関連する機能要件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 仮定と未確定事項",
+          "id": "example-8-仮定と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": [
+        "shared/diagrams/c10cfdc815b7c627.svg",
+        "shared/diagrams/b7368c2a2474d210.svg",
+        "shared/diagrams/3bce55b28cc79719.svg",
+        "shared/diagrams/7a092bbfa6b1e6f9.svg"
+      ]
+    },
+    {
+      "source": "requirements-template/06-related-systems-and-integrations.md",
+      "path": "requirements/06-related-systems-and-integrations.html",
+      "title": "関連システムとシステム連携",
+      "group": "要件定義",
+      "sourceSha256": "699ef7f9ea2b49a305c600aa4f7178c3676014d4becb80ad020943f4ce751dae",
+      "headings": [
+        {
+          "label": "関連システムとシステム連携",
+          "id": "関連システムとシステム連携",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 概要",
+          "id": "1-概要",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 関連システム",
+          "id": "2-関連システム",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. システム間の関係",
+          "id": "3-システム間の関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. システム連携",
+          "id": "4-システム連携",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "IF-001 連携名",
+          "id": "IF-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "5. 未確定事項",
+          "id": "5-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "06-related-systems-and-integrations.md",
+          "id": "example-06-related-systems-and-integrations-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "関連システムとシステム連携",
+          "id": "example-関連システムとシステム連携",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 概要",
+          "id": "example-1-概要",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 関連システム",
+          "id": "example-2-関連システム",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. システム間の関係",
+          "id": "example-3-システム間の関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. システム連携",
+          "id": "example-4-システム連携",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "IF-001 利用者認証",
+          "id": "example-IF-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "5. 未確定事項",
+          "id": "example-5-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": [
+        "shared/diagrams/d1f753f6f2ff638e.svg"
+      ]
+    },
+    {
+      "source": "requirements-template/07-functional-requirements.md",
+      "path": "requirements/07-functional-requirements.html",
+      "title": "機能要件",
+      "group": "要件定義",
+      "sourceSha256": "065e458f99d4ca95f55e52858d23c20cacd906464487e0ca334ca03299e5454f",
+      "headings": [
+        {
+          "label": "機能要件",
+          "id": "機能要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 機能要件の記述規則",
+          "id": "1-機能要件の記述規則",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 機能一覧",
+          "id": "2-機能一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2.1 カテゴリ名",
+          "id": "2-1-カテゴリ名",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3. 個別機能要件",
+          "id": "3-個別機能要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3.1 カテゴリ名",
+          "id": "3-1-カテゴリ名",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "FR-001 要件名",
+          "id": "FR-001",
+          "example": false,
+          "level": "h4"
+        },
+        {
+          "label": "4. 認証・認可",
+          "id": "4-認証-認可",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 監査・履歴",
+          "id": "5-監査-履歴",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. エラー処理",
+          "id": "6-エラー処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 未確定事項",
+          "id": "7-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "07-functional-requirements.md",
+          "id": "example-07-functional-requirements-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "機能要件",
+          "id": "example-機能要件",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 機能要件の記述規則",
+          "id": "example-1-機能要件の記述規則",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 機能一覧",
+          "id": "example-2-機能一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2.1 経費申請",
+          "id": "example-2-1-経費申請",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "2.2 承認",
+          "id": "example-2-2-承認",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "2.3 会計連携",
+          "id": "example-2-3-会計連携",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3. 個別機能要件",
+          "id": "example-3-個別機能要件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3.1 経費申請",
+          "id": "example-3-1-経費申請",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "FR-001 経費申請の提出",
+          "id": "example-FR-001",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "FR-002 申請状況の参照",
+          "id": "example-FR-002",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "3.2 承認",
+          "id": "example-3-2-承認",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "FR-003 申請の承認・差し戻し",
+          "id": "example-FR-003",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "3.3 会計連携",
+          "id": "example-3-3-会計連携",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "FR-004 会計連携用CSVの出力",
+          "id": "example-FR-004",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "4. 認証・認可",
+          "id": "example-4-認証-認可",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 監査・履歴",
+          "id": "example-5-監査-履歴",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. エラー処理",
+          "id": "example-6-エラー処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 未確定事項",
+          "id": "example-7-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/08-data-requirements.md",
+      "path": "requirements/08-data-requirements.html",
+      "title": "データ要件",
+      "group": "要件定義",
+      "sourceSha256": "296aeb99bc15ea0e75f010cdbeeb4ceb3494591a76fb8c83d475bd2fca456394",
+      "headings": [
+        {
+          "label": "データ要件",
+          "id": "データ要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. データの概要",
+          "id": "1-データの概要",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 主要なデータ",
+          "id": "2-主要なデータ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. データ項目",
+          "id": "3-データ項目",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "DR-001 データ要件名",
+          "id": "DR-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "4. データ間の関係",
+          "id": "4-データ間の関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. データの生成元",
+          "id": "5-データの生成元",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. データのライフサイクル",
+          "id": "6-データのライフサイクル",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 入力・整合性要件",
+          "id": "7-入力-整合性要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 保存期間",
+          "id": "8-保存期間",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 削除・匿名化",
+          "id": "9-削除-匿名化",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 機密区分とアクセス制御",
+          "id": "10-機密区分とアクセス制御",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 移行対象データ",
+          "id": "11-移行対象データ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "12. バックアップ・復元要件",
+          "id": "12-バックアップ-復元要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "13-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "08-data-requirements.md",
+          "id": "example-08-data-requirements-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "データ要件",
+          "id": "example-データ要件",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. データの概要",
+          "id": "example-1-データの概要",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 主要なデータ",
+          "id": "example-2-主要なデータ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. データ項目",
+          "id": "example-3-データ項目",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "DR-001 経費明細",
+          "id": "example-DR-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "4. データ間の関係",
+          "id": "example-4-データ間の関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. データの生成元",
+          "id": "example-5-データの生成元",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. データのライフサイクル",
+          "id": "example-6-データのライフサイクル",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 入力・整合性要件",
+          "id": "example-7-入力-整合性要件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 保存期間",
+          "id": "example-8-保存期間",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 削除・匿名化",
+          "id": "example-9-削除-匿名化",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 機密区分とアクセス制御",
+          "id": "example-10-機密区分とアクセス制御",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 移行対象データ",
+          "id": "example-11-移行対象データ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "12. バックアップ・復元要件",
+          "id": "example-12-バックアップ-復元要件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "example-13-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/09-non-functional-requirements.md",
+      "path": "requirements/09-non-functional-requirements.html",
+      "title": "非機能要件",
+      "group": "要件定義",
+      "sourceSha256": "4c37a2a81ac4f4fedf4ecf176b8641f9a991292cf4663be50520b4e480712ca2",
+      "headings": [
+        {
+          "label": "非機能要件",
+          "id": "非機能要件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 可用性",
+          "id": "1-可用性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "NFR-001 要件名",
+          "id": "NFR-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "2. 性能",
+          "id": "2-性能",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 拡張性",
+          "id": "3-拡張性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 信頼性",
+          "id": "4-信頼性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. セキュリティ",
+          "id": "5-セキュリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. プライバシー",
+          "id": "6-プライバシー",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. アクセシビリティ",
+          "id": "7-アクセシビリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. ユーザビリティ",
+          "id": "8-ユーザビリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 保守性",
+          "id": "9-保守性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 互換性",
+          "id": "10-互換性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 監視・ログ",
+          "id": "11-監視-ログ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "12. バックアップ・災害復旧",
+          "id": "12-バックアップ-災害復旧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "13. 運用・サポート",
+          "id": "13-運用-サポート",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "14. 法令・規格への準拠",
+          "id": "14-法令-規格への準拠",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "15. 未確定事項",
+          "id": "15-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "目次",
+          "id": "example-目次",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "09-non-functional-requirements.md",
+          "id": "example-09-non-functional-requirements-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "非機能要件",
+          "id": "example-非機能要件",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 可用性",
+          "id": "example-1-可用性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "NFR-001 サービス提供時間",
+          "id": "example-NFR-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "2. 性能",
+          "id": "example-2-性能",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "NFR-002 画面応答時間",
+          "id": "example-NFR-002",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3. 拡張性",
+          "id": "example-3-拡張性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 信頼性",
+          "id": "example-4-信頼性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. セキュリティ",
+          "id": "example-5-セキュリティ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. プライバシー",
+          "id": "example-6-プライバシー",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. アクセシビリティ",
+          "id": "example-7-アクセシビリティ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. ユーザビリティ",
+          "id": "example-8-ユーザビリティ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 保守性",
+          "id": "example-9-保守性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 互換性",
+          "id": "example-10-互換性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 監視・ログ",
+          "id": "example-11-監視-ログ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "12. バックアップ・災害復旧",
+          "id": "example-12-バックアップ-災害復旧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "NFR-007 復旧目標",
+          "id": "example-NFR-007",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "13. 運用・サポート",
+          "id": "example-13-運用-サポート",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "14. 法令・規格への準拠",
+          "id": "example-14-法令-規格への準拠",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "15. 未確定事項",
+          "id": "example-15-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/10-acceptance-and-traceability.md",
+      "path": "requirements/10-acceptance-and-traceability.html",
+      "title": "受入条件とトレーサビリティ",
+      "group": "要件定義",
+      "sourceSha256": "ed66ac2ac472c224e132c719148b531a0e3ed75a957c647d5401a8c786f10f38",
+      "headings": [
+        {
+          "label": "受入条件とトレーサビリティ",
+          "id": "受入条件とトレーサビリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 受入方針",
+          "id": "1-受入方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 受入条件",
+          "id": "2-受入条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "AC-001 受入条件名",
+          "id": "AC-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "3. 受入対象外",
+          "id": "3-受入対象外",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 要件トレーサビリティ",
+          "id": "4-要件トレーサビリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 完了条件",
+          "id": "5-完了条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 残課題",
+          "id": "6-残課題",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 承認",
+          "id": "7-承認",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10-acceptance-and-traceability.md",
+          "id": "example-10-acceptance-and-traceability-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "受入条件とトレーサビリティ",
+          "id": "example-受入条件とトレーサビリティ",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 受入方針",
+          "id": "example-1-受入方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 受入条件",
+          "id": "example-2-受入条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "AC-001 必須項目を入力した申請の提出",
+          "id": "example-AC-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "AC-002 必須項目不足時の提出制御",
+          "id": "example-AC-002",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "3. 受入対象外",
+          "id": "example-3-受入対象外",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 要件トレーサビリティ",
+          "id": "example-4-要件トレーサビリティ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 完了条件",
+          "id": "example-5-完了条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 残課題",
+          "id": "example-6-残課題",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 承認",
+          "id": "example-7-承認",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/appendices/assumptions-and-constraints.md",
+      "path": "requirements/appendices/assumptions-and-constraints.html",
+      "title": "前提条件と制約",
+      "group": "付録・競合調査",
+      "sourceSha256": "f2065b44b8d3e59861b79843af994cc53e55b3b198ab16cea7c3ee9f7eef3aaf",
+      "headings": [
+        {
+          "label": "前提条件と制約",
+          "id": "前提条件と制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "前提条件",
+          "id": "前提条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "ASM-001 前提名",
+          "id": "ASM-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "ビジネス上の制約",
+          "id": "ビジネス上の制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "CON-001 制約名",
+          "id": "CON-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "技術上の制約",
+          "id": "技術上の制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "法令・契約上の制約",
+          "id": "法令-契約上の制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "スケジュール・予算上の制約",
+          "id": "スケジュール-予算上の制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "appendices/assumptions-and-constraints.md",
+          "id": "example-appendices-assumptions-and-constraints-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "前提条件と制約",
+          "id": "example-前提条件と制約",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "前提条件",
+          "id": "example-前提条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ASM-001 社内アカウントの保有",
+          "id": "example-ASM-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "ビジネス上の制約",
+          "id": "example-ビジネス上の制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "CON-001 現行経費規程の維持",
+          "id": "example-CON-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "技術上の制約",
+          "id": "example-技術上の制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "CON-002 既存認証基盤の利用",
+          "id": "example-CON-002",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "法令・契約上の制約",
+          "id": "example-法令-契約上の制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "スケジュール・予算上の制約",
+          "id": "example-スケジュール-予算上の制約",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/appendices/competitive-analysis.md",
+      "path": "requirements/appendices/competitive-analysis.html",
+      "title": "競合調査と機能候補",
+      "group": "付録・競合調査",
+      "sourceSha256": "39ceea13384f418acaed25d5a0429e2837594a8b2856e22a5d628f9590c8c924",
+      "headings": [
+        {
+          "label": "競合調査と機能候補",
+          "id": "競合調査と機能候補",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 調査目的と範囲",
+          "id": "1-調査目的と範囲",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 競合・代替手段一覧",
+          "id": "2-競合-代替手段一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 比較結果",
+          "id": "3-比較結果",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 強み・弱みと差別化の仮説",
+          "id": "4-強み-弱みと差別化の仮説",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 取り入れる機能候補",
+          "id": "5-取り入れる機能候補",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "CAND-001 機能候補名",
+          "id": "CAND-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "6. 採否と要件への反映",
+          "id": "6-採否と要件への反映",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 出典と確認日",
+          "id": "7-出典と確認日",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 仮定と未確定事項",
+          "id": "8-仮定と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "1. 調査目的と範囲",
+          "id": "example-1-調査目的と範囲",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 競合・代替手段一覧",
+          "id": "example-2-競合-代替手段一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 比較結果",
+          "id": "example-3-比較結果",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 強み・弱みと差別化の仮説",
+          "id": "example-4-強み-弱みと差別化の仮説",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 取り入れる機能候補",
+          "id": "example-5-取り入れる機能候補",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "CAND-001 申請状況の参照",
+          "id": "example-CAND-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "CAND-002 承認者への自動催促",
+          "id": "example-CAND-002",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "6. 採否と要件への反映",
+          "id": "example-6-採否と要件への反映",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 出典と確認日",
+          "id": "example-7-出典と確認日",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 仮定と未確定事項",
+          "id": "example-8-仮定と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/appendices/decisions.md",
+      "path": "requirements/appendices/decisions.html",
+      "title": "決定記録",
+      "group": "付録・競合調査",
+      "sourceSha256": "33ee80286860d8b53af3109c769932d8fec6601f7b9012db6a37230f5d94bc90",
+      "headings": [
+        {
+          "label": "決定記録",
+          "id": "決定記録",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "決定事項一覧",
+          "id": "決定事項一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "決定事項",
+          "id": "決定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "DEC-001 決定のタイトル",
+          "id": "DEC-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "appendices/decisions.md",
+          "id": "example-appendices-decisions-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "決定記録",
+          "id": "example-決定記録",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "決定事項一覧",
+          "id": "example-決定事項一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "決定事項",
+          "id": "example-決定事項",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "DEC-001 初回リリースの会計連携方式",
+          "id": "example-DEC-001",
+          "example": true,
+          "level": "h3"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/appendices/glossary.md",
+      "path": "requirements/appendices/glossary.html",
+      "title": "用語集",
+      "group": "付録・競合調査",
+      "sourceSha256": "6e59aa518e36830801287af8a64522185728036919c9d7a185c4748086458af3",
+      "headings": [
+        {
+          "label": "用語集",
+          "id": "用語集",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "業務用語",
+          "id": "業務用語",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "システム用語",
+          "id": "システム用語",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "略語",
+          "id": "略語",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "使用を避ける曖昧な表現",
+          "id": "使用を避ける曖昧な表現",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "appendices/glossary.md",
+          "id": "example-appendices-glossary-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "用語集",
+          "id": "example-用語集",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "業務用語",
+          "id": "example-業務用語",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "システム用語",
+          "id": "example-システム用語",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "略語",
+          "id": "example-略語",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "使用を避ける曖昧な表現",
+          "id": "example-使用を避ける曖昧な表現",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "requirements-template/appendices/open-issues.md",
+      "path": "requirements/appendices/open-issues.html",
+      "title": "未確定事項",
+      "group": "付録・競合調査",
+      "sourceSha256": "18d8858cc9cda6e67016207647d1453f85d590b683b07c128fb0ee8843dcab73",
+      "headings": [
+        {
+          "label": "未確定事項",
+          "id": "未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "未確定事項一覧",
+          "id": "未確定事項一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "未確定事項",
+          "id": "未確定事項-1",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "ISSUE-001 未確定事項名",
+          "id": "ISSUE-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "解決済み事項",
+          "id": "解決済み事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "appendices/open-issues.md",
+          "id": "example-appendices-open-issues-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "未確定事項",
+          "id": "example-未確定事項",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "未確定事項一覧",
+          "id": "example-未確定事項一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "未確定事項",
+          "id": "example-未確定事項-1",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ISSUE-001 領収書原本と電子証憑の保存要件",
+          "id": "example-ISSUE-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "解決済み事項",
+          "id": "example-解決済み事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/README.md",
+      "path": "design/index.html",
+      "title": "技術設計",
+      "group": "設計の入口",
+      "sourceSha256": "f750a6958f46c2ecbd7acc6d2b56889a80c14aa2988968b2718b1588258fcb9f",
+      "headings": [
+        {
+          "label": "技術設計",
+          "id": "技術設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "文書の目的",
+          "id": "文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "入力となる要件・制約",
+          "id": "入力となる要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "文書一覧",
+          "id": "文書一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "基本設計",
+          "id": "基本設計",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "詳細設計",
+          "id": "詳細設計",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "設計原則",
+          "id": "設計原則",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "主要な設計判断",
+          "id": "主要な設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "更新・レビュー方法",
+          "id": "更新-レビュー方法",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/README.md",
+          "id": "example-design-readme-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "技術設計",
+          "id": "example-技術設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "文書の目的",
+          "id": "example-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "入力となる要件・制約",
+          "id": "example-入力となる要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "文書一覧",
+          "id": "example-文書一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "基本設計",
+          "id": "example-基本設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "詳細設計",
+          "id": "example-詳細設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "設計原則",
+          "id": "example-設計原則",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "主要な設計判断",
+          "id": "example-主要な設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "更新・レビュー方法",
+          "id": "example-更新-レビュー方法",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/01-system-structure.md",
+      "path": "design/basic/01-system-structure.html",
+      "title": "システム全体構成",
+      "group": "基本設計",
+      "sourceSha256": "002226873372ea89ea9f820cf8686764814246ce6e5e7f251167401684dcba2a",
+      "headings": [
+        {
+          "label": "システム全体構成",
+          "id": "システム全体構成",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. システム全体図",
+          "id": "2-システム全体図",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 構成要素と役割",
+          "id": "3-構成要素と役割",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 代表的な処理の流れ",
+          "id": "4-代表的な処理の流れ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "5-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5.1 設計上の判断",
+          "id": "5-1-設計上の判断",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "5.2 未確定事項",
+          "id": "5-2-未確定事項",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/01-system-structure.md",
+          "id": "example-design-basic-01-system-structure-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "システム全体構成",
+          "id": "example-システム全体構成",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. システム全体図",
+          "id": "example-2-システム全体図",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 構成要素と役割",
+          "id": "example-3-構成要素と役割",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 代表的な処理の流れ",
+          "id": "example-4-代表的な処理の流れ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "example-5-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5.1 設計上の判断",
+          "id": "example-5-1-設計上の判断",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "5.2 未確定事項",
+          "id": "example-5-2-未確定事項",
+          "example": true,
+          "level": "h3"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/02-technology-selection.md",
+      "path": "design/basic/02-technology-selection.html",
+      "title": "技術構成・採用技術",
+      "group": "基本設計",
+      "sourceSha256": "f22df5f73df1ed9881f5269b8a8f5ca0839a2665aa9e1fa889db303d9f0c9697",
+      "headings": [
+        {
+          "label": "技術構成・採用技術",
+          "id": "技術構成-採用技術",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 採用技術一覧",
+          "id": "2-採用技術一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 共通の採用方針",
+          "id": "3-共通の採用方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. ライセンス・サポート",
+          "id": "4-ライセンス-サポート",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "5-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/02-technology-selection.md",
+          "id": "example-design-basic-02-technology-selection-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "技術構成・採用技術",
+          "id": "example-技術構成-採用技術",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 採用技術一覧",
+          "id": "example-2-採用技術一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 共通の採用方針",
+          "id": "example-3-共通の採用方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. ライセンス・サポート",
+          "id": "example-4-ライセンス-サポート",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "example-5-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/03-data-design.md",
+      "path": "design/basic/03-data-design.html",
+      "title": "データ設計",
+      "group": "基本設計",
+      "sourceSha256": "17ed29eced424f6559049cf344635179b445f2dd1ee2aec44b694f5193b125d4",
+      "headings": [
+        {
+          "label": "データ設計",
+          "id": "データ設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 主要データと関係",
+          "id": "2-主要データと関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. データの生成・更新・保存",
+          "id": "3-データの生成-更新-保存",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. データの品質とアクセス",
+          "id": "4-データの品質とアクセス",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "5-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/03-data-design.md",
+          "id": "example-design-basic-03-data-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "データ設計",
+          "id": "example-データ設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 主要データと関係",
+          "id": "example-2-主要データと関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. データの生成・更新・保存",
+          "id": "example-3-データの生成-更新-保存",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. データの品質とアクセス",
+          "id": "example-4-データの品質とアクセス",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "example-5-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/04-external-system-integration-design.md",
+      "path": "design/basic/04-external-system-integration-design.html",
+      "title": "外部システム連携設計",
+      "group": "基本設計",
+      "sourceSha256": "4271b63cc009483514f48c79eab11321a0df9e9871f3370fc6bffa008372106d",
+      "headings": [
+        {
+          "label": "外部システム連携設計",
+          "id": "外部システム連携設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 外部連携一覧",
+          "id": "2-外部連携一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 入出力と接続方法",
+          "id": "3-入出力と接続方法",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. エラー・再送・監視",
+          "id": "4-エラー-再送-監視",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "5-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/04-external-system-integration-design.md",
+          "id": "example-design-basic-04-external-system-integration-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "外部システム連携設計",
+          "id": "example-外部システム連携設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 外部連携一覧",
+          "id": "example-2-外部連携一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 入出力と接続方法",
+          "id": "example-3-入出力と接続方法",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. エラー・再送・監視",
+          "id": "example-4-エラー-再送-監視",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 設計上の判断と未確定事項",
+          "id": "example-5-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/05-infrastructure-and-operations.md",
+      "path": "design/basic/05-infrastructure-and-operations.html",
+      "title": "インフラ・運用設計",
+      "group": "基本設計",
+      "sourceSha256": "37c43415b25bf024314091f2c47955a7b287b2fef502b7114eaa5292e0cdf816",
+      "headings": [
+        {
+          "label": "インフラ・運用設計",
+          "id": "インフラ-運用設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "2-入力となる要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 環境構成",
+          "id": "3-環境構成",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. ネットワークとセキュリティ",
+          "id": "4-ネットワークとセキュリティ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. ビルド・デプロイ・リリース",
+          "id": "5-ビルド-デプロイ-リリース",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 監視・ログ・通知",
+          "id": "6-監視-ログ-通知",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. バックアップと復旧",
+          "id": "7-バックアップと復旧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 定常運用と障害対応",
+          "id": "8-定常運用と障害対応",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 設計判断",
+          "id": "9-設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 未確定事項",
+          "id": "10-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/05-infrastructure-and-operations.md",
+          "id": "example-design-basic-05-infrastructure-and-operations-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "インフラ・運用設計",
+          "id": "example-インフラ-運用設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "example-2-入力となる要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 環境構成",
+          "id": "example-3-環境構成",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. ネットワークとセキュリティ",
+          "id": "example-4-ネットワークとセキュリティ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. ビルド・デプロイ・リリース",
+          "id": "example-5-ビルド-デプロイ-リリース",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 監視・ログ・通知",
+          "id": "example-6-監視-ログ-通知",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. バックアップと復旧",
+          "id": "example-7-バックアップと復旧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 定常運用と障害対応",
+          "id": "example-8-定常運用と障害対応",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 設計判断",
+          "id": "example-9-設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 未確定事項",
+          "id": "example-10-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/06-screen-design.md",
+      "path": "design/basic/06-screen-design.html",
+      "title": "画面設計",
+      "group": "基本設計",
+      "sourceSha256": "29361019e54405c88ce222119a901dd587d9b4bf71a7385c7f934c81fc5a32ae",
+      "headings": [
+        {
+          "label": "画面設計",
+          "id": "画面設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 画面一覧",
+          "id": "2-画面一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 画面遷移",
+          "id": "3-画面遷移",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 画面構成",
+          "id": "4-画面構成",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 入力項目と検証",
+          "id": "5-入力項目と検証",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 状態別の表示・操作",
+          "id": "6-状態別の表示-操作",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 対応端末・基本的な操作方針",
+          "id": "7-対応端末-基本的な操作方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. アクセシビリティ方針",
+          "id": "8-アクセシビリティ方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 設計上の判断と未確定事項",
+          "id": "9-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/06-screen-design.md",
+          "id": "example-design-basic-06-screen-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "画面設計",
+          "id": "example-画面設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 画面一覧",
+          "id": "example-2-画面一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 画面遷移",
+          "id": "example-3-画面遷移",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 画面構成",
+          "id": "example-4-画面構成",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 入力項目と検証",
+          "id": "example-5-入力項目と検証",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 状態別の表示・操作",
+          "id": "example-6-状態別の表示-操作",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 対応端末・基本的な操作方針",
+          "id": "example-7-対応端末-基本的な操作方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. アクセシビリティ方針",
+          "id": "example-8-アクセシビリティ方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 設計上の判断と未確定事項",
+          "id": "example-9-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/07-security-design.md",
+      "path": "design/basic/07-security-design.html",
+      "title": "セキュリティ設計",
+      "group": "基本設計",
+      "sourceSha256": "3b856c2e9c39d477dd129fc9b10f4c5c3624f1383f32f53053afc880dbf6ef2f",
+      "headings": [
+        {
+          "label": "セキュリティ設計",
+          "id": "セキュリティ設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "2-入力となる要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 保護対象と脅威",
+          "id": "3-保護対象と脅威",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 通信・保存データの暗号化",
+          "id": "4-通信-保存データの暗号化",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 秘密情報の管理",
+          "id": "5-秘密情報の管理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 監査ログ",
+          "id": "6-監査ログ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 脆弱性対策",
+          "id": "7-脆弱性対策",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 外部サービスの安全性",
+          "id": "8-外部サービスの安全性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. インシデント対応",
+          "id": "9-インシデント対応",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 設計判断",
+          "id": "10-設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 未確定事項",
+          "id": "11-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/07-security-design.md",
+          "id": "example-design-basic-07-security-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "セキュリティ設計",
+          "id": "example-セキュリティ設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "example-2-入力となる要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 保護対象と脅威",
+          "id": "example-3-保護対象と脅威",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 通信・保存データの暗号化",
+          "id": "example-4-通信-保存データの暗号化",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 秘密情報の管理",
+          "id": "example-5-秘密情報の管理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 監査ログ",
+          "id": "example-6-監査ログ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 脆弱性対策",
+          "id": "example-7-脆弱性対策",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 外部サービスの安全性",
+          "id": "example-8-外部サービスの安全性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. インシデント対応",
+          "id": "example-9-インシデント対応",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 設計判断",
+          "id": "example-10-設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 未確定事項",
+          "id": "example-11-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/08-migration-design.md",
+      "path": "design/basic/08-migration-design.html",
+      "title": "移行設計",
+      "group": "基本設計",
+      "sourceSha256": "c0429321f4f2de213940cb3a52701e782e5db0cd85c62a06e253ae88ef6390e0",
+      "headings": [
+        {
+          "label": "移行設計",
+          "id": "移行設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "2-入力となる要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 移行対象",
+          "id": "3-移行対象",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. データマッピング",
+          "id": "4-データマッピング",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. データ変換・クレンジング",
+          "id": "5-データ変換-クレンジング",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 移行方式と手順",
+          "id": "6-移行方式と手順",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 移行リハーサル",
+          "id": "7-移行リハーサル",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 移行結果の検証",
+          "id": "8-移行結果の検証",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 本番切替",
+          "id": "9-本番切替",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 切り戻し",
+          "id": "10-切り戻し",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 旧システムの停止・保管",
+          "id": "11-旧システムの停止-保管",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "12. 設計判断",
+          "id": "12-設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "13-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/08-migration-design.md",
+          "id": "example-design-basic-08-migration-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "移行設計",
+          "id": "example-移行設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "example-2-入力となる要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 移行対象",
+          "id": "example-3-移行対象",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. データマッピング",
+          "id": "example-4-データマッピング",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. データ変換・クレンジング",
+          "id": "example-5-データ変換-クレンジング",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 移行方式と手順",
+          "id": "example-6-移行方式と手順",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 移行リハーサル",
+          "id": "example-7-移行リハーサル",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 移行結果の検証",
+          "id": "example-8-移行結果の検証",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 本番切替",
+          "id": "example-9-本番切替",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 切り戻し",
+          "id": "example-10-切り戻し",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 旧システムの停止・保管",
+          "id": "example-11-旧システムの停止-保管",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "12. 設計判断",
+          "id": "example-12-設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "example-13-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/09-api-design.md",
+      "path": "design/basic/09-api-design.html",
+      "title": "API設計",
+      "group": "基本設計",
+      "sourceSha256": "307a7dea7912de50c9685588e198c52de4943806695b87a89956ec93f28b217e",
+      "headings": [
+        {
+          "label": "API設計",
+          "id": "api設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的と対象",
+          "id": "1-文書の目的と対象",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・設計",
+          "id": "2-入力となる要件-設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 共通方針",
+          "id": "3-共通方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. API一覧",
+          "id": "4-api一覧",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. API契約",
+          "id": "5-api契約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "API-001 API名",
+          "id": "API-001",
+          "example": false,
+          "level": "h3"
+        },
+        {
+          "label": "リクエスト",
+          "id": "リクエスト",
+          "example": false,
+          "level": "h4"
+        },
+        {
+          "label": "成功レスポンス",
+          "id": "成功レスポンス",
+          "example": false,
+          "level": "h4"
+        },
+        {
+          "label": "エラーレスポンス",
+          "id": "エラーレスポンス",
+          "example": false,
+          "level": "h4"
+        },
+        {
+          "label": "6. エラー形式",
+          "id": "6-エラー形式",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 一覧取得・検索",
+          "id": "7-一覧取得-検索",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 冪等性・並行更新・再試行",
+          "id": "8-冪等性-並行更新-再試行",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 制限と非機能条件",
+          "id": "9-制限と非機能条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 変更・廃止方針",
+          "id": "10-変更-廃止方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 設計判断と未確定事項",
+          "id": "11-設計判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/09-api-design.md",
+          "id": "example-design-basic-09-api-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "API設計",
+          "id": "example-api設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的と対象",
+          "id": "example-1-文書の目的と対象",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・設計",
+          "id": "example-2-入力となる要件-設計",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 共通方針",
+          "id": "example-3-共通方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. API一覧",
+          "id": "example-4-api一覧",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. API契約",
+          "id": "example-5-api契約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "API-001 経費申請作成",
+          "id": "example-API-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "リクエスト",
+          "id": "example-リクエスト",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "成功レスポンス",
+          "id": "example-成功レスポンス",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "エラーレスポンス",
+          "id": "example-エラーレスポンス",
+          "example": true,
+          "level": "h4"
+        },
+        {
+          "label": "6. エラー形式",
+          "id": "example-6-エラー形式",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 一覧取得・検索",
+          "id": "example-7-一覧取得-検索",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 冪等性・並行更新・再試行",
+          "id": "example-8-冪等性-並行更新-再試行",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 制限と非機能条件",
+          "id": "example-9-制限と非機能条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 変更・廃止方針",
+          "id": "example-10-変更-廃止方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 設計判断と未確定事項",
+          "id": "example-11-設計判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/basic/10-authentication-and-authorization-design.md",
+      "path": "design/basic/10-authentication-and-authorization-design.html",
+      "title": "認証・認可設計",
+      "group": "基本設計",
+      "sourceSha256": "777b674361237b37e67839872ddb6d156b70c133de6d4ccc1a78218d95a93c3e",
+      "headings": [
+        {
+          "label": "認証・認可設計",
+          "id": "認証-認可設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的と対象",
+          "id": "1-文書の目的と対象",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・設計",
+          "id": "2-入力となる要件-設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 主体と認証方式",
+          "id": "3-主体と認証方式",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 認証フロー",
+          "id": "4-認証フロー",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. セッション・トークン管理",
+          "id": "5-セッション-トークン管理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. ロールと権限",
+          "id": "6-ロールと権限",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 認可マトリクス",
+          "id": "7-認可マトリクス",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 認可判定と権限変更の反映",
+          "id": "8-認可判定と権限変更の反映",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 特権操作と緊急アクセス",
+          "id": "9-特権操作と緊急アクセス",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. 監査と異常検知",
+          "id": "10-監査と異常検知",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 設計判断と未確定事項",
+          "id": "11-設計判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/basic/10-authentication-and-authorization-design.md",
+          "id": "example-design-basic-10-authentication-and-authorization-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "認証・認可設計",
+          "id": "example-認証-認可設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的と対象",
+          "id": "example-1-文書の目的と対象",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・設計",
+          "id": "example-2-入力となる要件-設計",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 主体と認証方式",
+          "id": "example-3-主体と認証方式",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 認証フロー",
+          "id": "example-4-認証フロー",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. セッション・トークン管理",
+          "id": "example-5-セッション-トークン管理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. ロールと権限",
+          "id": "example-6-ロールと権限",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 認可マトリクス",
+          "id": "example-7-認可マトリクス",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 認可判定と権限変更の反映",
+          "id": "example-8-認可判定と権限変更の反映",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 特権操作と緊急アクセス",
+          "id": "example-9-特権操作と緊急アクセス",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. 監査と異常検知",
+          "id": "example-10-監査と異常検知",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 設計判断と未確定事項",
+          "id": "example-11-設計判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/detailed/01-application-design.md",
+      "path": "design/detailed/01-application-design.html",
+      "title": "アプリケーション詳細設計",
+      "group": "詳細設計",
+      "sourceSha256": "bd893d932cfd1142b3b0a167b7a87b1db3f93474e2bdee84f9eaf127123b4e9f",
+      "headings": [
+        {
+          "label": "アプリケーション詳細設計",
+          "id": "アプリケーション詳細設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "2-入力となる要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. モジュール構成",
+          "id": "3-モジュール構成",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 詳細な処理フロー",
+          "id": "4-詳細な処理フロー",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 状態遷移の実現方法",
+          "id": "5-状態遷移の実現方法",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 業務ルールの実現方法",
+          "id": "6-業務ルールの実現方法",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 認証・認可の内部処理",
+          "id": "7-認証-認可の内部処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. エラー処理",
+          "id": "8-エラー処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "9. 非同期処理・バッチ処理",
+          "id": "9-非同期処理-バッチ処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "10. トランザクション・排他・再処理",
+          "id": "10-トランザクション-排他-再処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "11. 監査・操作履歴",
+          "id": "11-監査-操作履歴",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "12. 設計判断",
+          "id": "12-設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "13-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/detailed/01-application-design.md",
+          "id": "example-design-detailed-01-application-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "アプリケーション詳細設計",
+          "id": "example-アプリケーション詳細設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる要件・制約",
+          "id": "example-2-入力となる要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. モジュール構成",
+          "id": "example-3-モジュール構成",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 詳細な処理フロー",
+          "id": "example-4-詳細な処理フロー",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 状態遷移の実現方法",
+          "id": "example-5-状態遷移の実現方法",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 業務ルールの実現方法",
+          "id": "example-6-業務ルールの実現方法",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 認証・認可の内部処理",
+          "id": "example-7-認証-認可の内部処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. エラー処理",
+          "id": "example-8-エラー処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "9. 非同期処理・バッチ処理",
+          "id": "example-9-非同期処理-バッチ処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "10. トランザクション・排他・再処理",
+          "id": "example-10-トランザクション-排他-再処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "11. 監査・操作履歴",
+          "id": "example-11-監査-操作履歴",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "12. 設計判断",
+          "id": "example-12-設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "13. 未確定事項",
+          "id": "example-13-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/detailed/02-project-directory-structure.md",
+      "path": "design/detailed/02-project-directory-structure.html",
+      "title": "プロジェクトディレクトリ構成",
+      "group": "詳細設計",
+      "sourceSha256": "62cf846b807223d05fb728270f3e88e0d9bd79e6c99ccf2d464623bd70c24e68",
+      "headings": [
+        {
+          "label": "プロジェクトディレクトリ構成",
+          "id": "プロジェクトディレクトリ構成",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "1-文書の目的",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる設計・制約",
+          "id": "2-入力となる設計-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. ディレクトリツリー",
+          "id": "3-ディレクトリツリー",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 配置ルール",
+          "id": "4-配置ルール",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 依存方向と境界",
+          "id": "5-依存方向と境界",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 命名規則",
+          "id": "6-命名規則",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 設計判断",
+          "id": "7-設計判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "8. 未確定事項",
+          "id": "8-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/detailed/02-project-directory-structure.md",
+          "id": "example-design-detailed-02-project-directory-structure-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "プロジェクトディレクトリ構成",
+          "id": "example-プロジェクトディレクトリ構成",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 文書の目的",
+          "id": "example-1-文書の目的",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力となる設計・制約",
+          "id": "example-2-入力となる設計-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. ディレクトリツリー",
+          "id": "example-3-ディレクトリツリー",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 配置ルール",
+          "id": "example-4-配置ルール",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 依存方向と境界",
+          "id": "example-5-依存方向と境界",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 命名規則",
+          "id": "example-6-命名規則",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 設計判断",
+          "id": "example-7-設計判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "8. 未確定事項",
+          "id": "example-8-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/detailed/03-common-ui-design.md",
+      "path": "design/detailed/03-common-ui-design.html",
+      "title": "共通UI詳細設計",
+      "group": "詳細設計",
+      "sourceSha256": "3f57154e9f887c58b439626bcf9242a93674067800492692af25b1e18f7d5f00",
+      "headings": [
+        {
+          "label": "共通UI詳細設計",
+          "id": "共通ui詳細設計",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力と検証の共通仕様",
+          "id": "2-入力と検証の共通仕様",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. エラー・確認・完了表示",
+          "id": "3-エラー-確認-完了表示",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 端末・画面サイズ別の振る舞い",
+          "id": "4-端末-画面サイズ別の振る舞い",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. アクセシビリティの実装仕様",
+          "id": "5-アクセシビリティの実装仕様",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 文言・共通部品",
+          "id": "6-文言-共通部品",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "7. 設計上の判断と未確定事項",
+          "id": "7-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/detailed/03-common-ui-design.md",
+          "id": "example-design-detailed-03-common-ui-design-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "共通UI詳細設計",
+          "id": "example-共通ui詳細設計",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 入力と検証の共通仕様",
+          "id": "example-2-入力と検証の共通仕様",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. エラー・確認・完了表示",
+          "id": "example-3-エラー-確認-完了表示",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 端末・画面サイズ別の振る舞い",
+          "id": "example-4-端末-画面サイズ別の振る舞い",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. アクセシビリティの実装仕様",
+          "id": "example-5-アクセシビリティの実装仕様",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 文言・共通部品",
+          "id": "example-6-文言-共通部品",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "7. 設計上の判断と未確定事項",
+          "id": "example-7-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/detailed/data/DATA-001-data-store-name.md",
+      "path": "design/detailed/data/DATA-001-data-store-name.html",
+      "title": "DATA-001 データストア名",
+      "group": "詳細設計",
+      "sourceSha256": "c0ebe334ce8d2e07028ff7beeb65c28c07808473f56b798962932e71965bf917",
+      "headings": [
+        {
+          "label": "DATA-001 データストア名",
+          "id": "DATA-001",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "1-この文書で決めること",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 構造と関係",
+          "id": "2-構造と関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 制約と整合性",
+          "id": "3-制約と整合性",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 検索と性能",
+          "id": "4-検索と性能",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 履歴・削除・スキーマ変更",
+          "id": "5-履歴-削除-スキーマ変更",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 設計上の判断と未確定事項",
+          "id": "6-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/detailed/data/DATA-001-expense-database.md",
+          "id": "example-design-detailed-data-data-001-expense-database-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "DATA-001 経費申請データベース",
+          "id": "example-DATA-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. この文書で決めること",
+          "id": "example-1-この文書で決めること",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 構造と関係",
+          "id": "example-2-構造と関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 制約と整合性",
+          "id": "example-3-制約と整合性",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 検索と性能",
+          "id": "example-4-検索と性能",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 履歴・削除・スキーマ変更",
+          "id": "example-5-履歴-削除-スキーマ変更",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 設計上の判断と未確定事項",
+          "id": "example-6-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/detailed/modules/MOD-001-module-name.md",
+      "path": "design/detailed/modules/MOD-001-module-name.html",
+      "title": "MOD-001 モジュール名",
+      "group": "詳細設計",
+      "sourceSha256": "6e45fe42c125514f3116ec6a1b9d77ee0ab63c8f8fe8a1b4d9014c5904b89c54",
+      "headings": [
+        {
+          "label": "MOD-001 モジュール名",
+          "id": "MOD-001",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 目的と責務",
+          "id": "1-目的と責務",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 利用箇所と依存関係",
+          "id": "2-利用箇所と依存関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. 公開API",
+          "id": "3-公開api",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 内部構成と主要処理",
+          "id": "4-内部構成と主要処理",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 品質とテスト方針",
+          "id": "5-品質とテスト方針",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "6. 設計上の判断と未確定事項",
+          "id": "6-設計上の判断と未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/detailed/modules/MOD-001-approval-engine.md",
+          "id": "example-design-detailed-modules-mod-001-approval-engine-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "MOD-001 承認判定モジュール",
+          "id": "example-MOD-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 目的と責務",
+          "id": "example-1-目的と責務",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 利用箇所と依存関係",
+          "id": "example-2-利用箇所と依存関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. 公開API",
+          "id": "example-3-公開api",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 内部構成と主要処理",
+          "id": "example-4-内部構成と主要処理",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 品質とテスト方針",
+          "id": "example-5-品質とテスト方針",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "6. 設計上の判断と未確定事項",
+          "id": "example-6-設計上の判断と未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "design-template/decisions/ADR-001-decision-title.md",
+      "path": "design/decisions/ADR-001-decision-title.html",
+      "title": "ADR-001 判断タイトル",
+      "group": "設計判断（ADR）",
+      "sourceSha256": "0d0688a4dc24206deb4c80c6144d99c4d1424bb4b168fd217241c37fe5c37004",
+      "headings": [
+        {
+          "label": "ADR-001 判断タイトル",
+          "id": "ADR-001",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "状態",
+          "id": "状態",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "背景",
+          "id": "背景",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "判断",
+          "id": "判断",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "比較した選択肢",
+          "id": "比較した選択肢",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "判断理由",
+          "id": "判断理由",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "利点",
+          "id": "利点",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "欠点・影響",
+          "id": "欠点-影響",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "関連する要件・制約",
+          "id": "関連する要件-制約",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "再検討条件",
+          "id": "再検討条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "design/decisions/ADR-001-application-structure.md",
+          "id": "example-design-decisions-adr-001-application-structure-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "ADR-001 アプリケーションの分割方式",
+          "id": "example-ADR-001",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "状態",
+          "id": "example-状態",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "背景",
+          "id": "example-背景",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "判断",
+          "id": "example-判断",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "比較した選択肢",
+          "id": "example-比較した選択肢",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "判断理由",
+          "id": "example-判断理由",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "利点",
+          "id": "example-利点",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "欠点・影響",
+          "id": "example-欠点-影響",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "関連する要件・制約",
+          "id": "example-関連する要件-制約",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "再検討条件",
+          "id": "example-再検討条件",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    },
+    {
+      "source": "planning-template/development-plan.md",
+      "path": "planning/development-plan.html",
+      "title": "開発計画",
+      "group": "開発計画",
+      "sourceSha256": "73a9345b844c4a7f64e67e6e7b7f505d3fb14b795facf5ab273fac8c1605cee5",
+      "headings": [
+        {
+          "label": "開発計画",
+          "id": "開発計画",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "1. 開発の進め方",
+          "id": "1-開発の進め方",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "2. 開発フェーズ",
+          "id": "2-開発フェーズ",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "3. フェーズ間の依存関係",
+          "id": "3-フェーズ間の依存関係",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "4. 各フェーズの完了条件",
+          "id": "4-各フェーズの完了条件",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "5. 未確定事項",
+          "id": "5-未確定事項",
+          "example": false,
+          "level": "h2"
+        },
+        {
+          "label": "記入例（参考・成果物には含めない）",
+          "id": "example-記入例-参考-成果物には含めない",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "planning/development-plan.md",
+          "id": "example-planning-development-plan-md",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "開発計画",
+          "id": "example-開発計画",
+          "example": true,
+          "level": "h3"
+        },
+        {
+          "label": "1. 開発の進め方",
+          "id": "example-1-開発の進め方",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "2. 開発フェーズ",
+          "id": "example-2-開発フェーズ",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "3. フェーズ間の依存関係",
+          "id": "example-3-フェーズ間の依存関係",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "4. 各フェーズの完了条件",
+          "id": "example-4-各フェーズの完了条件",
+          "example": true,
+          "level": "h2"
+        },
+        {
+          "label": "5. 未確定事項",
+          "id": "example-5-未確定事項",
+          "example": true,
+          "level": "h2"
+        }
+      ],
+      "diagrams": []
+    }
+  ],
+  "diagramCount": 9
+}

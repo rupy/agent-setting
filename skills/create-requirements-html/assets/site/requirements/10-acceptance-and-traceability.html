@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>受入条件とトレーサビリティ | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../shared/site.css"><script defer src="../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="index.html">要件定義</a></li><li data-nav-item><a href="01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="04-scope.html">スコープ</a></li><li data-nav-item><a href="05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="10-acceptance-and-traceability.html" aria-current="page">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="appendices/glossary.html">用語集</a></li><li data-nav-item><a href="appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../design/index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../design/basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../design/basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../design/basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../design/basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../design/basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../design/basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../design/basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../design/basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../design/basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../design/basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../design/detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../design/detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../design/detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../design/detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../design/detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../design/decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">トップ</a> / 要件定義 / 受入条件とトレーサビリティ</nav><header><p class="eyebrow">要件定義 · 11 / 34</p><h1>受入条件とトレーサビリティ</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 受入条件とトレーサビリティ
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#受入条件とトレーサビリティ">受入条件とトレーサビリティ</a></li><li><a href="#1-受入方針">1. 受入方針</a></li><li><a href="#2-受入条件">2. 受入条件</a></li><li><a href="#3-受入対象外">3. 受入対象外</a></li><li><a href="#4-要件トレーサビリティ">4. 要件トレーサビリティ</a></li><li><a href="#5-完了条件">5. 完了条件</a></li><li><a href="#6-残課題">6. 残課題</a></li><li><a href="#7-承認">7. 承認</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="受入条件とトレーサビリティ">受入条件とトレーサビリティ</h2>
+<h2 id="1-受入方針">1. 受入方針</h2>
+<p class="guide">受入の対象、判定原則、未達・未解決事項の扱いを記載する。</p>
+<h2 id="2-受入条件">2. 受入条件</h2>
+<p class="guide">Must要件を中心に、合否を一意に判断できる条件を定義する。</p>
+<h3 id="AC-001"><a href="10-acceptance-and-traceability.html#AC-001">AC-001</a> 受入条件名</h3>
+<p class="guide">対応要件、前提、手順、期待結果、検証環境を具体的に記載する。</p>
+<ul>
+<li>対応要件:</li>
+<li>前提:</li>
+<li>操作・検証手順:</li>
+<li>期待結果:</li>
+<li>検証環境:</li>
+</ul>
+<h2 id="3-受入対象外">3. 受入対象外</h2>
+<p class="guide">今回の受入で検証しない範囲と、その理由・別の確認方法を記載する。</p>
+<h2 id="4-要件トレーサビリティ">4. 要件トレーサビリティ</h2>
+<p class="guide">ビジネス目的・業務フローから要件、受入条件、検証方法までを対応付ける。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ビジネス目的</th>
+<th scope="col">スコープ・業務フロー</th>
+<th scope="col">システム要件</th>
+<th scope="col">受入条件</th>
+<th scope="col">検証方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="01-business-overview.html#BO-001">BO-001</a></td>
+<td><a href="05-business-process-before-and-after.html#BP-001">BP-001</a></td>
+<td><a href="07-functional-requirements.html#FR-001">FR-001</a></td>
+<td><a href="10-acceptance-and-traceability.html#AC-001">AC-001</a></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-完了条件">5. 完了条件</h2>
+<p class="guide">受入完了に必要な試験、不具合、文書、運用準備、承認の条件を記載する。</p>
+<h2 id="6-残課題">6. 残課題</h2>
+<p class="guide">受入時点で残せる課題、影響、代替策、担当、期限を記載する。</p>
+<h2 id="7-承認">7. 承認</h2>
+<p class="guide">受入結果を判断する役割、氏名、結果、日付を記録する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">役割</th>
+<th scope="col">氏名</th>
+<th scope="col">結果</th>
+<th scope="col">日付</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の固有名詞、数値、日付、方式、判断を実案件へ転用しない。</p>
+<h2 id="example-10-acceptance-and-traceability-md">10-acceptance-and-traceability.md</h2>
+<pre><code>---
+title: 受入条件とトレーサビリティ
+status: draft
+owner: テスト責任者
+reviewers:
+  - プロジェクト責任者
+  - 経理部責任者
+last_updated: 2026-08-30
+---
+</code></pre>
+<h3 id="example-受入条件とトレーサビリティ">受入条件とトレーサビリティ</h3>
+<h2 id="example-1-受入方針">1. 受入方針</h2>
+<p>Must要件の受入テストをすべて実施し、重大度「高」以上の未解決不具合がない場合に受入可能とする。
+Should要件が未達の場合は、代替運用と解消予定について業務責任者の承認を得る。</p>
+<h2 id="example-2-受入条件">2. 受入条件</h2>
+<h3 id="example-AC-001"><a href="10-acceptance-and-traceability.html#example-AC-001">AC-001</a> 必須項目を入力した申請の提出</h3>
+<ul>
+<li>対応要件: <a href="07-functional-requirements.html#example-FR-001">FR-001</a>、<a href="08-data-requirements.html#example-DR-001">DR-001</a></li>
+<li>前提: 申請者がログインし、必須項目を入力した下書きが存在する。</li>
+<li>操作・検証手順:
+<ol>
+<li>申請者が下書きを開く。</li>
+<li>提出を実行する。</li>
+</ol>
+</li>
+<li>期待結果:
+<ul>
+<li>状態が上長承認待ちになる。</li>
+<li>申請番号と提出完了が表示される。</li>
+<li>承認者の一覧に申請が表示される。</li>
+</ul>
+</li>
+<li>検証環境: 受入テスト環境</li>
+</ul>
+<h3 id="example-AC-002"><a href="10-acceptance-and-traceability.html#example-AC-002">AC-002</a> 必須項目不足時の提出制御</h3>
+<ul>
+<li>対応要件: <a href="07-functional-requirements.html#example-FR-001">FR-001</a></li>
+<li>前提: 金額が未入力の下書きが存在する。</li>
+<li>操作・検証手順: 申請者が提出を実行する。</li>
+<li>期待結果: 提出されず、金額の入力を求めるエラーが表示され、状態は下書きのままとなる。</li>
+<li>検証環境: 受入テスト環境</li>
+</ul>
+<h2 id="example-3-受入対象外">3. 受入対象外</h2>
+<ul>
+<li>本番会計データを用いた取込</li>
+<li>災害発生を伴う実地試験</li>
+<li>初回リリース対象外とした海外経費と振込処理</li>
+</ul>
+<h2 id="example-4-要件トレーサビリティ">4. 要件トレーサビリティ</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">ビジネス目的</th>
+<th scope="col">スコープ・業務フロー</th>
+<th scope="col">システム要件</th>
+<th scope="col">受入条件</th>
+<th scope="col">検証方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="01-business-overview.html#example-BO-001">BO-001</a>、<a href="01-business-overview.html#example-BO-002">BO-002</a></td>
+<td>経費申請、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="07-functional-requirements.html#example-FR-001">FR-001</a>、<a href="08-data-requirements.html#example-DR-001">DR-001</a></td>
+<td><a href="10-acceptance-and-traceability.html#example-AC-001">AC-001</a>、<a href="10-acceptance-and-traceability.html#example-AC-002">AC-002</a></td>
+<td>受入テスト</td>
+</tr>
+<tr>
+<td><a href="01-business-overview.html#example-BO-002">BO-002</a></td>
+<td>経費申請、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="07-functional-requirements.html#example-FR-002">FR-002</a></td>
+<td>AC-003</td>
+<td>受入テスト</td>
+</tr>
+<tr>
+<td><a href="01-business-overview.html#example-BO-002">BO-002</a></td>
+<td>承認、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="07-functional-requirements.html#example-FR-003">FR-003</a></td>
+<td>AC-004</td>
+<td>受入テスト</td>
+</tr>
+<tr>
+<td><a href="01-business-overview.html#example-BO-001">BO-001</a></td>
+<td>会計連携、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="06-related-systems-and-integrations.html#example-IF-004">IF-004</a>、<a href="07-functional-requirements.html#example-FR-004">FR-004</a></td>
+<td>AC-005</td>
+<td>連携試験</td>
+</tr>
+<tr>
+<td><a href="01-business-overview.html#example-BO-002">BO-002</a></td>
+<td><a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></td>
+<td><a href="09-non-functional-requirements.html#example-NFR-002">NFR-002</a></td>
+<td>AC-010</td>
+<td>負荷試験</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-5-完了条件">5. 完了条件</h2>
+<ul>
+<li>Must要件の検証が完了している。</li>
+<li>重大度「高」以上の未解決不具合がない。</li>
+<li>運用手順、監視、問い合わせ先が準備されている。</li>
+<li>業務責任者と情報システム部責任者が承認している。</li>
+</ul>
+<h2 id="example-6-残課題">6. 残課題</h2>
+<p>Should要件のうち延期した項目、既知の軽微な不具合、暫定運用を、担当者と解消期限とともに記録する。</p>
+<h2 id="example-7-承認">7. 承認</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">役割</th>
+<th scope="col">氏名</th>
+<th scope="col">結果</th>
+<th scope="col">日付</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>プロジェクト責任者</td>
+<td>山田例子</td>
+<td>承認</td>
+<td>2026-10-01</td>
+</tr>
+<tr>
+<td>経理部責任者</td>
+<td>鈴木例子</td>
+<td>承認</td>
+<td>2026-10-01</td>
+</tr>
+<tr>
+<td>情報システム部責任者</td>
+<td>佐藤例子</td>
+<td>条件付き承認</td>
+<td>2026-10-01</td>
+</tr>
+</tbody>
+</table></div>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="09-non-functional-requirements.html">← 前：非機能要件</a><a rel="next" href="appendices/assumptions-and-constraints.html">次：前提条件と制約 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

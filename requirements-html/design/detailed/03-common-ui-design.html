@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>共通UI詳細設計 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../../requirements/index.html">要件定義</a></li><li data-nav-item><a href="../../requirements/01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../../requirements/02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../../requirements/03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../../requirements/04-scope.html">スコープ</a></li><li data-nav-item><a href="../../requirements/05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../../requirements/06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../../requirements/07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../../requirements/08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../../requirements/09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../../requirements/10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="../../requirements/appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="../../requirements/appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="../../requirements/appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="../../requirements/appendices/glossary.html">用語集</a></li><li data-nav-item><a href="../../requirements/appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="03-common-ui-design.html" aria-current="page">共通UI詳細設計</a></li><li data-nav-item><a href="data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 詳細設計 / 共通UI詳細設計</nav><header><p class="eyebrow">詳細設計 · 30 / 34</p><h1>共通UI詳細設計</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 共通UI詳細設計
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#共通ui詳細設計">共通UI詳細設計</a></li><li><a href="#1-この文書で決めること">1. この文書で決めること</a></li><li><a href="#2-入力と検証の共通仕様">2. 入力と検証の共通仕様</a></li><li><a href="#3-エラー-確認-完了表示">3. エラー・確認・完了表示</a></li><li><a href="#4-端末-画面サイズ別の振る舞い">4. 端末・画面サイズ別の振る舞い</a></li><li><a href="#5-アクセシビリティの実装仕様">5. アクセシビリティの実装仕様</a></li><li><a href="#6-文言-共通部品">6. 文言・共通部品</a></li><li><a href="#7-設計上の判断と未確定事項">7. 設計上の判断と未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="共通ui詳細設計">共通UI詳細設計</h2>
+<h2 id="1-この文書で決めること">1. この文書で決めること</h2>
+<p class="guide">画面設計の方針を実装へ落とすため、複数画面で共通にするUI仕様の範囲を書く。</p>
+<h2 id="2-入力と検証の共通仕様">2. 入力と検証の共通仕様</h2>
+<p class="guide">入力形式、検証タイミング、必須表示、入力値保持、入力支援を記載する。</p>
+<h2 id="3-エラー-確認-完了表示">3. エラー・確認・完了表示</h2>
+<p class="guide">表示位置、表示条件、利用者が次に取る行動、確認と完了の表現を記載する。</p>
+<h2 id="4-端末-画面サイズ別の振る舞い">4. 端末・画面サイズ別の振る舞い</h2>
+<p class="guide">ブレークポイント、配置変更、表示・非表示、端末固有の操作を記載する。</p>
+<h2 id="5-アクセシビリティの実装仕様">5. アクセシビリティの実装仕様</h2>
+<p class="guide">キーボード操作、フォーカス、ラベル、色、読み上げへの具体的な対応を記載する。</p>
+<h2 id="6-文言-共通部品">6. 文言・共通部品</h2>
+<p class="guide">ボタンやメッセージの表現規則と、共通UI部品の利用方法を記載する。</p>
+<h2 id="7-設計上の判断と未確定事項">7. 設計上の判断と未確定事項</h2>
+<p class="guide">実装に影響する判断と、試作・検証が必要な事項を分けて記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例のUI仕様を実案件へ転用しない。</p>
+<h2 id="example-design-detailed-03-common-ui-design-md">design/detailed/03-common-ui-design.md</h2>
+<pre><code>---
+title: 共通UI詳細設計
+status: draft
+owner: UX責任者
+reviewers: [フロントエンド責任者, 利用部門代表者]
+last_updated: 2026-08-31
+---
+</code></pre>
+<h3 id="example-共通ui詳細設計">共通UI詳細設計</h3>
+<h2 id="example-1-この文書で決めること">1. この文書で決めること</h2>
+<p>SCR-001からSCR-003に共通する入力、状態表示、端末対応、アクセシビリティの実装仕様を定義する。</p>
+<h2 id="example-2-入力と検証の共通仕様">2. 入力と検証の共通仕様</h2>
+<p>必須項目にはラベル上で必須と表示する。形式検証はフォーカス移動時、業務検証は提出時に行い、エラーになっていない入力値は保持する。</p>
+<h2 id="example-3-エラー-確認-完了表示">3. エラー・確認・完了表示</h2>
+<p>項目エラーは入力欄の直下、処理全体のエラーは画面上部に表示する。原因と次に取れる行動を併記し、破棄を伴う操作は実行前に確認する。</p>
+<h2 id="example-4-端末-画面サイズ別の振る舞い">4. 端末・画面サイズ別の振る舞い</h2>
+<p>画面幅768px未満では一列構成とし、一覧の補助列を非表示にする。主要操作は画面下部へ固定せず、内容の直後に配置する。</p>
+<h2 id="example-5-アクセシビリティの実装仕様">5. アクセシビリティの実装仕様</h2>
+<p>すべての入力にプログラムから判別可能なラベルを付ける。エラー概要から対象項目へフォーカスを移動でき、状態は色とテキストの両方で示す。</p>
+<h2 id="example-6-文言-共通部品">6. 文言・共通部品</h2>
+<p>業務用語集に従い、「登録」「提出」「承認」を区別する。ボタン、入力、通知、ダイアログは共通UI部品を使用する。</p>
+<h2 id="example-7-設計上の判断と未確定事項">7. 設計上の判断と未確定事項</h2>
+<ul>
+<li>設計判断: エラー概要と項目エラーを併用する。</li>
+<li>ISSUE-030: 領収書撮影時の画像補正要否。</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="02-project-directory-structure.html">← 前：プロジェクトディレクトリ構成</a><a rel="next" href="data/DATA-001-data-store-name.html">次：DATA-001 データストア名 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

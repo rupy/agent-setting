@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ターゲットとペルソナ | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../shared/site.css"><script defer src="../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="index.html">要件定義</a></li><li data-nav-item><a href="01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="02-targets-and-personas.html" aria-current="page">ターゲットとペルソナ</a></li><li data-nav-item><a href="03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="04-scope.html">スコープ</a></li><li data-nav-item><a href="05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="appendices/glossary.html">用語集</a></li><li data-nav-item><a href="appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../design/index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../design/basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../design/basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../design/basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../design/basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../design/basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../design/basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../design/basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../design/basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../design/basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../design/basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../design/detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../design/detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../design/detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../design/detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../design/detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../design/decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">トップ</a> / 要件定義 / ターゲットとペルソナ</nav><header><p class="eyebrow">要件定義 · 3 / 34</p><h1>ターゲットとペルソナ</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: ターゲットとペルソナ
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#ターゲットとペルソナ">ターゲットとペルソナ</a></li><li><a href="#1-概要">1. 概要</a></li><li><a href="#2-対象顧客">2. 対象顧客</a></li><li><a href="#3-対象利用者">3. 対象利用者</a></li><li><a href="#4-ペルソナを使用する目的">4. ペルソナを使用する目的</a></li><li><a href="#5-ペルソナ">5. ペルソナ</a></li><li><a href="#6-ターゲットとペルソナの対応図">6. ターゲットとペルソナの対応図</a></li><li><a href="#7-根拠と仮定">7. 根拠と仮定</a></li><li><a href="#8-未確定事項">8. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="ターゲットとペルソナ">ターゲットとペルソナ</h2>
+<h2 id="1-概要">1. 概要</h2>
+<p class="guide">ターゲットとペルソナを何の判断に利用するかを記載する。</p>
+<h2 id="2-対象顧客">2. 対象顧客</h2>
+<p class="guide">顧客向けプロダクトの場合に、提供対象となる組織や顧客層を記載する。社内システムなどで該当しない場合は、その旨を記載する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象顧客</th>
+<th scope="col">抱えている課題</th>
+<th scope="col">対象とする理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-対象利用者">3. 対象利用者</h2>
+<p class="guide">実際にシステムを操作・利用する人の役割、環境、頻度、目的を記載する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象利用者</th>
+<th scope="col">役割</th>
+<th scope="col">利用環境・頻度</th>
+<th scope="col">主な目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-ペルソナを使用する目的">4. ペルソナを使用する目的</h2>
+<p class="guide">ペルソナを用いて判断するUI・UX、優先順位、利用シーンを記載する。</p>
+<h2 id="5-ペルソナ">5. ペルソナ</h2>
+<p class="guide">調査または明示した仮定に基づく典型的な利用者像だけを記載する。</p>
+<h3 id="PER-001"><a href="02-targets-and-personas.html#PER-001">PER-001</a> ペルソナ名</h3>
+<p class="guide">属性そのものではなく、利用状況、目的、困りごと、期待を要件判断に使える粒度で記載する。</p>
+<ul>
+<li>利用者の種類:</li>
+<li>役割:</li>
+<li>経験・習熟度:</li>
+<li>利用頻度:</li>
+<li>利用環境:</li>
+<li>目的:</li>
+<li>困りごと:</li>
+<li>期待すること:</li>
+<li>関連するスコープ・業務フロー:</li>
+</ul>
+<h2 id="6-ターゲットとペルソナの対応図">6. ターゲットとペルソナの対応図</h2>
+<p class="guide">Mermaidで対象顧客・対象利用者・ペルソナの対応を示す。以下は差し替え用の構造例。本文と名称・PER-IDを一致させ、矢印には関係の意味を付ける。所属関係は確認できる場合だけ示す。</p>
+<p class="guide">対象顧客が該当しない場合は顧客ノードを省き、自社など実際のまとまりをsubgraphにする。ペルソナを定義していない利用者も残し、図のために人物像や対応関係を捏造しない。仮定・未確定の関係は図中にも明記する。</p>
+<figure class="diagram"><img src="../shared/diagrams/6839e19cf07e52f3.svg" alt="ターゲットとペルソナの関係図・業務フロー"><figcaption>Mermaidから生成した図。関係・条件は前後の本文と表を参照。</figcaption></figure><details><summary>Mermaidソース</summary><pre><code>flowchart LR
+    customer[&quot;対象顧客名&quot;]
+    user_role[&quot;対象利用者名&quot;]
+    persona[&quot;PER-001 ペルソナ名&quot;]
+    customer --&gt;|所属する利用者| user_role
+    user_role --&gt;|典型的な利用者像| persona
+</code></pre></details>
+<h2 id="7-根拠と仮定">7. 根拠と仮定</h2>
+<p class="guide">ヒアリング、観察、調査などの根拠と、検証が必要な仮定を区別する。</p>
+<h2 id="8-未確定事項">8. 未確定事項</h2>
+<p class="guide">詳細は appendices/open-issues.md を正本とし、重要項目を参照する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の固有名詞、数値、属性、判断を実案件へ転用しない。</p>
+<h2 id="example-02-targets-and-personas-md">02-targets-and-personas.md</h2>
+<pre><code>---
+title: ターゲットとペルソナ
+status: draft
+owner: 業務分析担当者
+reviewers:
+  - 利用部門代表者
+  - 経理部責任者
+last_updated: 2026-08-30
+---
+</code></pre>
+<h3 id="example-ターゲットとペルソナ">ターゲットとペルソナ</h3>
+<h2 id="example-1-概要">1. 概要</h2>
+<p>本書では、経費精算システムの主な利用者と典型的な利用状況を整理し、
+画面、操作方法、優先順位を利用者視点で検討するために使用する。</p>
+<h2 id="example-2-対象顧客">2. 対象顧客</h2>
+<p>本システムは社内利用を目的としており、外部へ販売するプロダクトではないため、
+対象顧客は設定しない。対象となる社内利用者は次節で定義する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象顧客</th>
+<th scope="col">抱えている課題</th>
+<th scope="col">対象とする理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>該当なし</td>
+<td>社内システムのため外部顧客を持たない</td>
+<td>対象利用者を基準に要件を検討する</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-3-対象利用者">3. 対象利用者</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">対象利用者</th>
+<th scope="col">役割</th>
+<th scope="col">利用環境・頻度</th>
+<th scope="col">主な目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>営業担当者</td>
+<td>経費の申請</td>
+<td>外出先のスマートフォン、週数回</td>
+<td>支払い直後に申請を記録する</td>
+</tr>
+<tr>
+<td>部門管理職</td>
+<td>申請の承認</td>
+<td>PCとスマートフォン、毎営業日</td>
+<td>部下の申請を滞留させず処理する</td>
+</tr>
+<tr>
+<td>経理担当者</td>
+<td>経理確認と会計連携</td>
+<td>社内PC、毎営業日</td>
+<td>規程確認と転記を効率化する</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-4-ペルソナを使用する目的">4. ペルソナを使用する目的</h2>
+<ul>
+<li>スマートフォンで優先して提供する操作を判断する。</li>
+<li>入力支援とエラー表示の必要性を検討する。</li>
+<li>申請者と経理担当者で異なる利用頻度や習熟度を要件へ反映する。</li>
+</ul>
+<h2 id="example-5-ペルソナ">5. ペルソナ</h2>
+<h3 id="example-PER-001"><a href="02-targets-and-personas.html#example-PER-001">PER-001</a> 外出の多い営業担当者</h3>
+<ul>
+<li>利用者の種類: 申請者</li>
+<li>役割: 顧客訪問に伴う交通費と交際費を申請する。</li>
+<li>経験・習熟度: 営業経験3年、スマートフォン操作には慣れているが経費規程には詳しくない。</li>
+<li>利用頻度: 週3回から5回</li>
+<li>利用環境: 移動中または訪問直後に会社支給スマートフォンを利用する。</li>
+<li>目的: 領収書を紛失する前に短時間で申請を記録する。</li>
+<li>困りごと: 月末に領収書をまとめて整理する負担が大きく、経費区分の判断に迷う。</li>
+<li>期待すること: 入力途中で保存でき、選択すべき経費区分を理解できること。</li>
+<li>関連するスコープ・業務フロー: 経費申請、<a href="05-business-process-before-and-after.html#example-BP-001">BP-001</a></li>
+</ul>
+<h2 id="example-6-ターゲットとペルソナの対応図">6. ターゲットとペルソナの対応図</h2>
+<figure class="diagram"><img src="../shared/diagrams/cd834b492ad1776f.svg" alt="ターゲットとペルソナの関係図・業務フロー"><figcaption>Mermaidから生成した図。関係・条件は前後の本文と表を参照。</figcaption></figure><details><summary>Mermaidソース</summary><pre><code>flowchart LR
+    subgraph own_org[&quot;自社の対象利用者&quot;]
+        sales[&quot;営業担当者&quot;]
+        manager[&quot;部門管理職&quot;]
+        accounting[&quot;経理担当者&quot;]
+    end
+    sales --&gt;|典型的な利用者像| per001[&quot;PER-001 外出の多い営業担当者&quot;]
+</code></pre></details>
+<p>対象顧客は設定していないため、顧客ノードは置かない。
+<a href="02-targets-and-personas.html#example-PER-001">PER-001</a>は営業担当者の典型的な利用者像であり、別の実在人物を示すものではない。
+部門管理職と経理担当者は対象利用者だが、本書では個別のペルソナを定義していない。
+図は対象と利用者像の対応を示し、業務の処理順や関係者間の影響は示さない。</p>
+<h2 id="example-7-根拠と仮定">7. 根拠と仮定</h2>
+<ul>
+<li>確認済み: 営業担当者5名へのヒアリングで、外出先からの入力需要を確認した。</li>
+<li>確認済み: 直近3か月の申請記録から、営業部門の申請頻度を集計した。</li>
+<li>仮定: 訪問直後に入力できれば領収書紛失と月末の作業負担が減る。</li>
+<li>仮定: 経費区分の説明を画面に表示すれば問い合わせが減る。</li>
+</ul>
+<h2 id="example-8-未確定事項">8. 未確定事項</h2>
+<ul>
+<li>ISSUE-016: スマートフォンのみで申請を完了する必要があるか</li>
+<li>ISSUE-017: 経費区分の選択支援に必要な説明内容</li>
+</ul>
+<p>詳細は <code>appendices/open-issues.md</code> を参照する。</p>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="01-business-overview.html">← 前：ビジネス概要</a><a rel="next" href="03-stakeholders.html">次：ステークホルダー →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

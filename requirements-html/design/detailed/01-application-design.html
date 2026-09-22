@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>アプリケーション詳細設計 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../../requirements/index.html">要件定義</a></li><li data-nav-item><a href="../../requirements/01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../../requirements/02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../../requirements/03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../../requirements/04-scope.html">スコープ</a></li><li data-nav-item><a href="../../requirements/05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../../requirements/06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../../requirements/07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../../requirements/08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../../requirements/09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../../requirements/10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="../../requirements/appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="../../requirements/appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="../../requirements/appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="../../requirements/appendices/glossary.html">用語集</a></li><li data-nav-item><a href="../../requirements/appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="../basic/01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="../basic/02-technology-selection.html">技術構成・採用技術</a></li><li data-nav-item><a href="../basic/03-data-design.html">データ設計</a></li><li data-nav-item><a href="../basic/04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="../basic/05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="../basic/06-screen-design.html">画面設計</a></li><li data-nav-item><a href="../basic/07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="../basic/08-migration-design.html">移行設計</a></li><li data-nav-item><a href="../basic/09-api-design.html">API設計</a></li><li data-nav-item><a href="../basic/10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="01-application-design.html" aria-current="page">アプリケーション詳細設計</a></li><li data-nav-item><a href="02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 詳細設計 / アプリケーション詳細設計</nav><header><p class="eyebrow">詳細設計 · 28 / 34</p><h1>アプリケーション詳細設計</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: アプリケーション詳細設計
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#アプリケーション詳細設計">アプリケーション詳細設計</a></li><li><a href="#1-文書の目的">1. 文書の目的</a></li><li><a href="#2-入力となる要件-制約">2. 入力となる要件・制約</a></li><li><a href="#3-モジュール構成">3. モジュール構成</a></li><li><a href="#4-詳細な処理フロー">4. 詳細な処理フロー</a></li><li><a href="#5-状態遷移の実現方法">5. 状態遷移の実現方法</a></li><li><a href="#6-業務ルールの実現方法">6. 業務ルールの実現方法</a></li><li><a href="#7-認証-認可の内部処理">7. 認証・認可の内部処理</a></li><li><a href="#8-エラー処理">8. エラー処理</a></li><li><a href="#9-非同期処理-バッチ処理">9. 非同期処理・バッチ処理</a></li><li><a href="#10-トランザクション-排他-再処理">10. トランザクション・排他・再処理</a></li><li><a href="#11-監査-操作履歴">11. 監査・操作履歴</a></li><li><a href="#12-設計判断">12. 設計判断</a></li><li><a href="#13-未確定事項">13. 未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="アプリケーション詳細設計">アプリケーション詳細設計</h2>
+<h2 id="1-文書の目的">1. 文書の目的</h2>
+<p class="guide">詳細設計するアプリケーション範囲と、実装者へ伝える内容を書く。</p>
+<h2 id="2-入力となる要件-制約">2. 入力となる要件・制約</h2>
+<p class="guide">関連する機能要件、基本設計、制約、ADRを列挙する。</p>
+<h2 id="3-モジュール構成">3. モジュール構成</h2>
+<p class="guide">モジュールの責務、依存方向、公開境界、関連要件を記載する。</p>
+<h2 id="4-詳細な処理フロー">4. 詳細な処理フロー</h2>
+<p class="guide">主要処理の呼出順、分岐、入出力、副作用を記載する。</p>
+<h2 id="5-状態遷移の実現方法">5. 状態遷移の実現方法</h2>
+<p class="guide">状態、遷移条件、禁止遷移、遷移時処理を記載する。</p>
+<h2 id="6-業務ルールの実現方法">6. 業務ルールの実現方法</h2>
+<p class="guide">業務ルールの評価場所、設定、版管理、例外処理を記載する。</p>
+<h2 id="7-認証-認可の内部処理">7. 認証・認可の内部処理</h2>
+<p class="guide">認証情報の受渡し、認可判定、失敗時処理を記載する。</p>
+<h2 id="8-エラー処理">8. エラー処理</h2>
+<p class="guide">エラー分類、コード、変換、通知、利用者への応答を記載する。</p>
+<h2 id="9-非同期処理-バッチ処理">9. 非同期処理・バッチ処理</h2>
+<p class="guide">起動条件、処理単位、並列度、再試行、失敗時対応を記載する。</p>
+<h2 id="10-トランザクション-排他-再処理">10. トランザクション・排他・再処理</h2>
+<p class="guide">境界、競合制御、冪等性、部分失敗からの回復方法を記載する。</p>
+<h2 id="11-監査-操作履歴">11. 監査・操作履歴</h2>
+<p class="guide">記録箇所、項目、相関ID、失敗時の扱いを記載する。</p>
+<h2 id="12-設計判断">12. 設計判断</h2>
+<p class="guide">実装へ影響する重要な判断とADRへの参照を記載する。</p>
+<h2 id="13-未確定事項">13. 未確定事項</h2>
+<p class="guide">実装開始までに解決が必要な事項を記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の設計判断を実案件へ転用しない。</p>
+<h2 id="example-design-detailed-01-application-design-md">design/detailed/01-application-design.md</h2>
+<pre><code>---
+title: アプリケーション詳細設計
+status: in-review
+owner: 開発責任者
+reviewers: [アーキテクト, テスト責任者]
+last_updated: 2026-08-31
+---
+</code></pre>
+<h3 id="example-アプリケーション詳細設計">アプリケーション詳細設計</h3>
+<h2 id="example-1-文書の目的">1. 文書の目的</h2>
+<p>機能要件を実現するアプリケーション内部の構成、処理、状態、エラー制御を定義する。</p>
+<h2 id="example-2-入力となる要件-制約">2. 入力となる要件・制約</h2>
+<p><a href="../../requirements/07-functional-requirements.html#example-FR-001">FR-001</a>から<a href="../../requirements/07-functional-requirements.html#example-FR-004">FR-004</a>、<a href="../../requirements/05-business-process-before-and-after.html#example-BP-001">BP-001</a>、<a href="../../requirements/06-related-systems-and-integrations.html#example-IF-001">IF-001</a>から<a href="../../requirements/06-related-systems-and-integrations.html#example-IF-004">IF-004</a>、<a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a>を入力とする。</p>
+<h2 id="example-3-モジュール構成">3. モジュール構成</h2>
+<p>申請、承認、マスター、連携、監査の各モジュールに分け、業務ルールをUIや外部接続処理から分離する。</p>
+<h2 id="example-4-詳細な処理フロー">4. 詳細な処理フロー</h2>
+<p>申請提出では、認証確認、入力検証、承認者決定、状態更新、履歴保存、通知登録の順に処理する。</p>
+<h2 id="example-5-状態遷移の実現方法">5. 状態遷移の実現方法</h2>
+<p>下書き、上長承認待ち、経理確認待ち、承認済み、会計連携済みを持つ。不正な遷移は拒否する。</p>
+<h2 id="example-6-業務ルールの実現方法">6. 業務ルールの実現方法</h2>
+<p><a href="../../requirements/05-business-process-before-and-after.html#example-BR-001">BR-001</a>などの承認条件は承認ルールとして実装し、状態遷移時に一か所で評価する。</p>
+<h2 id="example-7-認証-認可の内部処理">7. 認証・認可の内部処理</h2>
+<p>認証は<a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a>の社内基盤へ委譲する。APIは利用者ID、役割、申請との関係を基に認可する。</p>
+<h2 id="example-8-エラー処理">8. エラー処理</h2>
+<p>入力エラー、競合、権限不足、外部連携失敗を区別し、利用者向けメッセージと運用ログを分ける。</p>
+<h2 id="example-9-非同期処理-バッチ処理">9. 非同期処理・バッチ処理</h2>
+<p>通知、組織情報取込、会計CSV生成をジョブとして実行し、処理IDで重複実行を防ぐ。</p>
+<h2 id="example-10-トランザクション-排他-再処理">10. トランザクション・排他・再処理</h2>
+<p>申請と履歴を同一トランザクションで保存する。申請の版番号で競合更新を拒否し、ジョブは同じ処理IDで安全に再実行できるようにする。</p>
+<h2 id="example-11-監査-操作履歴">11. 監査・操作履歴</h2>
+<p>提出、承認、差し戻し、CSV出力について実行者、日時、対象、変更前後、結果を記録する。</p>
+<h2 id="example-12-設計判断">12. 設計判断</h2>
+<p>初回規模では単一アプリケーション内をモジュール分割し、独立サービスには分割しない。</p>
+<h2 id="example-13-未確定事項">13. 未確定事項</h2>
+<ul>
+<li>ISSUE-028: 承認ルール変更時の版管理方法</li>
+<li>ISSUE-029: 失敗ジョブの最大再試行回数</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="../basic/10-authentication-and-authorization-design.html">← 前：認証・認可設計</a><a rel="next" href="02-project-directory-structure.html">次：プロジェクトディレクトリ構成 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

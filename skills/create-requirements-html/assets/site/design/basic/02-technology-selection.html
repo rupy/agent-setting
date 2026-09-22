@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>技術構成・採用技術 | 要件定義・設計ライブラリ</title><link rel="stylesheet" href="../../shared/site.css"><script defer src="../../shared/site.js"></script></head><body><a class="skip" href="#main">本文へ移動</a><header class="site-header"><a href="../../index.html">要件定義・設計ライブラリ</a><small>34文書・テンプレートと記入例</small></header><div class="layout"><aside class="sidebar"><details open><summary>サイトメニュー</summary><label for="nav-query">文書名で探す</label><input id="nav-query" type="search" placeholder="例：API、競合、機能"><button id="nav-reset" type="button">検索を解除</button><p id="nav-result" role="status" aria-live="polite"></p><nav aria-label="サイト全体"><a href="../../index.html">トップページ</a><div data-nav-group><h2 class="nav-group">要件定義</h2><ul><li data-nav-item><a href="../../requirements/index.html">要件定義</a></li><li data-nav-item><a href="../../requirements/01-business-overview.html">ビジネス概要</a></li><li data-nav-item><a href="../../requirements/02-targets-and-personas.html">ターゲットとペルソナ</a></li><li data-nav-item><a href="../../requirements/03-stakeholders.html">ステークホルダー</a></li><li data-nav-item><a href="../../requirements/04-scope.html">スコープ</a></li><li data-nav-item><a href="../../requirements/05-business-process-before-and-after.html">業務フロー Before／After</a></li><li data-nav-item><a href="../../requirements/06-related-systems-and-integrations.html">関連システムとシステム連携</a></li><li data-nav-item><a href="../../requirements/07-functional-requirements.html">機能要件</a></li><li data-nav-item><a href="../../requirements/08-data-requirements.html">データ要件</a></li><li data-nav-item><a href="../../requirements/09-non-functional-requirements.html">非機能要件</a></li><li data-nav-item><a href="../../requirements/10-acceptance-and-traceability.html">受入条件とトレーサビリティ</a></li></ul></div><div data-nav-group><h2 class="nav-group">付録・競合調査</h2><ul><li data-nav-item><a href="../../requirements/appendices/assumptions-and-constraints.html">前提条件と制約</a></li><li data-nav-item><a href="../../requirements/appendices/competitive-analysis.html">競合調査と機能候補</a></li><li data-nav-item><a href="../../requirements/appendices/decisions.html">決定記録</a></li><li data-nav-item><a href="../../requirements/appendices/glossary.html">用語集</a></li><li data-nav-item><a href="../../requirements/appendices/open-issues.html">未確定事項</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計の入口</h2><ul><li data-nav-item><a href="../index.html">技術設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">基本設計</h2><ul><li data-nav-item><a href="01-system-structure.html">システム全体構成</a></li><li data-nav-item><a href="02-technology-selection.html" aria-current="page">技術構成・採用技術</a></li><li data-nav-item><a href="03-data-design.html">データ設計</a></li><li data-nav-item><a href="04-external-system-integration-design.html">外部システム連携設計</a></li><li data-nav-item><a href="05-infrastructure-and-operations.html">インフラ・運用設計</a></li><li data-nav-item><a href="06-screen-design.html">画面設計</a></li><li data-nav-item><a href="07-security-design.html">セキュリティ設計</a></li><li data-nav-item><a href="08-migration-design.html">移行設計</a></li><li data-nav-item><a href="09-api-design.html">API設計</a></li><li data-nav-item><a href="10-authentication-and-authorization-design.html">認証・認可設計</a></li></ul></div><div data-nav-group><h2 class="nav-group">詳細設計</h2><ul><li data-nav-item><a href="../detailed/01-application-design.html">アプリケーション詳細設計</a></li><li data-nav-item><a href="../detailed/02-project-directory-structure.html">プロジェクトディレクトリ構成</a></li><li data-nav-item><a href="../detailed/03-common-ui-design.html">共通UI詳細設計</a></li><li data-nav-item><a href="../detailed/data/DATA-001-data-store-name.html">DATA-001 データストア名</a></li><li data-nav-item><a href="../detailed/modules/MOD-001-module-name.html">MOD-001 モジュール名</a></li></ul></div><div data-nav-group><h2 class="nav-group">設計判断（ADR）</h2><ul><li data-nav-item><a href="../decisions/ADR-001-decision-title.html">ADR-001 判断タイトル</a></li></ul></div><div data-nav-group><h2 class="nav-group">開発計画</h2><ul><li data-nav-item><a href="../../planning/development-plan.html">開発計画</a></li></ul></div></nav></details></aside><main id="main"><nav class="breadcrumbs" aria-label="パンくず"><a href="../../index.html">トップ</a> / 基本設計 / 技術構成・採用技術</nav><header><p class="eyebrow">基本設計 · 19 / 34</p><h1>技術構成・採用技術</h1><p class="notice">テンプレートと参考例の閲覧ページです。実案件への適用時は案内・空欄を埋め、参考例を除去してください。Markdown版の項目・記入例を省略せず収録しています。</p></header><details class="metadata"><summary>テンプレートの文書メタデータ</summary><pre>title: 技術構成・採用技術
+status: draft
+owner: 未定
+reviewers: []
+last_updated: YYYY-MM-DD</pre></details><nav class="page-toc" aria-label="このページの目次"><strong>このページの目次</strong><ul><li><a href="#技術構成-採用技術">技術構成・採用技術</a></li><li><a href="#1-この文書で決めること">1. この文書で決めること</a></li><li><a href="#2-採用技術一覧">2. 採用技術一覧</a></li><li><a href="#3-共通の採用方針">3. 共通の採用方針</a></li><li><a href="#4-ライセンス-サポート">4. ライセンス・サポート</a></li><li><a href="#5-設計上の判断と未確定事項">5. 設計上の判断と未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav><div class="doc-content"><section data-template-content><h2 id="技術構成-採用技術">技術構成・採用技術</h2>
+<h2 id="1-この文書で決めること">1. この文書で決めること</h2>
+<p class="guide">システムで採用する技術・製品を一覧化する目的と対象範囲を書く。</p>
+<h2 id="2-採用技術一覧">2. 採用技術一覧</h2>
+<p class="guide">技術領域ごとに採用結果、用途、バージョン方針、根拠を記載する。詳しい比較や判断経緯はADRを参照する。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">技術領域</th>
+<th scope="col">採用技術・製品</th>
+<th scope="col">用途</th>
+<th scope="col">バージョン方針</th>
+<th scope="col">関連要件・制約</th>
+<th scope="col">ADR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-共通の採用方針">3. 共通の採用方針</h2>
+<p class="guide">長期サポート、標準技術の優先、更新方針など、複数の技術に共通する選定・利用方針を書く。</p>
+<h2 id="4-ライセンス-サポート">4. ライセンス・サポート</h2>
+<p class="guide">ライセンス条件、費用、サポート期間、保守主体について設計上確認すべき事項を書く。</p>
+<h2 id="5-設計上の判断と未確定事項">5. 設計上の判断と未確定事項</h2>
+<p class="guide">採用済みの判断と、検証・契約・比較が残っている事項を分けて記載する。</p>
+</section><section class="reference-example" id="reference-example" data-reference-example><h2 id="example-記入例-参考-成果物には含めない">記入例（参考・成果物には含めない）</h2>
+<p>以下は記入の粒度を確認するための例であり、上のテンプレートへそのまま転記しない。</p>
+<details open>
+<summary>記入例を表示</summary>
+<p>架空の「社内経費精算システム」を題材に、対応するテンプレートの全項目を示す。例の製品やバージョンを実案件へ転用しない。</p>
+<h2 id="example-design-basic-02-technology-selection-md">design/basic/02-technology-selection.md</h2>
+<pre><code>---
+title: 技術構成・採用技術
+status: draft
+owner: アーキテクト
+reviewers: [開発責任者, 運用責任者]
+last_updated: 2026-08-31
+---
+</code></pre>
+<h3 id="example-技術構成-採用技術">技術構成・採用技術</h3>
+<h2 id="example-1-この文書で決めること">1. この文書で決めること</h2>
+<p>経費精算システムの開発・実行・運用に使用する主要な技術と製品を一覧化する。構成や設定の詳細は各設計文書、候補比較と判断理由はADRを正本とする。</p>
+<h2 id="example-2-採用技術一覧">2. 採用技術一覧</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th scope="col">技術領域</th>
+<th scope="col">採用技術・製品</th>
+<th scope="col">用途</th>
+<th scope="col">バージョン方針</th>
+<th scope="col">関連要件・制約</th>
+<th scope="col">ADR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>フロントエンド</td>
+<td>React</td>
+<td>申請・承認画面</td>
+<td>サポート中の安定版を固定</td>
+<td><a href="../../requirements/07-functional-requirements.html#example-FR-001">FR-001</a>から<a href="../../requirements/07-functional-requirements.html#example-FR-003">FR-003</a></td>
+<td>ADR-003</td>
+</tr>
+<tr>
+<td>バックエンド</td>
+<td>Java</td>
+<td>業務処理と外部連携</td>
+<td>LTS版を使用</td>
+<td><a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a>、<a href="../../requirements/09-non-functional-requirements.html#example-NFR-007">NFR-007</a></td>
+<td>ADR-004</td>
+</tr>
+<tr>
+<td>データベース</td>
+<td>PostgreSQL</td>
+<td>申請・承認・監査データ</td>
+<td>マネージドサービスの対応版</td>
+<td><a href="../../requirements/08-data-requirements.html#example-DR-001">DR-001</a>、<a href="../../requirements/09-non-functional-requirements.html#example-NFR-001">NFR-001</a></td>
+<td>ADR-005</td>
+</tr>
+<tr>
+<td>認証</td>
+<td>社内IdP</td>
+<td>利用者認証</td>
+<td>社内標準に従う</td>
+<td><a href="../../requirements/06-related-systems-and-integrations.html#example-IF-001">IF-001</a>、<a href="../../requirements/appendices/assumptions-and-constraints.html#example-CON-002">CON-002</a></td>
+<td>ADR-006</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="example-3-共通の採用方針">3. 共通の採用方針</h2>
+<p>組織の標準技術と長期サポート版を優先する。バージョンは環境間で統一し、更新時は互換性試験とロールバック手順を用意する。</p>
+<h2 id="example-4-ライセンス-サポート">4. ライセンス・サポート</h2>
+<p>利用するOSSのライセンスをリリース前に確認する。商用サービスは契約期間、サポート窓口、終了時のデータ取得方法を確認する。</p>
+<h2 id="example-5-設計上の判断と未確定事項">5. 設計上の判断と未確定事項</h2>
+<ul>
+<li>設計判断: DEC-002に基づきWebアプリケーションとして提供する。</li>
+<li>ISSUE-040: Javaの採用LTSバージョンを性能検証後に確定する。</li>
+<li>ISSUE-041: 商用監視サービスの契約プランを費用確認後に確定する。</li>
+</ul>
+</details>
+</section></div><nav class="pager" aria-label="前後のページ"><a rel="prev" href="01-system-structure.html">← 前：システム全体構成</a><a rel="next" href="03-data-design.html">次：データ設計 →</a></nav></main></div><footer class="site-footer">テンプレート閲覧用サイト。記入例の内容・採否・承認状態は架空であり、実案件の事実ではありません。</footer></body></html>

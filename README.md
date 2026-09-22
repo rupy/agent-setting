@@ -37,7 +37,7 @@ Claude Code と Codex で使う個人設定のベースです。
 - **Codex共通指示**: `codex/AGENTS.md`から共通指示の原本を参照
 - **共通ワークフロー**: `skills/*/SKILL.md`
 - **要件定義文書の作成**: `skills/create-requirements-docs/`
-- **HTML要件定義・設計資料の作成**: `skills/create-requirements-html/`。Markdown版とは別に、HTML出力を指定したときに使用する。
+- **HTML要件定義・設計資料の作成**: `skills/create-requirements-html/`。Markdown版とは別に、HTML出力を指定したときに使用する。34文書と共通目次・ページ遷移を備えたサイトを作成する。[閲覧用サイト](requirements-html/index.html)から構成を確認できる。
 
 ## 導入先
 
@@ -71,6 +71,31 @@ Claude Code と Codex で使う個人設定のベースです。
 今回導入したのは共通指示と Claude の分割ルールです。上表の Skill は別途導入する構成です。
 
 読み込み仕様: [Codex の AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[Claude Code の CLAUDE.md](https://code.claude.com/docs/en/memory)。
+
+### rupy ユーザーでの導入
+
+配置先は `/home/rupy/projects/agent-setting` です。`orca` 側のホームを参照せず、このディレクトリだけで利用できます。
+SSH で `rupy` として接続した後、次を実行します。
+
+```bash
+cd ~/projects/agent-setting
+bash install.sh
+```
+
+共通指示、Claude の分割ルール、リポジトリ内の全 Skill を実行ユーザーの設定先へリンクします。
+`CODEX_HOME` / `CLAUDE_CONFIG_DIR` を設定している場合はその絶対パスを使います。
+既存の同名ファイル・ディレクトリは `~/.local/state/agent-setting/backup.*` の下に元の絶対パスを保って退避します。
+同じリンクが導入済みなら変更しません。反映後は新しいセッションを開始してください。
+
+配置先には `.git` も含め、元の履歴・ブランチ・未コミット変更を引き継いでいます。元のリポジトリの変更は自動同期されません。
+`orca` からのコピー直後は所有者が `orca` です。`rupy` として接続後、次を一度実行して、このリポジトリの所有者を `rupy` に変更してください。グループは共有用の `orca-dev` を維持します。
+
+```bash
+sudo chown -hR rupy /home/rupy/projects/agent-setting
+git -C /home/rupy/projects/agent-setting status
+```
+
+所有者の変更後は、このリポジトリ用の `safe.directory` の例外登録は不要です。
 
 ## 育て方
 
