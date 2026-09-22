@@ -22,6 +22,11 @@ Claude Code と Codex で使う個人設定のベースです。
     │   └── assets/
     │       ├── requirements-template/
     │       └── planning-template/
+    ├── create-requirements-html/
+    │   ├── SKILL.md
+    │   ├── references/
+    │   ├── assets/
+    │   └── scripts/
     └── verify-work/
         └── SKILL.md
 ```
@@ -32,6 +37,7 @@ Claude Code と Codex で使う個人設定のベースです。
 - **Codex共通指示**: `codex/AGENTS.md`から共通指示の原本を参照
 - **共通ワークフロー**: `skills/*/SKILL.md`
 - **要件定義文書の作成**: `skills/create-requirements-docs/`
+- **HTML要件定義・設計資料の作成**: `skills/create-requirements-html/`。Markdown版とは別に、HTML出力を指定したときに使用する。
 
 ## 導入先
 

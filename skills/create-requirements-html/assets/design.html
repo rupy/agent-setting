@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>技術設計 — テンプレート</title><style>
+:root{color-scheme:light;--ink:#182330;--muted:#526170;--line:#cbd5df;--accent:#155e75}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f5f7fa;font:16px/1.7 system-ui,sans-serif}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b45309;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:white;padding:1rem;z-index:2}
+.layout{display:grid;grid-template-columns:16rem minmax(0,1fr);max-width:1440px;margin:auto}
+nav{padding:2rem 1rem;position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto}nav ul{padding-left:1.2rem}
+main{min-width:0;background:white;padding:clamp(1rem,4vw,3rem)}h1{font-size:2rem}h2{margin-top:0;border-bottom:2px solid var(--line);padding-bottom:.4rem}h3{margin-bottom:.4rem}
+section{margin-top:2.5rem;scroll-margin-top:1rem}.meta{display:grid;grid-template-columns:7rem 1fr;gap:.25rem 1rem}.meta dd{margin:0}
+.table-wrap,.diagram{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:1rem 0}caption{text-align:left;font-weight:700}
+th,td{border:1px solid var(--line);padding:.6rem;text-align:left;vertical-align:top}thead{background:#edf2f7}
+.note{border-left:4px solid var(--accent);padding:.6rem 1rem;background:#eef7fa}.muted{color:var(--muted)}
+article{border:1px solid var(--line);padding:1rem;margin:1rem 0}article:target{outline:3px solid #b45309}
+.controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:end}.controls label{display:block}input,select,button{font:inherit;padding:.4rem;max-width:100%}
+svg{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{overflow-wrap:anywhere}
+[hidden]{display:none!important}
+@media(max-width:760px){.layout{display:block}nav{position:static;max-height:none;border-bottom:1px solid var(--line)}nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}th,td{min-width:8rem}}
+@media print{body{background:white;font-size:11pt}.layout{display:block}nav,.controls,.skip,#search-result{display:none!important}main{padding:0}article[hidden]{display:block!important}section{break-before:auto}h2,h3{break-after:avoid}.table-wrap,.diagram{overflow:visible}thead{display:table-header-group}a{color:inherit}article{break-inside:avoid}svg{max-height:80vh}}
+</style></head>
+<body><a class="skip" href="#main">本文へ移動</a><div class="layout"><nav aria-label="文書目次"><strong>技術設計</strong><ul><li><a href="#overview">目的と関連要件</a></li><li><a href="#architecture">全体構成と設計方針</a></li><li><a href="#technology">技術構成</a></li><li><a href="#data">データ・外部連携</a></li><li><a href="#interfaces">画面・API・認証認可</a></li><li><a href="#operations">インフラ・運用・セキュリティ・移行</a></li><li><a href="#detail">詳細設計</a></li><li><a href="#decisions">設計判断と未確定事項</a></li><li><a href="#reference-example">記入例（成果物には含めない）</a></li></ul></nav>
+<main id="main"><header><h1>技術設計</h1><p class="note">作成用テンプレート。案内文・未記入欄を置き換え、参考例は完成物から除く。</p><dl class="meta"><dt>対象</dt><dd>未記入</dd><dt>文書状態</dt><dd>草案</dd><dt>責任者</dt><dd>未確定</dd><dt>確認日</dt><dd>未記入</dd><dt>正本の扱い</dt><dd>HTML正本／元資料の閲覧用派生物のいずれかを明記</dd></dl></header>
+<section id="overview" aria-labelledby="overview-heading"><h2 id="overview-heading">目的と関連要件</h2><p>対象、要件資料へのリンク、状態、制約を記載する。</p></section>
+<section id="architecture" aria-labelledby="architecture-heading"><h2 id="architecture-heading">全体構成と設計方針</h2><p>構成・責務・依存方向を図示し、読者の関心に対応する説明を添える。</p></section>
+<section id="technology" aria-labelledby="technology-heading"><h2 id="technology-heading">技術構成</h2><div class="table-wrap"><table><caption>採用技術</caption><thead><tr><th scope="col">技術・版方針</th><th scope="col">用途</th><th scope="col">関連要件・制約</th><th scope="col">ADR</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="data" aria-labelledby="data-heading"><h2 id="data-heading">データ・外部連携</h2><p>論理データと関係・ライフサイクルを定義する。外部接続の契約・認証・再試行・障害時の対応を分けて示す。</p></section>
+<section id="interfaces" aria-labelledby="interfaces-heading"><h2 id="interfaces-heading">画面・API・認証認可</h2><p>対象がある場合に、画面遷移、提供APIの入出力・エラー・互換性、主体・資源・操作・状態を含む認可規則を定義する。</p></section>
+<section id="operations" aria-labelledby="operations-heading"><h2 id="operations-heading">インフラ・運用・セキュリティ・移行</h2><p>配置、監視、バックアップ・復元、脅威と対策、切替・ロールバックと検証条件を記載する。</p></section>
+<section id="detail" aria-labelledby="detail-heading"><h2 id="detail-heading">詳細設計</h2><p>アプリケーションの責務、ディレクトリ構成と依存を定義する。必要なモジュール・データストア・共通UIの契約を追加する。</p></section>
+<section id="decisions" aria-labelledby="decisions-heading"><h2 id="decisions-heading">設計判断と未確定事項</h2><div class="table-wrap"><table><caption>ADR</caption><thead><tr><th scope="col">ID</th><th scope="col">根拠・比較案</th><th scope="col">採否・理由・影響</th><th scope="col">再検討条件</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="reference-example" aria-labelledby="reference-example-heading"><h2 id="reference-example-heading">記入例（成果物には含めない）</h2><div data-reference-example><p class="note">架空の設計判断の例。実案件へ転用しない。</p><article id="ADR-001"><h3>ADR-001 アプリケーション分割</h3><p>状態：提案。小規模チームでの運用負担を抑えるため、単一配備を候補とする。独立した負荷増大が確認された場合に分割を再検討する。関連要件・制約は未確定であり、採用済みではない。</p></article></div></section></main></div></body></html>
+

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>要件定義 — テンプレート</title><style>
+:root{color-scheme:light;--ink:#182330;--muted:#526170;--line:#cbd5df;--accent:#155e75}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f5f7fa;font:16px/1.7 system-ui,sans-serif}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b45309;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:white;padding:1rem;z-index:2}
+.layout{display:grid;grid-template-columns:16rem minmax(0,1fr);max-width:1440px;margin:auto}
+nav{padding:2rem 1rem;position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto}nav ul{padding-left:1.2rem}
+main{min-width:0;background:white;padding:clamp(1rem,4vw,3rem)}h1{font-size:2rem}h2{margin-top:0;border-bottom:2px solid var(--line);padding-bottom:.4rem}h3{margin-bottom:.4rem}
+section{margin-top:2.5rem;scroll-margin-top:1rem}.meta{display:grid;grid-template-columns:7rem 1fr;gap:.25rem 1rem}.meta dd{margin:0}
+.table-wrap,.diagram{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:1rem 0}caption{text-align:left;font-weight:700}
+th,td{border:1px solid var(--line);padding:.6rem;text-align:left;vertical-align:top}thead{background:#edf2f7}
+.note{border-left:4px solid var(--accent);padding:.6rem 1rem;background:#eef7fa}.muted{color:var(--muted)}
+article{border:1px solid var(--line);padding:1rem;margin:1rem 0}article:target{outline:3px solid #b45309}
+.controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:end}.controls label{display:block}input,select,button{font:inherit;padding:.4rem;max-width:100%}
+svg{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{overflow-wrap:anywhere}
+[hidden]{display:none!important}
+@media(max-width:760px){.layout{display:block}nav{position:static;max-height:none;border-bottom:1px solid var(--line)}nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}th,td{min-width:8rem}}
+@media print{body{background:white;font-size:11pt}.layout{display:block}nav,.controls,.skip,#search-result{display:none!important}main{padding:0}article[hidden]{display:block!important}section{break-before:auto}h2,h3{break-after:avoid}.table-wrap,.diagram{overflow:visible}thead{display:table-header-group}a{color:inherit}article{break-inside:avoid}svg{max-height:80vh}}
+</style></head>
+<body><a class="skip" href="#main">本文へ移動</a><div class="layout"><nav aria-label="文書目次"><strong>要件定義</strong><ul><li><a href="#business">ビジネスと目的</a></li><li><a href="#targets">ターゲットとペルソナ</a></li><li><a href="#stakeholders">ステークホルダー</a></li><li><a href="#scope">スコープ</a></li><li><a href="#flows">業務フロー</a></li><li><a href="#integrations">関連システムと連携</a></li><li><a href="#competition">競合調査と機能候補</a></li><li><a href="#functions">カテゴリ別の機能要件</a></li><li><a href="#data">データ要件</a></li><li><a href="#quality">非機能要件</a></li><li><a href="#acceptance">受入とトレーサビリティ</a></li><li><a href="#appendices">用語・仮定・決定・未確定事項</a></li><li><a href="#reference-example">記入例</a></li></ul></nav>
+<main id="main"><header><h1>要件定義</h1><p class="note">作成用テンプレート。案内文・未記入欄を置き換え、参考例は完成物から除く。</p><dl class="meta"><dt>対象</dt><dd>未記入</dd><dt>文書状態</dt><dd>草案</dd><dt>責任者</dt><dd>未確定</dd><dt>確認日</dt><dd>未記入</dd><dt>正本の扱い</dt><dd>HTML正本／元資料の閲覧用派生物のいずれかを明記</dd></dl></header>
+<section id="business" aria-labelledby="business-heading"><h2 id="business-heading">ビジネスと目的</h2><p>背景、利用者の課題、期待価値、成功指標を記載する。</p><div class="table-wrap"><table><caption>ビジネス目的</caption><thead><tr><th scope="col">ID</th><th scope="col">目的・根拠</th><th scope="col">成功指標・測定方法</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="targets" aria-labelledby="targets-heading"><h2 id="targets-heading">ターゲットとペルソナ</h2><p>対象顧客と対象利用者を分け、ペルソナとの対応を図示する。根拠と仮定を明記する。</p></section>
+<section id="stakeholders" aria-labelledby="stakeholders-heading"><h2 id="stakeholders-heading">ステークホルダー</h2><p>自社・顧客などの組織ごとに部門・役割をまとめ、関係・影響を図と表で示す。</p></section>
+<section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">スコープ</h2><div class="table-wrap"><table><caption>今回の範囲</caption><thead><tr><th scope="col">領域</th><th scope="col">対象</th><th scope="col">対象外</th><th scope="col">理由</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="flows" aria-labelledby="flows-heading"><h2 id="flows-heading">業務フロー</h2><p>同じ範囲・粒度のBefore／After図を置き、手順・実施者・分岐・例外・BR-IDを対応付ける。既存業務がなければBeforeを省く。</p></section>
+<section id="integrations" aria-labelledby="integrations-heading"><h2 id="integrations-heading">関連システムと連携</h2><div class="table-wrap"><table><caption>連携要件</caption><thead><tr><th scope="col">IF-ID</th><th scope="col">相手・役割</th><th scope="col">情報・タイミング</th><th scope="col">失敗時の扱い</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="competition" aria-labelledby="competition-heading"><h2 id="competition-heading">競合調査と機能候補</h2><p>一次情報の出典・確認日・プランを記録し、事実と推奨を分離する。</p><div class="table-wrap"><table><caption>比較結果</caption><thead><tr><th scope="col">対象・区分</th><th scope="col">利用者・価値</th><th scope="col">機能・制約</th><th scope="col">出典・確認日</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div><div class="table-wrap"><table><caption>候補と採否</caption><thead><tr><th scope="col">CAND-ID・カテゴリ</th><th scope="col">利用者価値・推奨理由</th><th scope="col">負担・依存・検証</th><th scope="col">採否・判断者・日付</th><th scope="col">FR・AC・反映状況</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="functions" aria-labelledby="functions-heading"><h2 id="functions-heading">カテゴリ別の機能要件</h2><p>カテゴリ見出しの下にFR-IDを持つ要件を配置する。入力・振る舞い・出力・例外・権限・優先度・根拠・受入条件を定義する。</p><div class="controls"><div><label for="query">機能要件を検索</label><input id="query" type="search" placeholder="ID・機能名・説明"></div><div><label for="category">機能カテゴリ</label><select id="category"><option value="">すべて</option><option value="申請">申請</option><option value="承認">承認</option></select></div><button id="reset" type="button">絞り込みを解除</button></div><p id="search-result" role="status" aria-live="polite"></p><noscript><p>検索はJavaScriptが必要です。本文はすべて読めます。</p></noscript><p class="muted">候補カテゴリは案件に合わせて更新する。検索対象は data-requirement 付き要件カード。</p></section>
+<section id="data" aria-labelledby="data-heading"><h2 id="data-heading">データ要件</h2><div class="table-wrap"><table><caption>データ</caption><thead><tr><th scope="col">DR-ID</th><th scope="col">意味・所有</th><th scope="col">品質</th><th scope="col">保持・削除・機密区分</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="quality" aria-labelledby="quality-heading"><h2 id="quality-heading">非機能要件</h2><div class="table-wrap"><table><caption>品質と運用</caption><thead><tr><th scope="col">NFR-ID</th><th scope="col">条件・負荷</th><th scope="col">目標値</th><th scope="col">測定方法・受入</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="acceptance" aria-labelledby="acceptance-heading"><h2 id="acceptance-heading">受入とトレーサビリティ</h2><div class="table-wrap"><table><caption>受入</caption><thead><tr><th scope="col">AC-ID</th><th scope="col">要求ID</th><th scope="col">確認方法・期待結果</th><th scope="col">実施結果・証跡</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section>
+<section id="appendices" aria-labelledby="appendices-heading"><h2 id="appendices-heading">用語・仮定・決定・未確定事項</h2><div class="table-wrap"><table><caption>未確定事項</caption><thead><tr><th scope="col">ID・種別</th><th scope="col">内容・影響</th><th scope="col">担当・期限</th><th scope="col">次の行動・根拠</th></tr></thead><tbody><tr><td>未記入</td><td>未記入</td><td>未記入</td><td>未記入</td></tr></tbody></table></div></section><section id="reference-example" data-reference-example aria-labelledby="reference-example-heading">
+<h2 id="reference-example-heading">記入例（成果物には含めない）</h2>
+<p class="note">以下はすべて架空の経費申請の例。完成物では、この要素全体を除去する。実案件の内容に置き換えて必要な表現だけを各節へ移す。</p>
+<h3>図：自社内の役割と影響</h3>
+<figure class="diagram"><svg viewBox="0 0 700 160" role="img" aria-labelledby="org-title org-desc">
+<title id="org-title">自社内の申請者と経理担当者</title><desc id="org-desc">申請者は経理担当者へ、進捗が分からないという課題を伝える。</desc>
+<rect x="5" y="5" width="690" height="150" fill="#eef7fa" stroke="#526170"/><text x="25" y="32" font-size="18">自社（導入企業）</text>
+<rect x="30" y="55" width="160" height="65" fill="white" stroke="#526170"/><text x="76" y="94" font-size="18">申請者</text>
+<path d="M190 87 H480 L469 81 M480 87 L469 93" stroke="#155e75" fill="none" stroke-width="2"/>
+<text x="205" y="73" font-size="16">進捗が分からないという課題</text>
+<rect x="485" y="55" width="180" height="65" fill="white" stroke="#526170"/><text x="523" y="94" font-size="18">経理担当者</text></svg>
+<figcaption>組織内の情報提供を表す。承認手順ではない。</figcaption></figure>
+<p id="BO-001"><strong>BO-001：</strong>申請状況を自分で確認できるようにする。問い合わせ削減の目標値は未確定。</p>
+<p id="CAND-001"><strong>CAND-001：</strong>申請状況の参照。架空の比較で得た候補。今回採用という判断の例であり、実際の調査・承認ではない。対応：<a href="#FR-001">FR-001</a>。</p>
+<h3>申請</h3>
+<article id="FR-001" data-requirement data-category="申請" aria-labelledby="fr1-title"><h4 id="fr1-title">FR-001 申請状況の参照</h4>
+<p><strong>優先度：</strong>Must（例）／<strong>状態：</strong>草案</p>
+<dl><dt>利用者・目的</dt><dd>申請者が現在の処理状況を確認する。</dd><dt>根拠</dt><dd><a href="#BO-001">BO-001</a>、<a href="#CAND-001">CAND-001</a></dd><dt>振る舞い</dt><dd>認証済みの申請者へ、本人の申請の現在状態を表示する。他人の申請内容は表示しない。</dd><dt>受入条件</dt><dd><a href="#AC-001">AC-001</a></dd></dl></article>
+<h3>承認</h3>
+<article id="FR-002" data-requirement data-category="承認" aria-labelledby="fr2-title"><h4 id="fr2-title">FR-002 承認待ち一覧</h4>
+<p><strong>優先度：</strong>未確定／<strong>状態：</strong>草案</p><p>承認者へ本人に割り当てられた承認待ち申請を表示する。</p><p>根拠：<a href="#BO-001">BO-001</a>。受入：<a href="#AC-002">AC-002</a>。</p></article>
+<div class="table-wrap"><table><caption>受入条件の例（試験未実施）</caption><thead><tr><th scope="col">ID</th><th scope="col">要求</th><th scope="col">期待結果</th></tr></thead><tbody>
+<tr id="AC-001"><th scope="row">AC-001</th><td><a href="#FR-001">FR-001</a></td><td>本人の申請状態は参照でき、他人の申請内容は表示されない。</td></tr>
+<tr id="AC-002"><th scope="row">AC-002</th><td><a href="#FR-002">FR-002</a></td><td>本人に割り当てられた承認待ち申請のみ表示される。</td></tr>
+</tbody></table></div></section></main></div><script>
+(() => {
+  const query = document.getElementById('query');
+  const category = document.getElementById('category');
+  const cards = Array.from(document.querySelectorAll('[data-requirement]'));
+  if (!query || !category) return;
+  const result = document.getElementById('search-result');
+  const apply = () => {
+    const term = query.value.trim().toLocaleLowerCase();
+    let shown = 0;
+    cards.forEach(card => {
+      card.hidden = !(card.textContent.toLocaleLowerCase().includes(term) &&
+        (!category.value || card.dataset.category === category.value));
+      if (!card.hidden) shown++;
+    });
+    result.textContent = shown + ' / ' + cards.length + ' 件を表示';
+  };
+  const revealAnchor = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (target && target.closest('[data-requirement]')) {
+      query.value = ''; category.value = ''; apply();
+      target.scrollIntoView();
+    }
+  };
+  query.addEventListener('input', apply);
+  category.addEventListener('change', apply);
+  document.getElementById('reset').addEventListener('click', () => {
+    query.value = ''; category.value = ''; apply();
+  });
+  window.addEventListener('hashchange', revealAnchor);
+  apply(); revealAnchor();
+})();
+</script></body></html>
+

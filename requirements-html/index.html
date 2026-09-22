@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社内申請管理 — HTMLスキル動作確認</title>
+<style>
+:root{color-scheme:light;--ink:#182330;--muted:#526170;--line:#cbd5df;--accent:#155e75}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f5f7fa;font:16px/1.7 system-ui,sans-serif}
+a{color:var(--accent)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b45309;outline-offset:3px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:white;padding:1rem;z-index:2}
+.layout{display:grid;grid-template-columns:16rem minmax(0,1fr);max-width:1440px;margin:auto}
+nav{padding:2rem 1rem;position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto}nav ul{padding-left:1.2rem}
+main{min-width:0;background:white;padding:clamp(1rem,4vw,3rem)}h1{font-size:2rem}h2{margin-top:0;border-bottom:2px solid var(--line);padding-bottom:.4rem}h3{margin-bottom:.4rem}
+section{margin-top:2.5rem;scroll-margin-top:1rem}.meta{display:grid;grid-template-columns:7rem 1fr;gap:.25rem 1rem}.meta dd{margin:0}
+.table-wrap,.diagram{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:1rem 0}caption{text-align:left;font-weight:700}
+th,td{border:1px solid var(--line);padding:.6rem;text-align:left;vertical-align:top}thead{background:#edf2f7}
+.note{border-left:4px solid var(--accent);padding:.6rem 1rem;background:#eef7fa}.muted{color:var(--muted)}
+article{border:1px solid var(--line);padding:1rem;margin:1rem 0}article:target{outline:3px solid #b45309}
+.controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:end}.controls label{display:block}input,select,button{font:inherit;padding:.4rem;max-width:100%}
+svg{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{overflow-wrap:anywhere}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.box{border:1px solid var(--line);padding:.6rem;background:#eef7fa}.diagram{margin:1rem 0}
+[hidden]{display:none!important}
+@media(max-width:760px){.layout{display:block}nav{position:static;max-height:none;border-bottom:1px solid var(--line)}nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}th,td{min-width:8rem}}
+@media print{body{background:white;font-size:11pt}.layout{display:block}nav,.controls,.skip,#search-result{display:none!important}main{padding:0}article[hidden]{display:block!important}section{break-before:auto}h2,h3{break-after:avoid}.table-wrap,.diagram{overflow:visible}thead{display:table-header-group}a{color:inherit}article{break-inside:avoid}svg{max-height:80vh}}
+</style></head>
+<body><a class="skip" href="#main">本文へ移動</a><div class="layout">
+<nav aria-label="文書目次"><strong>社内申請管理</strong><ul>
+<li><a href="#business">目的と前提</a></li><li><a href="#targets">ターゲット・ペルソナ</a></li><li><a href="#stakeholders">関係者</a></li><li><a href="#scope">スコープ</a></li><li><a href="#flows">業務フロー</a></li><li><a href="#functions">機能要件</a></li><li><a href="#data">データ・品質</a></li><li><a href="#acceptance">受入条件</a></li><li><a href="#issues">未確定事項</a></li>
+</ul></nav><main id="main"><header><h1>社内申請管理<br>要件定義サンプル</h1>
+<p class="note">HTML専用スキルの動作確認用に作成した架空の資料です。実案件の要求・承認・調査結果ではありません。数値や業務条件はテスト用の仮定です。</p>
+<dl class="meta"><dt>文書状態</dt><dd>動作確認用・草案</dd><dt>作成日</dt><dd>2026-09-22</dd><dt>責任者</dt><dd>実案件ではないため未設定</dd><dt>正本の扱い</dt><dd>独立したHTMLサンプル。既存Markdownとは同期せず、変更もしません。</dd></dl></header>
+<section id="business"><h2>目的と前提</h2><p id="BO-001"><strong>BO-001：</strong>申請者が問い合わせずに申請状況を確認できるようにする。</p><p id="ASM-001">仮定：現在はメールで申請・承認し、状況の照会もメールで行っている。これは利用者ヒアリング済みの事実ではない。</p><p>成功指標案：申請1件あたりの状況照会件数。現状値・削減目標・測定期間は<a href="#ISSUE-001">ISSUE-001</a>で確認する。</p></section>
+<section id="targets"><h2>ターゲットとペルソナ</h2><p>導入組織は自社の管理部門、直接利用者は申請者と承認者を想定する。以下は検証前の役割モデルであり、実在人物ではない。</p>
+<figure class="diagram"><div class="flow"><span class="box">導入組織：自社</span><span aria-hidden="true">→</span><span class="box">利用者：社員<br>PER-001 申請者</span><span class="box">利用者：管理職<br>PER-002 承認者</span></div><figcaption>自社に属する社員・管理職を、それぞれ申請者・承認者の役割として扱う。</figcaption></figure>
+<p id="PER-001"><strong>PER-001 申請者：</strong>自分の申請が承認待ちか完了したかを確認したい。</p><p id="PER-002"><strong>PER-002 承認者：</strong>自分が処理すべき申請を見つけたい。承認処理そのものは今回のサンプル範囲外。</p></section>
+<section id="stakeholders"><h2>関係者（組織ごと）</h2>
+<figure class="diagram"><svg viewBox="0 0 700 160" role="img" aria-labelledby="org-title org-desc"><title id="org-title">自社内の申請者と承認者</title><desc id="org-desc">自社という一つの組織に申請者と承認者が属し、申請者が承認者へ申請を渡す。</desc><rect x="5" y="5" width="690" height="150" fill="#eef7fa" stroke="#526170"/><text x="25" y="32" font-size="18">自社（架空の導入組織）</text><rect x="30" y="55" width="160" height="65" fill="white" stroke="#526170"/><text x="76" y="94" font-size="18">申請者</text><path d="M190 87 H480 L469 81 M480 87 L469 93" stroke="#155e75" fill="none" stroke-width="2"/><text x="305" y="73" font-size="16">申請</text><rect x="485" y="55" width="180" height="65" fill="white" stroke="#526170"/><text x="540" y="94" font-size="18">承認者</text></svg><figcaption>両者は自社内の役割。管理部門が導入目的・業務ルールを確認する想定。</figcaption></figure></section>
+<section id="scope"><h2>スコープ</h2><div class="table-wrap"><table><caption>今回のサンプル範囲</caption><thead><tr><th scope="col">領域</th><th scope="col">対象</th><th scope="col">対象外・理由</th></tr></thead><tbody><tr><th scope="row">申請・承認</th><td>本人の申請状況参照、担当する承認待ち一覧</td><td>申請登録・承認更新は内容を絞った動作確認のため省略</td></tr><tr><th scope="row">連携・競合</th><td>文書単体での閲覧</td><td>外部システム連携・競合調査は今回未実施。競合由来の採用判断はない</td></tr></tbody></table></div></section>
+<section id="flows"><h2>業務フロー</h2><p>業務範囲：申請後から現在状況の把握まで。Beforeは<a href="#ASM-001">仮定</a>に基づく。</p>
+<h3>Before</h3><figure class="diagram"><div class="flow"><span class="box">申請者：状況照会</span><span aria-hidden="true">→</span><span class="box">承認者：メールを確認</span><span aria-hidden="true">→</span><span class="box">申請者：回答を受領</span></div><figcaption>承認者が回答できない場合は待機・再照会する。</figcaption></figure>
+<h3 id="BP-001">After（BP-001）</h3><figure class="diagram"><div class="flow"><span class="box">申請者：状況画面を開く</span><span aria-hidden="true">→</span><span class="box">システム：本人の申請を取得</span><span aria-hidden="true">→</span><span class="box">申請者：状況を把握</span></div><figcaption>本人の申請がない場合は「申請なし」。取得失敗時は再試行を案内し、古い状態を現在の状態として表示しない。</figcaption></figure><p id="BR-001">BR-001：申請内容は本人と担当承認者のみが閲覧できる。</p></section>
+<section id="functions"><h2>カテゴリ別の機能要件</h2><p>以下はサンプルシステムへの要求です。このHTML自身が申請処理を行うわけではありません。</p>
+<div class="controls"><div><label for="query">機能要件を検索</label><input id="query" type="search" placeholder="ID・機能名・説明"></div><div><label for="category">機能カテゴリ</label><select id="category"><option value="">すべて</option><option value="申請">申請</option><option value="承認">承認</option></select></div><button id="reset" type="button">絞り込みを解除</button></div><p id="search-result" role="status" aria-live="polite"></p><noscript><p>検索にはJavaScriptが必要です。本文はすべて読めます。</p></noscript>
+<h3>申請</h3><article id="FR-001" data-requirement data-category="申請" aria-labelledby="fr1-title"><h4 id="fr1-title">FR-001 申請状況の参照</h4><p>優先度：Must（仮定）／状態：草案</p><dl><dt>利用者・目的</dt><dd><a href="#PER-001">申請者</a>が現在の処理状況を確認する。</dd><dt>根拠</dt><dd><a href="#BO-001">BO-001</a>・<a href="#BP-001">BP-001</a></dd><dt>入力・条件</dt><dd>認証済みの申請者が状況画面を開く。</dd><dt>振る舞い・出力</dt><dd>本人の申請ID・件名・現在状態・更新日時を表示する。</dd><dt>例外・権限</dt><dd>0件時は「申請なし」、取得失敗時は再試行案内。他人の申請は表示しない（<a href="#BR-001">BR-001</a>）。</dd><dt>受入条件</dt><dd><a href="#AC-001">AC-001</a></dd></dl></article>
+<h3>承認</h3><article id="FR-002" data-requirement data-category="承認" aria-labelledby="fr2-title"><h4 id="fr2-title">FR-002 承認待ち一覧</h4><p>優先度：Must（仮定）／状態：草案</p><dl><dt>利用者・目的</dt><dd><a href="#PER-002">承認者</a>が自分の担当案件を見つける。</dd><dt>根拠</dt><dd><a href="#BO-001">BO-001</a>の前提となる状況把握を支援する。</dd><dt>入力・条件</dt><dd>認証済みの承認者が一覧画面を開く。</dd><dt>振る舞い・出力</dt><dd>本人に割り当てられた承認待ち申請のID・件名・申請者を表示する。</dd><dt>例外・権限</dt><dd>0件時は「承認待ちなし」、取得失敗時は再試行案内。他担当者の案件は表示しない。</dd><dt>受入条件</dt><dd><a href="#AC-002">AC-002</a></dd></dl></article></section>
+<section id="data"><h2>データ・品質</h2><p id="DR-001">DR-001：申請は一意なID・件名・申請者・担当承認者・状態・更新日時を持つ。所有は自社、社員情報を含むため社内限定。保持期間と削除条件は<a href="#ISSUE-002">未確定</a>。</p><p id="NFR-001">NFR-001（サンプル上の仮定）：一般権限の利用者が他人の申請IDを指定しても申請内容を取得できないこと。画面非表示だけでなく、アクセス要求そのものを拒否する。検証は<a href="#AC-003">AC-003</a>。</p></section>
+<section id="acceptance"><h2>受入条件・追跡</h2><p>下表はサンプルの申請管理システムへの試験条件です。HTML表示の動作確認結果とは別であり、いずれも未実施です。</p><div class="table-wrap"><table><caption>要求から受入への対応</caption><thead><tr><th scope="col">受入ID</th><th scope="col">要求</th><th scope="col">確認方法・期待結果</th><th scope="col">結果</th></tr></thead><tbody><tr id="AC-001"><th scope="row">AC-001</th><td><a href="#FR-001">FR-001</a></td><td>本人・他人の申請を用意し、本人分だけ表示されること。0件・通信失敗時にそれぞれ案内が出ること。</td><td>未実施</td></tr><tr id="AC-002"><th scope="row">AC-002</th><td><a href="#FR-002">FR-002</a></td><td>他担当・処理済みの申請を含むデータで、本人担当の承認待ちのみ表示。0件・通信失敗も確認。</td><td>未実施</td></tr><tr id="AC-003"><th scope="row">AC-003</th><td><a href="#NFR-001">NFR-001</a></td><td>他人の申請へのアクセス要求が拒否され、応答に内容を含まない。</td><td>未実施</td></tr></tbody></table></div></section>
+<section id="issues"><h2>未確定事項</h2><p id="ISSUE-001">ISSUE-001：成功指標の目標値・測定期間。実案件化する場合、管理部門に現状値を確認する。担当・期限は実案件化時に設定。</p><p id="ISSUE-002">ISSUE-002：保持期間・削除・監査・性能条件。実案件化する場合、管理部門・運用担当と合意する。担当・期限は未設定。</p></section>
+</main></div><script>
+(() => {
+  const query = document.getElementById('query');
+  const category = document.getElementById('category');
+  const cards = Array.from(document.querySelectorAll('[data-requirement]'));
+  if (!query || !category) return;
+  const result = document.getElementById('search-result');
+  const apply = () => {
+    const term = query.value.trim().toLocaleLowerCase();
+    let shown = 0;
+    cards.forEach(card => {
+      card.hidden = !(card.textContent.toLocaleLowerCase().includes(term) &&
+        (!category.value || card.dataset.category === category.value));
+      if (!card.hidden) shown++;
+    });
+    result.textContent = shown + ' / ' + cards.length + ' 件を表示';
+  };
+  const revealAnchor = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (target && target.closest('[data-requirement]')) {
+      query.value = ''; category.value = ''; apply();
+      target.scrollIntoView();
+    }
+  };
+  query.addEventListener('input', apply);
+  category.addEventListener('change', apply);
+  document.getElementById('reset').addEventListener('click', () => {
+    query.value = ''; category.value = ''; apply();
+  });
+  window.addEventListener('hashchange', revealAnchor);
+  apply(); revealAnchor();
+})();
+</script></body></html>
