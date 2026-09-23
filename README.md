@@ -28,6 +28,33 @@ bash install.sh
 
 `CODEX_HOME` と `CLAUDE_CONFIG_DIR` を設定している場合は、絶対パスを指定してください。Codex に `AGENTS.override.md` がある場合は、同じ階層の `AGENTS.md` より優先されます。
 
+## VPS での自動更新
+
+GitHub の `main` を約1分ごとに取得し、共通指示と Skill の追加・変更・削除を自動反映できます。
+
+```bash
+bash install-auto-sync.sh
+loginctl enable-linger "$(id -un)"
+```
+
+ユーザー用 systemd timer を使用します。`enable-linger` はログアウト後・VPS 再起動後も同期を継続するための設定です。環境によって管理者権限が必要です。
+
+同期先は `~/.local/share/agent-setting/repo` です。設定のリンクはこの専用コピーを参照し、開発用リポジトリは変更しません。初回に既存設定と衝突した場合は、通常の導入と同じバックアップを作成します。専用コピーに未コミットの変更・独自コミットがある場合や、リモートの履歴が書き換わった場合は同期を停止します。取得に失敗した場合は次の実行で再試行します。
+
+同期時には取得した `install.sh` をユーザー権限で実行するため、`main` には信頼できる変更だけを取り込んでください。削除された Skill は専用コピーを参照するリンクだけを削除します。`CODEX_HOME` / `CLAUDE_CONFIG_DIR` の指定は導入時にサービスへ保存します。同期プログラムや timer 自体を更新するときは `install-auto-sync.sh` を再実行してください。
+
+```bash
+# 状態・ログ
+systemctl --user status agent-setting-sync.timer
+journalctl --user -u agent-setting-sync.service -n 50
+# 今すぐ同期
+systemctl --user start agent-setting-sync.service
+# 自動更新を停止（現在の設定は維持）
+systemctl --user disable --now agent-setting-sync.timer
+```
+
+反映後は新しいエージェントのセッションを開始してください。[Codex の公式ドキュメント](https://learn.chatgpt.com/docs/agent-configuration/agents-md)では、指示はセッション開始時に読み込まれます。
+
 ## Claude Code での読み込み条件
 
 [Claude Code の公式ドキュメント](https://code.claude.com/docs/en/memory#agentsmd)によると、`AGENTS.md` の直接読み込みには v2.1.277 以降が必要です。作業ディレクトリまたはその親に `CLAUDE.md` / `CLAUDE.local.md` がある場合、既定ではそちらが優先されます。Bedrock などの外部プロバイダーやテレメトリー無効化などで機能が使えないセッションもあります。その場合は必要な場所に `CLAUDE.md` を作り、`@AGENTS.md` で読み込んでください。Claude Code のセッション開始時に `AGENTS.md loaded` と表示されるか確認できます。
