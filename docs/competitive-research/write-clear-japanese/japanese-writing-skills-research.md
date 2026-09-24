@@ -2,6 +2,8 @@
 
 調査日: 2026-09-22
 
+追加調査: 2026-09-23、`coji/natural-japanese` を追加。既存6件の出典は再調査していない。追加対象のコミット、実行確認、採否は[個別調査](natural-japanese-research.md)を参照。
+
 ## 調査の範囲
 
 公開されている `SKILL.md` と、その配布元の README を確認した。日本語の説明文、技術文書、業務文書の作成・推敲に役立つものを対象とする。公開スキルの品質や効果を、このリポジトリの文章で比較実測したものではない。
@@ -16,6 +18,7 @@
 | [writing-style](https://github.com/takekazuomi/takekazuomi-claude-plugins/blob/main/plugins/writing-style/skills/writing-style/SKILL.md) | ブログ等は casual、仕様書・設計書等は formal と文書種別で切り替える。執筆後に削除、論理、通読、文字数、任意の textlint を確認する。 | 同じ「良い日本語」でも用途ごとに文体と情報密度を変える。機械検査を論理検査の代わりにしない。 | スタイルの二分法や著者固有の好みは、そのまま共通規則にしない。 |
 | [japanese-writing](https://github.com/ultimatile/dotfiles/blob/main/.claude/skills/japanese-writing/SKILL.md) | 修辞の抑制、語格・用語の一貫性、引用符などを点検。プロジェクト固有の表記は現地のガイドや用語集に委ねる。 | 共通の文章規則と、案件ごとの用語・書式を分ける設計。既存の textlint 設定があれば利用する。 | 他スキルへの依存や、毎回の確認手順は、このリポジトリの運用に合わせて簡素化する。 |
 | [ja-proofreading](https://github.com/sanoakr/ai-skills/blob/main/ja-proofreading/SKILL.md) | textlint の日本語プリセットで、文長、読点、ら抜き、文体混在などを検出する校正スキル。 | 表記・語法の機械的な問題を再現可能に見つける。修正が機械的か、判断が必要かを分ける。 | ツールの検出結果は文意、論証、用途への適合を保証しない。必要な依存の導入も別途検討する。 |
+| [natural-japanese](https://github.com/coji/natural-japanese/blob/9a78a42964096da509b8f3e011f0085a5f080151/skills/natural-japanese/SKILL.md) | 日本語の仕事文書・記事の作成と推敲。構成設計、lint、文脈に基づく修正判断、再検査を組み合わせる。 | 見出しと段落先頭の通読、用語候補の抽出、指摘を直すか残すかの記録。 | 点数や指摘0件を品質保証にしない。付属テストの動作は確認したが、文章の改善効果は未検証。[個別調査](natural-japanese-research.md)・[採否検討](inclusion-review/japanese-writing/natural-japanese.md)を参照。 |
 
 ## 分かったこと
 
